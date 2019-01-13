@@ -214,6 +214,24 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 
 	//checking
 	printf("location is %s\n",node_next->location);
+
+	//double back moves
+	//TODO continue this
+	if(node_next->location[0]=='D') {
+
+		printf("Dracula: Double Back\n");
+		location_t history[TRAIL_SIZE];
+		gv_get_history (new, PLAYER_DRACULA, history);
+
+		if(node_next->location[1]=='1')  {
+			printf("Dracula: Double Back 1\n");
+
+
+			printf("history[0] = %d\n",history[0]);
+			printf("node_next->location = %s\n",node_next->location);
+			printf("location_get_abbrev(history[0]) = %s\n",location_get_abbrev(history[0]));
+		}
+	}
 	
 	//dracula_trap
 	if(past_plays[i+3]=='T') {
@@ -245,11 +263,13 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 
 	//if sea reduce blood points TODO
 	if(valid_location_p (id) && sea_p (id)) {
-		new->D_health = new->D_health - 2;
+		printf("Dracula: Life lost at sea\n");
+		new->D_health = new->D_health - LIFE_LOSS_SEA;
 	}
 	
 	//if at castle gain 10 pts
 	if(valid_location_p (id) && CASTLE_DRACULA==id) {
+		printf("Dracula: Life gained at castle\n");
 		new->D_health = new->D_health + 10;
 
 	}
@@ -424,7 +444,6 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 		}
 
 		//Increment round
-		printf("i = %d\n");
 		if((i+8)%MAX_ROUNDS==0 && i!=0) new->round++; 
 
 	}
@@ -571,6 +590,34 @@ void gv_get_history (
 	location_t trail[TRAIL_SIZE])
 {
 
+	//Find player
+	Move tail = NULL;
+	if(player==PLAYER_LORD_GODALMING) tail = gv->G_tail;
+	if(player==PLAYER_DR_SEWARD) tail = gv->S_tail;
+	if(player==PLAYER_VAN_HELSING) tail = gv->H_tail;
+	if(player==PLAYER_MINA_HARKER) tail = gv->M_tail;
+	if(player==PLAYER_DRACULA) tail = gv->D_tail;
+
+
+	for (int i = 0;i < 6;i++) {
+	
+		//if tail is null
+		if(tail==NULL) {
+
+			//insert unknown location
+			trail[i] = UNKNOWN_LOCATION;
+		} 
+
+		else {
+
+			//TODO: if ID>70 passes through trail[i]=-1. so if S? passes through trail[i] = -1 when it should equal SEA_UNKNOWN. 
+			printf("tail->location = %s\n",tail->location);
+
+			//insert location
+			trail[i] = location_find_by_abbrev(tail->location);
+			tail = tail->prev;
+		}
+	}
 }
 
 location_t *gv_get_connections (

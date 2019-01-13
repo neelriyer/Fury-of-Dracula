@@ -118,7 +118,7 @@ int main (void)
 		gv_drop (gv);
 	} while (0);
 
-/*
+
 	do {////////////////////////////////////////////////////////////////
 		puts ("Test for Dracula doubling back at sea, "
 			  "and losing blood points (Hunter View)");
@@ -144,7 +144,7 @@ int main (void)
 		puts ("passed");
 		gv_drop (gv);
 	} while (0);
-
+/*
 
 	do {////////////////////////////////////////////////////////////////
 		puts ("Test for Dracula doubling back at sea, "
