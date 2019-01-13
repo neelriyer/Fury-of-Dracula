@@ -39,10 +39,33 @@ int main (void)
 
 
 	do {////////////////////////////////////////////////////////////////
+		puts ("Test for traps/immature vampire/dracula confrontation");
+
+		char *trail =
+			"GSTTVD. SAOTVD. HZUTVD. MBBTVD. DC?TVM.";
+		player_message messages[] = {
+			"Hello", "Rubbish", "Stuff", "", "Mwahahah"};
+		GameView gv = gv_new (trail, messages);
+
+		assert (gv_get_player (gv) == PLAYER_LORD_GODALMING);
+		assert (gv_get_round (gv) == 1);
+		assert (gv_get_location (gv, PLAYER_LORD_GODALMING) == STRASBOURG);
+		assert (gv_get_location (gv, PLAYER_DR_SEWARD) == ATLANTIC_OCEAN);
+		assert (gv_get_location (gv, PLAYER_VAN_HELSING) == ZURICH);
+		assert (gv_get_location (gv, PLAYER_MINA_HARKER) == BAY_OF_BISCAY);
+		assert (gv_get_location (gv, PLAYER_DRACULA) == CITY_UNKNOWN);
+		assert (gv_get_health (gv, PLAYER_DRACULA) == GAME_START_BLOOD_POINTS);
+
+		puts ("passed");
+		gv_drop (gv);
+	} while (0);
+
+
+	do {////////////////////////////////////////////////////////////////
 		puts ("Test for Dracula trail and basic functions");
 
 		char *trail =
-			"GST.... SAO.... HZU.... MBB.... DC?....";
+			"GST.... SAO.... HZU.... MBB.... DC?.... GST....";
 		player_message messages[] = {
 			"Hello", "Rubbish", "Stuff", "", "Mwahahah"};
 		GameView gv = gv_new (trail, messages);
@@ -95,7 +118,7 @@ int main (void)
 		gv_drop (gv);
 	} while (0);
 
-
+/*
 	do {////////////////////////////////////////////////////////////////
 		puts ("Test for Dracula doubling back at sea, "
 			  "and losing blood points (Hunter View)");
@@ -222,6 +245,6 @@ int main (void)
 		puts ("passed");
 		gv_drop (gv);
 	} while (0);
-
+*/
 	return EXIT_SUCCESS;
 }

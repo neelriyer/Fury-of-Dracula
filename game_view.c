@@ -28,16 +28,15 @@ typedef struct moves *Move;
 
 struct moves {
 
-	char location[2];
+	char location[3];
 	Move next;
 	Move prev;
-	int trap;
+	int hunter_trap;
+	int dracula_trap;
 	int dracula_encounter;
 	int immature_vampire;
 	int mature_vampire;
-	int rest;
-	int sea;
-	int castle;
+	int hunter_rest;
 
 };
 
@@ -75,7 +74,7 @@ typedef struct game_view {
 
 
 //helper1
-static Move new_node() {
+static Move new_node_move() {
 
 	Move new = malloc (sizeof(struct moves));
 	if (new == NULL) err (EX_OSERR, "couldn't allocate GameView");
@@ -93,6 +92,167 @@ static game_view *new_node_game_view() {
 	return new;
 
 }
+
+
+//helper 3
+static Move hunter_setup(char *past_plays, int i, game_view *new, enum player player)
+{
+
+	int health=0,turns=0;
+	Move tail = NULL;
+	
+	//find player
+	if(player==PLAYER_LORD_GODALMING) {
+		tail = new->G_tail;
+		health = new->G_health;
+		turns = new->G_turns;
+	}
+	if(player==PLAYER_DR_SEWARD) {
+		tail = new->S_tail;
+		health = new->S_health;
+		turns = new->S_turns;
+	}
+	if(player==PLAYER_VAN_HELSING) {
+		tail = new->H_tail;
+		health = new->H_health;
+		turns = new->H_turns;
+	}
+	if(player==PLAYER_MINA_HARKER) {
+		tail = new->M_tail;
+		health = new->M_health;
+		turns = new->M_turns;
+	}
+
+	//create node
+	Move node_next = new_node_move();
+			
+	//new node location is past_plays[i+1] and past_plays[i+2]
+	node_next->location[0] = past_plays[i+1];
+	node_next->location[1] = past_plays[i+2];
+	node_next->location[2] = '\0';
+
+	//checking 
+	printf("location is %s\n", node_next->location);
+	printf("location ID is %d\n",location_find_by_abbrev(node_next->location));
+	
+
+	//hunter_trap
+	if(past_plays[i+3]=='T') {
+		printf("%u Hunter: Trap\n", player);
+		node_next->hunter_trap=1;
+		health = health - 2;
+	}
+
+	//immature vampire
+	if(past_plays[i+4]=='V') {
+		printf("%u Hunter: Immature Vampire\n", player);
+		node_next->immature_vampire=1;
+	}
+
+	//dracula encounter
+	if(past_plays[i+5]=='D') {
+		node_next->dracula_encounter=1;
+		printf("%u Hunter: Dracula Encounter\n", player);
+		health = health - 4;
+	}
+
+	//rest (not working) TODO fix this
+	if(tail!=NULL) printf("\nCHECK REST:\nnew->G_tail->location is %s\n",tail->location);
+	printf("node_next->location is %s\n", node_next->location);
+
+	if(tail!=NULL && strcmp(tail->location,node_next->location)==0) {
+		node_next->hunter_rest=1;
+		printf("Hunter: Rest\n");
+		health = health + 3;
+	}
+
+	//increment turn count
+	turns++;
+
+	//find player. input health and turns.
+	if(player==PLAYER_LORD_GODALMING) {
+		new->G_health = health; 
+		new->G_turns = turns;
+		printf("new->G_health = %d\n",new->G_health);
+		printf("new->G_turns = %d\n",new->G_turns);
+	}
+	if(player==PLAYER_DR_SEWARD) {
+		new->S_health = health;
+		new->S_turns = turns;
+		printf("new->S_health = %d\n",new->S_health);
+		printf("new->S_turns = %d\n",new->S_turns);
+	}
+	if(player==PLAYER_VAN_HELSING) {
+		new->H_health = health;
+		new->H_turns = turns;
+		printf("new->H_health = %d\n",new->H_health);
+		printf("new->H_turns = %d\n",new->H_turns);
+	}
+	if(player==PLAYER_MINA_HARKER) {
+		new->M_health = health;
+		new->M_turns = turns;
+		printf("new->M_health = %d\n",new->M_health);
+		printf("new->M_turns = %d\n",new->M_turns);
+	}
+	printf("\n\n");
+
+	
+	return node_next;
+
+}
+
+//helper 4
+static Move dracula_setup(char *past_plays, int i, game_view *new) {
+
+	//create node
+	Move node_next = new_node_move();
+
+	//new node location is past_plays[i+1] and past_plays[i+2]
+	node_next->location[0] = past_plays[i+1];
+	node_next->location[1] = past_plays[i+2];
+	node_next->location[2] = '\0';
+
+	//checking
+	printf("location is %s\n",node_next->location); 
+
+	//if sea reduce blood TODO
+
+	//dracula_trap
+	if(past_plays[i+3]=='T') {
+		printf("Dracula: Trap\n");
+		node_next->dracula_trap=1;
+	}
+
+	//immature vampire
+	if(past_plays[i+4]=='V') {
+		printf("Dracula: Immature Vampire\n");
+		node_next->immature_vampire=1;
+	}
+
+	//trap vanishes
+	if(past_plays[i+5]=='M') {
+		printf("Dracula: Trap matured\n");
+		node_next->dracula_trap=0;
+	}
+
+	//vampire matures
+	if(past_plays[i+5]=='V') {
+		printf("Dracula: Vampire matures\n");
+		node_next->mature_vampire=1;
+		new->score = new->score - 13;
+	}
+
+	//reduce score
+	printf("Dracula: decreased score\n");
+	new->score--;
+
+	//increase turns
+	printf("Dracula: increased turns\n");
+	new->D_turns++;
+	
+	return node_next;
+
+} 
 
 
 //0        1        2          3     4                  5                 6  7       8
@@ -144,67 +304,100 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 		if(i%MAX_ROUNDS==0) new->round++;
 		//TODO: fix new->found (this^ isn't going to work)
 
-		//If G
-		printf("i = %d\n",i);
-		printf("past_plays[i] = %c\n",past_plays[i]);
-		printf("strcmp(&past_plays[i],G) = %d\n",strcmp(&past_plays[i],"G"));
-		if(strcmp(&past_plays[i],"G")==0) {
+		//If Lord Godalming
+		if(past_plays[i]=='G') {
+
 			//create new node
-			Move node_next = new_node();
-			printf("here\n");
-			
-			//new node location is past_plays[i+1] and past_plays[i+2]
-			node_next->location[0] = past_plays[i+1];
-			node_next->location[1] = past_plays[i+2];
+			Move node_next = hunter_setup(past_plays, i, new, PLAYER_LORD_GODALMING);
 
-			//checking 
-			printf("location is %s\n",node_next->location);
-
-			//trap
-			if(strcmp(&past_plays[i+3],"T")==0) {
-				node_next->trap=1;
-				new->G_health = new->G_health - 2;
-			}
-
-			//immature vampire
-			if(strcmp(&past_plays[i+4],"V")==0) {
-				node_next->immature_vampire=1;
-			}
-
-			//dracula encounter
-			if(strcmp(&past_plays[i+5],"D")==0) {
-				node_next->dracula_encounter=1;
-				new->G_health = new->G_health - 4;
-			}
-
-			//rest
-			if(G_prev!=NULL && strcmp(G_prev->location,node_next->location)==0) {
-				node_next->rest=1;
-				new->G_health = new->G_health + 3;
-			}
-
-			//increment turn count
-			new->G_turns++;
-			
 			//Fix links
-			//if empty
 			if (new->G_tail == NULL) { 
 				new->G_tail = node_next;
 			} 
-
-			//not empty
 			else { 
 				new->G_tail->next = node_next;
 				new->G_tail = node_next;
 			}
-
-			//Fix previous
 			node_next->prev = G_prev;
 			G_prev = node_next;
 
 		}
 
+		//If Dr. Seward
+		if(past_plays[i]=='S') {
+
+			//create new node
+			Move node_next = hunter_setup(past_plays, i, new, PLAYER_DR_SEWARD);
+
+			//Fix links
+			if (new->S_tail == NULL) { 
+				new->S_tail = node_next;
+			} 
+			else { 
+				new->S_tail->next = node_next;
+				new->S_tail = node_next;
+			}
+			node_next->prev = S_prev;
+			S_prev = node_next;
+		}
+
+		//If Van Helsing
+		if(past_plays[i]=='H') {
+
+			//create new node
+			Move node_next = hunter_setup(past_plays, i, new, PLAYER_VAN_HELSING);
+
+			//Fix links
+			if (new->H_tail == NULL) { 
+				new->H_tail = node_next;
+			} 
+			else { 
+				new->H_tail->next = node_next;
+				new->H_tail = node_next;
+			}
+			node_next->prev = H_prev;
+			H_prev = node_next;
+		}
+
+		//If Mina Harker
+		if(past_plays[i]=='M') {
+
+			//create new node
+			Move node_next = hunter_setup(past_plays, i, new, PLAYER_MINA_HARKER);
+
+			//Fix links
+			if (new->M_tail == NULL) { 
+				new->M_tail = node_next;
+			} 
+			else { 
+				new->M_tail->next = node_next;
+				new->M_tail = node_next;
+			}
+			node_next->prev = M_prev;
+			M_prev = node_next;
+		}
+
+		//If Dracula
+		if(past_plays[i]=='D') {
+
+			//create new node
+			Move node_next = dracula_setup(past_plays, i, new);
+
+			//Fix links
+			if (new->D_tail == NULL) { 
+				new->D_tail = node_next;
+			} 
+			else { 
+				new->D_tail->next = node_next;
+				new->D_tail = node_next;
+			}
+			node_next->prev = D_prev;
+			D_prev = node_next;
+		}
+
+
 	}
+
 	return new;
 }
 
@@ -219,9 +412,23 @@ round_t gv_get_round (game_view *gv)
 	return gv->round;
 }
 
+//whose turn is it?
 enum player gv_get_player (game_view *gv __unused)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
+	//G, S, H, M, D, G.....
+	
+	int first = gv->G_turns;
+	int second = gv->S_turns;
+	int third = gv->H_turns;
+	int fourth = gv->M_turns;
+	int fifth = gv->D_turns;
+
+	if(first>second) return PLAYER_DR_SEWARD;
+	else if(second>third) return PLAYER_VAN_HELSING;
+	else if(third>fourth) return PLAYER_MINA_HARKER;
+	else if(fourth>fifth) return PLAYER_DRACULA;
+	else return PLAYER_LORD_GODALMING;
+	
 	return 0;
 }
 
@@ -255,6 +462,35 @@ location_t gv_get_location (game_view *gv, enum player player)
 	if(player==PLAYER_LORD_GODALMING) {
 		if(gv->G_tail==NULL) return UNKNOWN_LOCATION;
 		else return location_find_by_abbrev(gv->G_tail->location);
+	}
+	
+	if(player==PLAYER_DR_SEWARD) {
+		if(gv->S_tail==NULL) return UNKNOWN_LOCATION;
+		else return location_find_by_abbrev(gv->S_tail->location);
+	}
+
+	if(player==PLAYER_VAN_HELSING) {
+		if(gv->H_tail==NULL) return UNKNOWN_LOCATION;
+		else return location_find_by_abbrev(gv->H_tail->location);
+	}
+
+	if(player==PLAYER_MINA_HARKER) {
+		if(gv->M_tail==NULL) return UNKNOWN_LOCATION;
+		else return location_find_by_abbrev(gv->M_tail->location);
+	}
+
+	if(player==PLAYER_DRACULA) {
+		if(gv->D_tail==NULL) return UNKNOWN_LOCATION;
+		else if(gv->D_tail->location[0]=='C' && gv->D_tail->location[1]=='?') return CITY_UNKNOWN;
+		else if(gv->D_tail->location[0]=='S' && gv->D_tail->location[1]=='?') return SEA_UNKNOWN;
+		else if(gv->D_tail->location[0]=='H' && gv->D_tail->location[1]=='I') return HIDE;
+		else if(gv->D_tail->location[0]=='D' && gv->D_tail->location[1]=='1') return DOUBLE_BACK_1;
+		else if(gv->D_tail->location[0]=='D' && gv->D_tail->location[1]=='2') return DOUBLE_BACK_2;
+		else if(gv->D_tail->location[0]=='D' && gv->D_tail->location[1]=='3') return DOUBLE_BACK_3;
+		else if(gv->D_tail->location[0]=='D' && gv->D_tail->location[1]=='4') return DOUBLE_BACK_4;
+		else if(gv->D_tail->location[0]=='D' && gv->D_tail->location[1]=='5') return DOUBLE_BACK_5;
+		else if(gv->D_tail->location[0]=='T' && gv->D_tail->location[1]=='P') return TELEPORT;
+		else return location_find_by_abbrev(gv->D_tail->location);
 	}
 
 	return 0;
