@@ -42,7 +42,7 @@ struct moves {
 
 typedef struct game_view {
 
-	int round;
+	round_t round;
 	int score;
 
 	Move G_tail;
@@ -137,29 +137,29 @@ static Move hunter_setup(char *past_plays, int i, game_view *new, enum player pl
 	
 
 	//hunter_trap
-	if(past_plays[i+3]=='T') {
+	if(past_plays[i+3]=='T' || past_plays[i+4]=='T' || past_plays[i+5]=='T' || past_plays[i+6]=='T') {
 		printf("%u Hunter: Trap\n", player);
 		node_next->hunter_trap=1;
 		health = health - 2;
 	}
 
 	//immature vampire
-	if(past_plays[i+4]=='V') {
+	if(past_plays[i+3]=='V' || past_plays[i+4]=='V' || past_plays[i+5]=='V' || past_plays[i+6]=='V') {
 		printf("%u Hunter: Immature Vampire\n", player);
 		node_next->immature_vampire=1;
 	}
 
 	//dracula encounter
-	if(past_plays[i+5]=='D') {
+	if(past_plays[i+3]=='D' || past_plays[i+4]=='D' || past_plays[i+5]=='D' || past_plays[i+6]=='D') {
 		node_next->dracula_encounter=1;
 		printf("%u Hunter: Dracula Encounter\n", player);
 		health = health - 4;
+		new->D_health = new->D_health - 10;
 	}
 
-	//rest (not working) TODO fix this
-	if(tail!=NULL) printf("\nCHECK REST:\nnew->G_tail->location is %s\n",tail->location);
-	printf("node_next->location is %s\n", node_next->location);
-
+	//rest 
+	//if(tail!=NULL) printf("\nCHECK REST:\nnew->G_tail->location is %s\n",tail->location);
+	//printf("node_next->location is %s\n", node_next->location);
 	if(tail!=NULL && strcmp(tail->location,node_next->location)==0) {
 		node_next->hunter_rest=1;
 		printf("Hunter: Rest\n");
@@ -213,16 +213,14 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 	node_next->location[2] = '\0';
 
 	//checking
-	printf("location is %s\n",node_next->location); 
-
-	//if sea reduce blood TODO
-
+	printf("location is %s\n",node_next->location);
+	
 	//dracula_trap
 	if(past_plays[i+3]=='T') {
 		printf("Dracula: Trap\n");
 		node_next->dracula_trap=1;
 	}
-
+	
 	//immature vampire
 	if(past_plays[i+4]=='V') {
 		printf("Dracula: Immature Vampire\n");
@@ -241,14 +239,29 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 		node_next->mature_vampire=1;
 		new->score = new->score - 13;
 	}
+	
+	//get ID
+	int id = location_find_by_abbrev(node_next->location);
+
+	//if sea reduce blood points TODO
+	if(valid_location_p (id) && sea_p (id)) {
+		new->D_health = new->D_health - 2;
+	}
+	
+	//if at castle gain 10 pts
+	if(valid_location_p (id) && CASTLE_DRACULA==id) {
+		new->D_health = new->D_health + 10;
+
+	}
 
 	//reduce score
-	printf("Dracula: decreased score\n");
 	new->score--;
-
+	
 	//increase turns
-	printf("Dracula: increased turns\n");
 	new->D_turns++;
+
+	printf("new->D_health = %d\n",new->D_health);
+	printf("new->D_turns = %d\n\n\n",new->D_turns);
 	
 	return node_next;
 
@@ -298,20 +311,23 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 
 	new->score = GAME_START_SCORE;
 	
-	for(int i = 0;i<(MAX_ROUNDS) && past_plays[i]!='\0';i = i+8) {
+	for(int i = 0;i<(strlen(past_plays)+1);i = i+8) {
 
-		//Increment round
-		if(i%MAX_ROUNDS==0) new->round++;
-		//TODO: fix new->found (this^ isn't going to work)
+		printf("strlen(past_plays) = %d\n", strlen(past_plays));
+
+		printf("\n--------ROUND %d--------\n", new->round);
 
 		//If Lord Godalming
 		if(past_plays[i]=='G') {
+
+			printf("Lord Godalming\n");
 
 			//create new node
 			Move node_next = hunter_setup(past_plays, i, new, PLAYER_LORD_GODALMING);
 
 			//Fix links
-			if (new->G_tail == NULL) { 
+			if (new->G_tail == NULL) {
+				new->G_head = node_next; 
 				new->G_tail = node_next;
 			} 
 			else { 
@@ -326,11 +342,14 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 		//If Dr. Seward
 		if(past_plays[i]=='S') {
 
+			printf("Dr. Seward\n");
+
 			//create new node
 			Move node_next = hunter_setup(past_plays, i, new, PLAYER_DR_SEWARD);
 
 			//Fix links
 			if (new->S_tail == NULL) { 
+				new->S_head = node_next;
 				new->S_tail = node_next;
 			} 
 			else { 
@@ -344,11 +363,14 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 		//If Van Helsing
 		if(past_plays[i]=='H') {
 
+			printf("Van Helsing\n");
+
 			//create new node
 			Move node_next = hunter_setup(past_plays, i, new, PLAYER_VAN_HELSING);
 
 			//Fix links
 			if (new->H_tail == NULL) { 
+				new->H_head = node_next;
 				new->H_tail = node_next;
 			} 
 			else { 
@@ -362,11 +384,14 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 		//If Mina Harker
 		if(past_plays[i]=='M') {
 
+			printf("Mina Harker\n");
+
 			//create new node
 			Move node_next = hunter_setup(past_plays, i, new, PLAYER_MINA_HARKER);
 
 			//Fix links
 			if (new->M_tail == NULL) { 
+				new->M_head = node_next;
 				new->M_tail = node_next;
 			} 
 			else { 
@@ -380,11 +405,14 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 		//If Dracula
 		if(past_plays[i]=='D') {
 
+			printf("Dracula\n");
+
 			//create new node
 			Move node_next = dracula_setup(past_plays, i, new);
 
 			//Fix links
 			if (new->D_tail == NULL) { 
+				new->D_head = node_next;
 				new->D_tail = node_next;
 			} 
 			else { 
@@ -395,16 +423,58 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 			D_prev = node_next;
 		}
 
+		//Increment round
+		printf("i = %d\n");
+		if((i+8)%MAX_ROUNDS==0 && i!=0) new->round++; 
 
 	}
 
 	return new;
+
 }
+
 
 void gv_drop (game_view *gv)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	free (gv);
+
+	Move temp, node;
+
+	//TODO: use a function to make this neater
+	node = gv->G_head;
+    while (node != NULL) {
+       temp = node->next;
+       free(node);
+       node = temp;
+    }
+
+    node = gv->S_head;
+    while (node != NULL) {
+       temp = node->next;
+       free(node);
+       node = temp;
+    }
+
+    node = gv->H_head;
+    while (node != NULL) {
+       temp = node->next;
+       free(node);
+       node = temp;
+    }
+
+    node = gv->M_head;
+    while (node != NULL) {
+       temp = node->next;
+       free(node);
+       node = temp;
+    }
+    node = gv->D_head;
+    while (node != NULL) {
+       temp = node->next;
+       free(node);
+       node = temp;
+    }
+    free (gv);
+
 }
 
 round_t gv_get_round (game_view *gv)
@@ -413,10 +483,10 @@ round_t gv_get_round (game_view *gv)
 }
 
 //whose turn is it?
-enum player gv_get_player (game_view *gv __unused)
+enum player gv_get_player (game_view *gv)
 {
-	//G, S, H, M, D, G.....
 	
+	//G goes first, S goes second, etc.
 	int first = gv->G_turns;
 	int second = gv->S_turns;
 	int third = gv->H_turns;
@@ -429,7 +499,6 @@ enum player gv_get_player (game_view *gv __unused)
 	else if(fourth>fifth) return PLAYER_DRACULA;
 	else return PLAYER_LORD_GODALMING;
 	
-	return 0;
 }
 
 int gv_get_score (game_view *gv)
@@ -497,10 +566,11 @@ location_t gv_get_location (game_view *gv, enum player player)
 }
 
 void gv_get_history (
-	game_view *gv __unused, enum player player __unused,
-	location_t trail[TRAIL_SIZE] __unused)
+
+	game_view *gv, enum player player,
+	location_t trail[TRAIL_SIZE])
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
+
 }
 
 location_t *gv_get_connections (

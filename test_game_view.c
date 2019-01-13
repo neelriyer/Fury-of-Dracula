@@ -42,7 +42,7 @@ int main (void)
 		puts ("Test for traps/immature vampire/dracula confrontation");
 
 		char *trail =
-			"GSTTVD. SAOTVD. HZUTVD. MBBTVD. DC?TVM.";
+			"GSTTVD. SAOTVD. HZUTVD. MBBTVD. DC?T...";
 		player_message messages[] = {
 			"Hello", "Rubbish", "Stuff", "", "Mwahahah"};
 		GameView gv = gv_new (trail, messages);
@@ -54,7 +54,7 @@ int main (void)
 		assert (gv_get_location (gv, PLAYER_VAN_HELSING) == ZURICH);
 		assert (gv_get_location (gv, PLAYER_MINA_HARKER) == BAY_OF_BISCAY);
 		assert (gv_get_location (gv, PLAYER_DRACULA) == CITY_UNKNOWN);
-		assert (gv_get_health (gv, PLAYER_DRACULA) == GAME_START_BLOOD_POINTS);
+		assert (gv_get_health (gv, PLAYER_DRACULA) == 0);
 
 		puts ("passed");
 		gv_drop (gv);
@@ -65,7 +65,7 @@ int main (void)
 		puts ("Test for Dracula trail and basic functions");
 
 		char *trail =
-			"GST.... SAO.... HZU.... MBB.... DC?.... GST....";
+			"GST.... SAO.... HZU.... MBB.... DC?....";
 		player_message messages[] = {
 			"Hello", "Rubbish", "Stuff", "", "Mwahahah"};
 		GameView gv = gv_new (trail, messages);
