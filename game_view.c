@@ -158,8 +158,6 @@ static Move hunter_setup(char *past_plays, int i, game_view *new, enum player pl
 	}
 
 	//rest 
-	//if(tail!=NULL) printf("\nCHECK REST:\nnew->G_tail->location is %s\n",tail->location);
-	//printf("node_next->location is %s\n", node_next->location);
 	if(tail!=NULL && strcmp(tail->location,node_next->location)==0) {
 		node_next->hunter_rest=1;
 		printf("Hunter: Rest\n");
@@ -202,6 +200,31 @@ static Move hunter_setup(char *past_plays, int i, game_view *new, enum player pl
 }
 
 //helper 4
+//change dracula's health based on where he is
+static void dracula_location_blood(const char *location, int id, game_view *new) {
+
+	//if location is SEA_UNKNOWN
+	if(strcmp(location,"S?")==0 || id == SEA_UNKNOWN) {
+		printf("Dracula: Life lost at sea\n");
+		new->D_health = new->D_health - LIFE_LOSS_SEA;
+	}
+
+	//if at castle gain 10 pts
+	if(strcmp(location,"TP")==0 || id == TELEPORT) {
+		printf("Dracula: Life gained at castle\n");
+		new->D_health = new->D_health + 10;
+	}
+
+	//if in sea
+	if(valid_location_p(id) && sea_p(id)) {
+		printf("Dracula: Life lost at sea\n");
+		new->D_health = new->D_health - LIFE_LOSS_SEA;
+	}
+
+}
+
+
+//helper 5
 static Move dracula_setup(char *past_plays, int i, game_view *new) {
 
 	//create node
@@ -215,24 +238,6 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 	//checking
 	printf("location is %s\n",node_next->location);
 
-	//double back moves
-	//TODO continue this
-	if(node_next->location[0]=='D') {
-
-		printf("Dracula: Double Back\n");
-		location_t history[TRAIL_SIZE];
-		gv_get_history (new, PLAYER_DRACULA, history);
-
-		if(node_next->location[1]=='1')  {
-			printf("Dracula: Double Back 1\n");
-
-
-			printf("history[0] = %d\n",history[0]);
-			printf("node_next->location = %s\n",node_next->location);
-			printf("location_get_abbrev(history[0]) = %s\n",location_get_abbrev(history[0]));
-		}
-	}
-	
 	//dracula_trap
 	if(past_plays[i+3]=='T') {
 		printf("Dracula: Trap\n");
@@ -258,21 +263,39 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 		new->score = new->score - 13;
 	}
 	
-	//get ID
+	//Double back moves
+	if(node_next->location[0]=='D') {
+
+		//get history
+		location_t history[TRAIL_SIZE];
+		gv_get_history (new, PLAYER_DRACULA, history);
+
+		//TODO fix this, double back doesn't work
+		for (int j = 0;j < 5;j++) {
+			
+			//number dracula doubles back by (convert from char to int)
+			int double_back_number = node_next->location[1]-'0'-1;
+			
+			//printf("double_back_number-1 = %d\n", double_back_number-1);
+			//printf("j = %d\n", j);
+
+			if(double_back_number==j)  {
+				printf("\nDracula: Double Back %d\n",j+1);
+
+				printf("Doubling back to %s\n", location_get_abbrev(history[j]));
+
+				//change dracula's health based on location
+				dracula_location_blood(location_get_abbrev(history[j]), history[j], new); 
+			}
+		}
+	}
+
+	//get id
 	int id = location_find_by_abbrev(node_next->location);
+	//printf("id = %d\n", id);	
 
-	//if sea reduce blood points TODO
-	if(valid_location_p (id) && sea_p (id)) {
-		printf("Dracula: Life lost at sea\n");
-		new->D_health = new->D_health - LIFE_LOSS_SEA;
-	}
-	
-	//if at castle gain 10 pts
-	if(valid_location_p (id) && CASTLE_DRACULA==id) {
-		printf("Dracula: Life gained at castle\n");
-		new->D_health = new->D_health + 10;
-
-	}
+	//change dracula's health based on location
+	dracula_location_blood(node_next->location, id, new);
 
 	//reduce score
 	new->score--;
@@ -331,9 +354,8 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 
 	new->score = GAME_START_SCORE;
 	
+	//while less than string length of trail + 1
 	for(int i = 0;i<(strlen(past_plays)+1);i = i+8) {
-
-		printf("strlen(past_plays) = %d\n", strlen(past_plays));
 
 		printf("\n--------ROUND %d--------\n", new->round);
 
@@ -452,47 +474,27 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 
 }
 
+//helper
+static void delete_list(Move node) {
 
+	Move temp;
+	while (node != NULL) {
+		temp = node->next;
+		free(node);
+		node = temp;
+	}
+
+}
+
+//drop function
 void gv_drop (game_view *gv)
 {
 
-	Move temp, node;
-
-	//TODO: use a function to make this neater
-	node = gv->G_head;
-    while (node != NULL) {
-       temp = node->next;
-       free(node);
-       node = temp;
-    }
-
-    node = gv->S_head;
-    while (node != NULL) {
-       temp = node->next;
-       free(node);
-       node = temp;
-    }
-
-    node = gv->H_head;
-    while (node != NULL) {
-       temp = node->next;
-       free(node);
-       node = temp;
-    }
-
-    node = gv->M_head;
-    while (node != NULL) {
-       temp = node->next;
-       free(node);
-       node = temp;
-    }
-    node = gv->D_head;
-    while (node != NULL) {
-       temp = node->next;
-       free(node);
-       node = temp;
-    }
-    free (gv);
+	delete_list(gv->G_head);
+	delete_list(gv->S_head);
+	delete_list(gv->H_head);
+	delete_list(gv->M_head);
+	delete_list(gv->D_head);
 
 }
 
@@ -600,24 +602,42 @@ void gv_get_history (
 
 
 	for (int i = 0;i < 6;i++) {
-	
+
 		//if tail is null
 		if(tail==NULL) {
-
-			//insert unknown location
 			trail[i] = UNKNOWN_LOCATION;
-		} 
-
-		else {
-
-			//TODO: if ID>70 passes through trail[i]=-1. so if S? passes through trail[i] = -1 when it should equal SEA_UNKNOWN. 
-			printf("tail->location = %s\n",tail->location);
-
-			//insert location
-			trail[i] = location_find_by_abbrev(tail->location);
-			tail = tail->prev;
+			return;
 		}
+
+		//if CITY_UNKNOWN
+		else if(tail->location[0]=='C' && tail->location[1]=='?') trail[i] = CITY_UNKNOWN;
+
+		//if SEA_UNKNOWN
+		else if(tail->location[0]=='S' && tail->location[1]=='?') trail[i] =  SEA_UNKNOWN;
+
+		//if HIDE
+		else if(tail->location[0]=='H' && tail->location[1]=='I') trail[i] = HIDE;
+
+		//if double back 
+		else if(tail->location[0]=='D' && tail->location[1]=='1') trail[i] =  DOUBLE_BACK_1;
+		else if(tail->location[0]=='D' && tail->location[1]=='2') trail[i] =  DOUBLE_BACK_2;
+		else if(tail->location[0]=='D' && tail->location[1]=='3') trail[i] =  DOUBLE_BACK_3;
+		else if(tail->location[0]=='D' && tail->location[1]=='4') trail[i] =  DOUBLE_BACK_4;
+		else if(tail->location[0]=='D' && tail->location[1]=='5') trail[i] =  DOUBLE_BACK_5;
+
+		//If Teleport
+		else if(tail->location[0]=='T' && tail->location[1]=='P') trail[i] =  TELEPORT;
+
+		//Otherwise
+		else {
+			printf("tail->location = %s\n", tail->location);
+			trail[i] = location_find_by_abbrev(tail->location);
+		}
+		
+		//previous node
+		tail = tail->prev;
 	}
+		
 }
 
 location_t *gv_get_connections (

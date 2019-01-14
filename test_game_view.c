@@ -19,27 +19,10 @@
 
 int main (void)
 {
+
+	//MY TESTS TODO add more
 	do {////////////////////////////////////////////////////////////////
-		puts ("Test basic empty initialisation");
-
-		char *trail = "";
-		player_message messages[] = {};
-		GameView gv = gv_new (trail, messages);
-
-		assert (gv_get_player (gv) == PLAYER_LORD_GODALMING);
-		assert (gv_get_round (gv) == 0);
-		assert (gv_get_health (gv, PLAYER_DR_SEWARD) == GAME_START_HUNTER_LIFE_POINTS);
-		assert (gv_get_health (gv, PLAYER_DRACULA) == GAME_START_BLOOD_POINTS);
-		assert (gv_get_score (gv) == GAME_START_SCORE);
-		assert (gv_get_location (gv, PLAYER_LORD_GODALMING) == UNKNOWN_LOCATION);
-
-		puts ("passed");
-		gv_drop (gv);
-	} while (0);
-
-
-	do {////////////////////////////////////////////////////////////////
-		puts ("Test for traps/immature vampire/dracula confrontation");
+		puts ("Test for traps/dracula confrontation");
 
 		char *trail =
 			"GSTTVD. SAOTVD. HZUTVD. MBBTVD. DC?T...";
@@ -55,6 +38,25 @@ int main (void)
 		assert (gv_get_location (gv, PLAYER_MINA_HARKER) == BAY_OF_BISCAY);
 		assert (gv_get_location (gv, PLAYER_DRACULA) == CITY_UNKNOWN);
 		assert (gv_get_health (gv, PLAYER_DRACULA) == 0);
+
+		puts ("passed");
+		gv_drop (gv);
+	} while (0);
+
+	//STANDARD TESTS
+	do {////////////////////////////////////////////////////////////////
+		puts ("Test basic empty initialisation");
+
+		char *trail = "";
+		player_message messages[] = {};
+		GameView gv = gv_new (trail, messages);
+
+		assert (gv_get_player (gv) == PLAYER_LORD_GODALMING);
+		assert (gv_get_round (gv) == 0);
+		assert (gv_get_health (gv, PLAYER_DR_SEWARD) == GAME_START_HUNTER_LIFE_POINTS);
+		assert (gv_get_health (gv, PLAYER_DRACULA) == GAME_START_BLOOD_POINTS);
+		assert (gv_get_score (gv) == GAME_START_SCORE);
+		assert (gv_get_location (gv, PLAYER_LORD_GODALMING) == UNKNOWN_LOCATION);
 
 		puts ("passed");
 		gv_drop (gv);
@@ -144,7 +146,7 @@ int main (void)
 		puts ("passed");
 		gv_drop (gv);
 	} while (0);
-/*
+
 
 	do {////////////////////////////////////////////////////////////////
 		puts ("Test for Dracula doubling back at sea, "
@@ -202,6 +204,7 @@ int main (void)
 			free (edges);
 		} while (0);
 
+
 		do {
 			puts ("Checking Ionian Sea sea connections");
 			size_t n_edges;
@@ -245,6 +248,8 @@ int main (void)
 		puts ("passed");
 		gv_drop (gv);
 	} while (0);
-*/
+	
+	
+
 	return EXIT_SUCCESS;
 }
