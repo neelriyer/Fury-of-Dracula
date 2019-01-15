@@ -189,21 +189,19 @@ int main (void)
 				GALATZ, PLAYER_LORD_GODALMING, 0,
 				true, false, false
 			);
-
+			
 			bool seen[NUM_MAP_LOCATIONS] = {false};
-			for (size_t i = 0; i < n_edges; i++)
+			for (size_t i = 0; i < n_edges; i++) {
 				seen[edges[i]] = true;
-
+			}
 			assert (n_edges == 5);
 			assert (seen[GALATZ]);
 			assert (seen[CONSTANTA]);
 			assert (seen[BUCHAREST]);
 			assert (seen[KLAUSENBURG]);
 			assert (seen[CASTLE_DRACULA]);
-
 			free (edges);
 		} while (0);
-
 
 		do {
 			puts ("Checking Ionian Sea sea connections");
@@ -218,6 +216,8 @@ int main (void)
 			for (size_t i = 0; i < n_edges; i++)
 				seen[edges[i]] = true;
 
+
+			printf("n_edges = %d\n", n_edges);
 			assert (n_edges == 7);
 			assert (seen[IONIAN_SEA]);
 			assert (seen[BLACK_SEA]);
@@ -241,6 +241,30 @@ int main (void)
 
 			assert (n_edges == 1);
 			assert (edges[0] == ATHENS);
+
+			free (edges);
+		} while (0);
+
+		do {
+			puts ("Checking Vienna connections");
+			size_t n_edges;
+			location_t *edges = gv_get_connections (
+				gv, &n_edges,
+				VIENNA, PLAYER_DR_SEWARD, 12,
+				true, true, true
+			);
+
+			bool seen[NUM_MAP_LOCATIONS] = {false};
+			for (size_t i = 0; i < n_edges; i++)
+				seen[edges[i]] = true;
+
+			assert (n_edges == 8);
+			assert (seen[VIENNA]);
+			assert (seen[VENICE]);
+			assert (seen[PRAGUE]);
+			assert (seen[BUDAPEST]);
+			assert (seen[ZAGREB]);
+			assert (seen[MUNICH]);
 
 			free (edges);
 		} while (0);

@@ -23,7 +23,7 @@
 
 #define __unused __attribute__((unused))
 
-// #include "map.h" ... if you decide to use the Map ADT
+ #include "map.h" //... if you decide to use the Map ADT
 typedef struct moves *Move;
 
 struct moves {
@@ -640,12 +640,60 @@ void gv_get_history (
 		
 }
 
+
+/**
+ * Return an array of `location_t`s giving all of the locations that the
+ * given `player` could reach from their current location, assuming it's
+ * currently `round`.
+ *
+ * The array can be in any order but must contain unique entries.
+ * The array size is stored at the variable referenced by `n_locations`.
+ * The player's current location should be included in the array.
+ *
+ * `road`, `rail`, and `sea` connections should only be considered
+ * if the `road`, `rail`, `sea` parameters are true, respectively.
+ *
+ * The function must take into account the current round and player for
+ * determining how far `player` can travel by rail.
+ *
+ * When `player` is `PLAYER_DRACULA`, the function must take into
+ * account (many of) the rules around Dracula's movements, such as that
+ * Dracula may not go to the hospital, and may not travel by rail.
+ * It need not take into account the trail restriction.
+ */
 location_t *gv_get_connections (
-	game_view *gv __unused, size_t *n_locations,
-	location_t from __unused, enum player player __unused, round_t round __unused,
-	bool road __unused, bool rail __unused, bool sea __unused)
+	game_view *gv, size_t *n_locations,
+	location_t from, enum player player, round_t round,
+	bool road, bool rail, bool sea)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	*n_locations = 0;
-	return NULL;
+	//NOTE: very similar to lab04 exercise
+
+	//create map
+	Map europe = map_new();
+
+	int *arr = malloc(NUM_MAP_LOCATIONS * sizeof *arr);
+
+	size_t n_connections = connections(europe, from, arr, round, road, rail, sea, player); 
+
+/*
+	for (size_t i = 0; i < n_connections; i++) {
+
+		printf("connects to %s\n", location_get_name(arr[i]));
+
+	}
+*/
+	
+	//add current location to arr
+	arr[n_connections] = from;
+	printf("connects to %s\n", location_get_name(arr[n_connections]));
+	n_connections++;
+
+
+	*n_locations = n_connections;
+	//printf("n_connections = %d\n", n_connections);
+
+
+	map_drop(europe);
+
+	return arr;
 }

@@ -26,7 +26,7 @@ typedef struct map {
 		struct map_adj *next; // link to next node
 	} *connections[NUM_MAP_LOCATIONS]; // array of lists
 } map;
-
+size_t connections (map *g, int front, int *arr, int round, bool road, bool rail, bool sea, int player);
 static void add_connections (map *);
 static void add_connection (map *, location_t, location_t, transport_t);
 static inline bool is_sentinel_edge (connection);
@@ -83,6 +83,68 @@ void map_show (map *g)
 				transport_to_s (curr->type)
 			);
 }
+
+//helper
+size_t connections (map *g, int front, int *arr, int round, bool road, bool rail, bool sea, int player)
+{
+	assert (g != NULL);
+
+	size_t n_connections=0;
+
+	//find all other connections and store in arr
+	for (map_adj *curr = g->connections[front]; curr != NULL; curr = curr->next) {
+
+		printf ("%s connects to %s by %s\n", location_get_name ((location_t) front), location_get_name (curr->v), transport_to_s (curr->type));
+		
+		//if road is allowed
+		if(curr->type==ROAD && road) {
+			arr[n_connections] = curr->v;
+			n_connections++;
+		}
+
+		//if sea is allowed
+		if(curr->type==BOAT && sea) {
+			arr[n_connections] = curr->v;
+			n_connections++;
+		}
+
+		//rail
+		if(curr->type==RAIL && rail) {
+
+			//sum
+			int sum = player + round;
+			printf("sum = %d\n", sum);
+
+			//Move 1 rail hop
+			if(sum%4==1) {
+				arr[n_connections] = curr->v;
+				n_connections++;
+			}
+
+			//Move 2 rail hops
+			else if(sum%4==2) {
+				arr[n_connections] = curr->v;
+				n_connections++;
+	
+				char n_connections1 = connections(g, curr->v, arr1, round, false, true, false, player);
+
+				printf("RECURSIVE 1\n%s connects to %s\n",  
+			}
+
+			//Move 3 rail hops
+			else if(sum%4==3) {
+				arr[n_connections] = curr->v;
+				n_connections++;
+			}
+
+
+		}
+
+	}
+
+	return n_connections;
+}
+
 
 // Return count of nodes
 size_t map_nv (map *g)
