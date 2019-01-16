@@ -245,18 +245,22 @@ int main (void)
 			free (edges);
 		} while (0);
 
+
+		//MY TESTs
 		do {
-			puts ("Checking Vienna connections");
+			puts ("\n\nChecking Vienna connections (2 rail hops)");
 			size_t n_edges;
 			location_t *edges = gv_get_connections (
 				gv, &n_edges,
-				VIENNA, PLAYER_DR_SEWARD, 12,
+				VIENNA, PLAYER_DR_SEWARD, 13,
 				true, true, true
 			);
 
 			bool seen[NUM_MAP_LOCATIONS] = {false};
-			for (size_t i = 0; i < n_edges; i++)
+			for (size_t i = 0; i < n_edges; i++) {
+				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
 				seen[edges[i]] = true;
+			}
 
 			assert (n_edges == 8);
 			assert (seen[VIENNA]);
@@ -265,6 +269,107 @@ int main (void)
 			assert (seen[BUDAPEST]);
 			assert (seen[ZAGREB]);
 			assert (seen[MUNICH]);
+
+			free (edges);
+		} while (0);
+
+		do {
+			puts ("\n\nChecking Vienna connections (3 rail hops)");
+			size_t n_edges;
+			location_t *edges = gv_get_connections (
+				gv, &n_edges,
+				VIENNA, PLAYER_VAN_HELSING, 13,
+				true, true, true
+			);
+
+			bool seen[NUM_MAP_LOCATIONS] = {false};
+			for (size_t i = 0; i < n_edges; i++) {
+				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				seen[edges[i]] = true;
+			}
+
+			assert (n_edges == 12);
+			assert (seen[VIENNA]);
+			assert (seen[VENICE]);
+			assert (seen[PRAGUE]);
+			assert (seen[BERLIN]);
+			assert (seen[LEIPZIG]);
+			assert (seen[HAMBURG]);
+			assert (seen[BUDAPEST]);
+			assert (seen[SZEGED]);
+			assert (seen[BUCHAREST]);
+			assert (seen[BELGRADE]);
+			assert (seen[ZAGREB]);
+			assert (seen[MUNICH]);
+
+			free (edges);
+		} while (0);
+
+		do {
+			puts ("\n\nChecking SARAJEVO connections");
+			size_t n_edges;
+			location_t *edges = gv_get_connections (
+				gv, &n_edges,
+				SARAJEVO, PLAYER_DRACULA, 13,
+				true, true, true
+			);
+
+			bool seen[NUM_MAP_LOCATIONS] = {false};
+			for (size_t i = 0; i < n_edges; i++) {
+				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				seen[edges[i]] = true;
+			}
+
+			assert (n_edges == 5);
+			assert (seen[SARAJEVO]);
+			assert (seen[ZAGREB]);
+			assert (seen[VALONA]);
+			assert (seen[SOFIA]);
+			assert (seen[BELGRADE]);
+			
+
+			free (edges);
+		} while (0);
+
+		do {
+			puts ("\n\nChecking dracula starting in a sea");
+			size_t n_edges;
+			location_t *edges = gv_get_connections (
+				gv, &n_edges,
+				ADRIATIC_SEA, PLAYER_DRACULA, 13,
+				true, true, true
+			);
+
+			bool seen[NUM_MAP_LOCATIONS] = {false};
+			for (size_t i = 0; i < n_edges; i++) {
+				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				seen[edges[i]] = true;
+			}
+
+			assert (n_edges == 3);
+			assert (seen[VENICE]);
+			assert (seen[IONIAN_SEA]);
+			assert (seen[BARI]);
+
+			free (edges);
+		} while (0);
+
+		do {
+			puts ("\n\nChecking dracula starting in an unknown sea");
+			size_t n_edges;
+			location_t *edges = gv_get_connections (
+				gv, &n_edges,
+				SEA_UNKNOWN, PLAYER_DRACULA, 13,
+				true, true, true
+			);
+
+			bool seen[NUM_MAP_LOCATIONS] = {false};
+			for (size_t i = 0; i < n_edges; i++) {
+				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				seen[edges[i]] = true;
+			}
+
+			assert (n_edges == 0);
 
 			free (edges);
 		} while (0);

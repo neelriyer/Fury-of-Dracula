@@ -85,61 +85,150 @@ void map_show (map *g)
 }
 
 //helper
+//is variable part of array?
+static int is_part_of_array(int variable, int *arr, size_t up_to) {
+
+	for(size_t i = 0;i<up_to;i++) {
+		if(variable==arr[i]) return 1;
+	}
+
+	return 0;
+}
+
+//helper
 size_t connections (map *g, int front, int *arr, int round, bool road, bool rail, bool sea, int player)
 {
 	assert (g != NULL);
 
 	size_t n_connections=0;
 
+	//if unknown location return nothing
+	if(valid_location_p(front)==0) return n_connections;
+
+	//if dracula's location is a sea, then he cannot stay in the sea
+	if(!(player==4 && location_get_type(front)==SEA)) {
+
+		//add current city to array
+		arr[n_connections] = front;
+		n_connections++;
+	}
+
 	//find all other connections and store in arr
 	for (map_adj *curr = g->connections[front]; curr != NULL; curr = curr->next) {
 
-		printf ("%s connects to %s by %s\n", location_get_name ((location_t) front), location_get_name (curr->v), transport_to_s (curr->type));
-		
+		//printf ("%s connects to %s by %s\n", location_get_name ((location_t) front), location_get_name (curr->v), transport_to_s (curr->type));
+
+
+		//If dracula skip st joseph and marys
+		if(player==4 && curr->v==ST_JOSEPH_AND_ST_MARYS) continue;
+
 		//if road is allowed
 		if(curr->type==ROAD && road) {
-			arr[n_connections] = curr->v;
-			n_connections++;
+	
+			//add connections that are not already part of array
+			if(is_part_of_array(curr->v,arr,n_connections)!=1) {
+					arr[n_connections] = curr->v;
+					n_connections++;
+			}
 		}
 
 		//if sea is allowed
 		if(curr->type==BOAT && sea) {
-			arr[n_connections] = curr->v;
-			n_connections++;
+
+			//add connections that are not already part of array
+			if(is_part_of_array(curr->v,arr,n_connections)!=1) {
+					arr[n_connections] = curr->v;
+					n_connections++;
+			}
 		}
 
-		//rail
-		if(curr->type==RAIL && rail) {
+		//if rail is allowed (dracula cannot take rail)
+		if(curr->type==RAIL && rail && player!=4) {
 
 			//sum
 			int sum = player + round;
-			printf("sum = %d\n", sum);
+			//printf("sum = %d\n", sum);
 
 			//Move 1 rail hop
 			if(sum%4==1) {
-				arr[n_connections] = curr->v;
-				n_connections++;
+
+				//add connections that are not already part of array
+				if(is_part_of_array(curr->v,arr,n_connections)!=1) {
+					arr[n_connections] = curr->v;
+					n_connections++;
+				}
 			}
 
 			//Move 2 rail hops
 			else if(sum%4==2) {
-				arr[n_connections] = curr->v;
-				n_connections++;
-	
-				char n_connections1 = connections(g, curr->v, arr1, round, false, true, false, player);
 
-				printf("RECURSIVE 1\n%s connects to %s\n",  
+				//1st city (that are not already part of array)
+				if(is_part_of_array(curr->v,arr,n_connections)!=1) {
+					arr[n_connections] = curr->v;
+					n_connections++;
+				}
+
+				//2nd city
+				int second_city = curr->v;
+
+				for (map_adj *second = g->connections[second_city]; second != NULL; second = second->next) {
+
+					//rail connections only (that are not already part of array)
+					if(second->type==RAIL && is_part_of_array(second->v,arr, n_connections)!=1) {
+					//printf ("\nsecond\n%s connects to %s by %s\n", location_get_name ((location_t) second_city), location_get_name (second->v), transport_to_s (second->type));
+	
+					//add to array
+					arr[n_connections] = second->v;
+					n_connections++;
+		
+					}
+
+				}
+
 			}
 
 			//Move 3 rail hops
 			else if(sum%4==3) {
-				arr[n_connections] = curr->v;
-				n_connections++;
+
+				//1st city, add connections that are not already part of array
+				if(is_part_of_array(curr->v,arr,n_connections)!=1) {
+					arr[n_connections] = curr->v;
+					n_connections++;
+				}
+
+				//2nd city
+				int second_city = curr->v;
+
+				for (map_adj *second = g->connections[second_city]; second != NULL; second = second->next) {
+
+					//rail connections only (that are not already part of array)
+					if(second->type==RAIL && is_part_of_array(second->v,arr, n_connections)!=1) {
+						//printf ("\nsecond\n%s connects to %s by %s\n", location_get_name ((location_t) second_city), location_get_name (second->v), transport_to_s (second->type));
+
+						//add to array
+						arr[n_connections] = second->v;
+						n_connections++;
+
+
+						//3rd city
+						int third_city = second->v;
+
+						for (map_adj *third = g->connections[third_city]; third != NULL; third = third->next) {
+
+							//rail connections only (that are not already part of array)
+							if(third->type==RAIL && is_part_of_array(third->v,arr, n_connections)!=1) {
+								//printf ("\nthird\n%s connects to %s by %s\n", location_get_name ((location_t) third_city), location_get_name (third->v), transport_to_s (third->type));
+
+								//add to array
+								arr[n_connections] = third->v;
+								n_connections++;
+
+							}
+						}
+					}
+				}
 			}
-
-
-		}
-
+		}	
 	}
 
 	return n_connections;

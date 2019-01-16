@@ -671,27 +671,14 @@ location_t *gv_get_connections (
 	//create map
 	Map europe = map_new();
 
+	//create array
 	int *arr = malloc(NUM_MAP_LOCATIONS * sizeof *arr);
 
+	//find number of connections
 	size_t n_connections = connections(europe, from, arr, round, road, rail, sea, player); 
 
-/*
-	for (size_t i = 0; i < n_connections; i++) {
-
-		printf("connects to %s\n", location_get_name(arr[i]));
-
-	}
-*/
-	
-	//add current location to arr
-	arr[n_connections] = from;
-	printf("connects to %s\n", location_get_name(arr[n_connections]));
-	n_connections++;
-
-
+	//copy number of connections into n_locations
 	*n_locations = n_connections;
-	//printf("n_connections = %d\n", n_connections);
-
 
 	map_drop(europe);
 
