@@ -62,7 +62,7 @@ int main (void)
 		location_t history[TRAIL_SIZE];
 		dv_get_trail (dv, PLAYER_DRACULA, history);
 		assert (history[0] == GENEVA);
-		assert (history[2] == UNKNOWN_LOCATION);
+		assert (history[1] == UNKNOWN_LOCATION);
 
 		dv_get_trail (dv, PLAYER_LORD_GODALMING, history);
 		assert (history[0] == GENEVA);

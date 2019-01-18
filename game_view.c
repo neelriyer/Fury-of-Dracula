@@ -23,20 +23,23 @@
 
 #define __unused __attribute__((unused))
 
- #include "map.h" //... if you decide to use the Map ADT
-typedef struct moves *Move;
+#include "map.h" //... if you decide to use the Map ADT
 
 struct moves {
 
 	char location[3];
 	Move next;
 	Move prev;
+
 	int hunter_trap;
 	int dracula_trap;
+
+	int hunter_rest;
+
 	int dracula_encounter;
+
 	int immature_vampire;
 	int mature_vampire;
-	int hunter_rest;
 
 };
 
@@ -44,6 +47,9 @@ typedef struct game_view {
 
 	round_t round;
 	int score;
+
+	int traps[NUM_MAP_LOCATIONS]; //0 if no traps, 1 if 1 trap, 2 if 2 traps, 3 if 3 traps
+	int vamps[NUM_MAP_LOCATIONS]; //0 if nothing, 1 if immature vamp, 2 if mature vamp
 
 	Move G_tail;
 	Move G_head;
@@ -72,6 +78,86 @@ typedef struct game_view {
 
 } game_view;
 
+static Move dracula_setup(char *past_plays, int i, game_view *new);
+
+//helper0
+int trap_count(game_view *gv, int id) {
+	if(valid_location_p(id)) return gv->traps[id];
+	else return 0;
+}
+
+//if rounds are greater than 6
+//go back 6 dracula_moves/rounds
+//delete all traps from here until start
+
+//if rounds are greater than 13
+//go back 13 dracula_moves/rounds
+//delete all immature vampires and create mature vampires
+static void trap_vamp_matures(game_view *gv, int trap, int vamp) {
+	
+	//if trap
+	if(trap) {
+
+		//find the trap that has matured
+		Move tail = gv->D_tail;
+		
+		if(gv->round>=(TRAIL_SIZE+1)) {
+
+			//go beyond trail
+			for (int i = 0;i<TRAIL_SIZE;i++) {
+				tail = tail->prev;
+			}
+
+			//remove current trap and all before it
+			while(tail!=NULL) {
+
+				//get id
+				int id = location_find_by_abbrev(tail->location);
+	
+				//remove all traps
+				if(valid_location_p(id)) {
+					gv->traps[id] = 0;
+					printf("removed all traps at = %s\n", location_get_abbrev(id));
+				}
+	
+				//previous node
+				tail = tail->prev;
+			}
+		}
+	}
+
+	//if vamp
+	if(vamp) {
+
+		//find the vamp that has matured
+		Move tail = gv->D_tail;
+		
+		if(gv->round>=(TRAIL_SIZE+1)) {
+
+			//go beyond trail
+			for (int i = 0;i<TRAIL_SIZE;i++) {
+				tail = tail->prev;
+			}
+
+			//remove current trap and all before it
+			while(tail!=NULL) {
+
+				//get id
+				int id = location_find_by_abbrev(tail->location);
+	
+				//mature vamp at
+				if(valid_location_p(id) && gv->vamps[id]==1) {
+					gv->vamps[id] = 2;
+					printf("Vampire: %s is now mature\n", location_get_abbrev(id));
+				}
+	
+				//previous node
+				tail = tail->prev;
+			}
+		}
+	}
+
+}
 
 //helper1
 static Move new_node_move() {
@@ -125,6 +211,7 @@ static Move hunter_setup(char *past_plays, int i, game_view *new, enum player pl
 
 	//create node
 	Move node_next = new_node_move();
+
 			
 	//new node location is past_plays[i+1] and past_plays[i+2]
 	node_next->location[0] = past_plays[i+1];
@@ -134,34 +221,69 @@ static Move hunter_setup(char *past_plays, int i, game_view *new, enum player pl
 	//checking 
 	printf("location is %s\n", node_next->location);
 	printf("location ID is %d\n",location_find_by_abbrev(node_next->location));
-	
+
+	int id = location_find_by_abbrev(node_next->location);
 
 	//hunter_trap
 	if(past_plays[i+3]=='T' || past_plays[i+4]=='T' || past_plays[i+5]=='T' || past_plays[i+6]=='T') {
 		printf("%u Hunter: Trap\n", player);
 		node_next->hunter_trap=1;
-		health = health - 2;
+		health = health - LIFE_LOSS_TRAP_ENCOUNTER;
+
+		//detract from trap count
+		if(valid_location_p(id)) {
+			new->traps[id]--;
+			printf("new->traps[id] = %d\nid = %d\n", new->traps[id], id);
+		}
 	}
 
 	//immature vampire
 	if(past_plays[i+3]=='V' || past_plays[i+4]=='V' || past_plays[i+5]=='V' || past_plays[i+6]=='V') {
 		printf("%u Hunter: Immature Vampire\n", player);
 		node_next->immature_vampire=1;
+
+		//detract from immature vamp count
+		if(valid_location_p(id)) {
+			new->vamps[id]=0;
+			printf("new->vamps[id] = %d\nid = %d\n", new->vamps[id], id);
+		}
 	}
 
 	//dracula encounter
 	if(past_plays[i+3]=='D' || past_plays[i+4]=='D' || past_plays[i+5]=='D' || past_plays[i+6]=='D') {
 		node_next->dracula_encounter=1;
 		printf("%u Hunter: Dracula Encounter\n", player);
-		health = health - 4;
-		new->D_health = new->D_health - 10;
+		health = health - LIFE_LOSS_DRACULA_ENCOUNTER;
+		new->D_health = new->D_health - LIFE_LOSS_HUNTER_ENCOUNTER;
 	}
 
-	//rest 
-	if(tail!=NULL && strcmp(tail->location,node_next->location)==0) {
+	//rest (only if hunter does not have full health)
+	if(tail!=NULL && strcmp(tail->location,node_next->location)==0 && health!=GAME_START_HUNTER_LIFE_POINTS) {
+
 		node_next->hunter_rest=1;
 		printf("Hunter: Rest\n");
-		health = health + 3;
+
+		if(health==(GAME_START_HUNTER_LIFE_POINTS-1)) health = health + 1;
+		else if(health==(GAME_START_HUNTER_LIFE_POINTS-2)) health = health + 2;
+		else if(health==(GAME_START_HUNTER_LIFE_POINTS-3)) health = health + 3;
+		else health = health + LIFE_GAIN_REST;
+
+	}
+
+	//if health is less or equal to 0 
+	if(health<=0) {
+		printf("hunter died\n");
+		//rest health
+		health = GAME_START_HUNTER_LIFE_POINTS;
+
+		//reduce score
+		new->score = new->score - SCORE_LOSS_HUNTER_HOSPITAL;
+
+		//sent to hospital
+		node_next->location[0] = 'J';
+		node_next->location[1] = 'M';
+		node_next->location[2] = '\0';
+		
 	}
 
 	//increment turn count
@@ -192,11 +314,10 @@ static Move hunter_setup(char *past_plays, int i, game_view *new, enum player pl
 		printf("new->M_health = %d\n",new->M_health);
 		printf("new->M_turns = %d\n",new->M_turns);
 	}
+	printf("new->score = %d\n", new->score);
 	printf("\n\n");
-
 	
 	return node_next;
-
 }
 
 //helper 4
@@ -210,9 +331,9 @@ static void dracula_location_blood(const char *location, int id, game_view *new)
 	}
 
 	//if at castle gain 10 pts
-	if(strcmp(location,"TP")==0 || id == TELEPORT) {
+	if(strcmp(location,"CD")==0 || id == CASTLE_DRACULA || strcmp(location,"TP")==0 || id == CASTLE_DRACULA) {
 		printf("Dracula: Life gained at castle\n");
-		new->D_health = new->D_health + 10;
+		new->D_health = new->D_health + LIFE_GAIN_CASTLE_DRACULA;
 	}
 
 	//if in sea
@@ -220,7 +341,6 @@ static void dracula_location_blood(const char *location, int id, game_view *new)
 		printf("Dracula: Life lost at sea\n");
 		new->D_health = new->D_health - LIFE_LOSS_SEA;
 	}
-
 }
 
 
@@ -238,29 +358,48 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 	//checking
 	printf("location is %s\n",node_next->location);
 
+	//get id
+	int id = location_find_by_abbrev(node_next->location);
+	//printf("id = %d\nCASTLE_DRACULA = %d\n", id, CASTLE_DRACULA);
+
 	//dracula_trap
 	if(past_plays[i+3]=='T') {
 		printf("Dracula: Trap\n");
 		node_next->dracula_trap=1;
+
+		//add to trap count
+		if(valid_location_p(id)) {
+			new->traps[id]++;
+			printf("new->traps[id] = %d\nid = %d\n", new->traps[id], id);
+		}
 	}
 	
 	//immature vampire
 	if(past_plays[i+4]=='V') {
 		printf("Dracula: Immature Vampire\n");
 		node_next->immature_vampire=1;
+
+		//add to immature vamp count
+		if(valid_location_p(id)) {
+			new->vamps[id]=1;
+			printf("new->vamps[id] = %d\nid = %d\n", new->vamps[id], id);
+		}
 	}
 
-	//trap vanishes
+	//trap matures
 	if(past_plays[i+5]=='M') {
 		printf("Dracula: Trap matured\n");
-		node_next->dracula_trap=0;
+		node_next->dracula_trap=1;
+		trap_vamp_matures(new, 1,0);
+		
 	}
 
 	//vampire matures
 	if(past_plays[i+5]=='V') {
 		printf("Dracula: Vampire matures\n");
 		node_next->mature_vampire=1;
-		new->score = new->score - 13;
+		new->score = new->score - SCORE_LOSS_VAMPIRE_MATURES;
+		trap_vamp_matures(new, 0,1);
 	}
 	
 	//Double back moves
@@ -290,15 +429,12 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 		}
 	}
 
-	//get id
-	int id = location_find_by_abbrev(node_next->location);
-	//printf("id = %d\n", id);	
-
 	//change dracula's health based on location
 	dracula_location_blood(node_next->location, id, new);
 
 	//reduce score
-	new->score--;
+	new->score = new->score - SCORE_LOSS_DRACULA_TURN;
+	printf("new->score = %d\n", new->score);
 	
 	//increase turns
 	new->D_turns++;
@@ -313,12 +449,11 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 
 //0        1        2          3     4                  5                 6  7       8
 //[player][location][location][trap][immature vampire][dracula_encounter][.]["space"][player]etc.
-game_view *gv_new (char *past_plays, player_message messages[] )
+game_view *gv_new (char *past_plays, player_message messages[] __unused)
 {
 
 	//create new node
 	game_view *new = new_node_game_view();
-
 	//Initialise
 	Move G_prev = NULL;
     Move S_prev = NULL;
@@ -353,6 +488,10 @@ game_view *gv_new (char *past_plays, player_message messages[] )
 	new->D_health = GAME_START_BLOOD_POINTS;
 
 	new->score = GAME_START_SCORE;
+
+	for(int q = 0;q<NUM_MAP_LOCATIONS;q++) new->traps[q] = 0;
+
+	for(int q = 0;q<NUM_MAP_LOCATIONS;q++) new->vamps[q] = 0;
 	
 	//while less than string length of trail + 1
 	for(int i = 0;i<(strlen(past_plays)+1);i = i+8) {
@@ -641,26 +780,6 @@ void gv_get_history (
 }
 
 
-/**
- * Return an array of `location_t`s giving all of the locations that the
- * given `player` could reach from their current location, assuming it's
- * currently `round`.
- *
- * The array can be in any order but must contain unique entries.
- * The array size is stored at the variable referenced by `n_locations`.
- * The player's current location should be included in the array.
- *
- * `road`, `rail`, and `sea` connections should only be considered
- * if the `road`, `rail`, `sea` parameters are true, respectively.
- *
- * The function must take into account the current round and player for
- * determining how far `player` can travel by rail.
- *
- * When `player` is `PLAYER_DRACULA`, the function must take into
- * account (many of) the rules around Dracula's movements, such as that
- * Dracula may not go to the hospital, and may not travel by rail.
- * It need not take into account the trail restriction.
- */
 location_t *gv_get_connections (
 	game_view *gv, size_t *n_locations,
 	location_t from, enum player player, round_t round,
@@ -684,3 +803,4 @@ location_t *gv_get_connections (
 
 	return arr;
 }
+

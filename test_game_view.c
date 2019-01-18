@@ -20,28 +20,62 @@
 int main (void)
 {
 
-	//MY TESTS TODO add more
 	do {////////////////////////////////////////////////////////////////
 		puts ("Test for traps/dracula confrontation");
 
 		char *trail =
-			"GSTTVD. SAOTVD. HZUTVD. MBBTVD. DC?T...";
+			"GED.... SGE.... HZU.... MCA.... DCF.V.. " 
+			"GMN.... SGE.D.. HGE.... MLS.... DBOT... " 
+			"GLO.... SMR.... HGE.... MMA.... DTOT... "
+			"GPL.... SMS.... HMR.... MGR.... DBAT... "
+			"GLO.... SBATD.. HMS.... MMA.... DSRT... "
+			"GPL.... SSJ.... HBA.... MGR.... DALT... "
+			"GPL.... SSJ.... HBA.... MGR.... DMAT... "
+			"GLO.... SBE.... HMS.... MMATD.. DMAT.M. "
+			"GLO.... SBE.... HMS.... MMATD.. DMAT.V. ";
 		player_message messages[] = {
 			"Hello", "Rubbish", "Stuff", "", "Mwahahah"};
 		GameView gv = gv_new (trail, messages);
 
 		assert (gv_get_player (gv) == PLAYER_LORD_GODALMING);
-		assert (gv_get_round (gv) == 1);
-		assert (gv_get_location (gv, PLAYER_LORD_GODALMING) == STRASBOURG);
-		assert (gv_get_location (gv, PLAYER_DR_SEWARD) == ATLANTIC_OCEAN);
-		assert (gv_get_location (gv, PLAYER_VAN_HELSING) == ZURICH);
-		assert (gv_get_location (gv, PLAYER_MINA_HARKER) == BAY_OF_BISCAY);
-		assert (gv_get_location (gv, PLAYER_DRACULA) == CITY_UNKNOWN);
-		assert (gv_get_health (gv, PLAYER_DRACULA) == 0);
+		//assert (gv_get_round (gv) == 3);
+		//assert (gv_get_location (gv, PLAYER_LORD_GODALMING) == STRASBOURG);
+		//assert (gv_get_location (gv, PLAYER_DR_SEWARD) == ATLANTIC_OCEAN);
+		//assert (gv_get_location (gv, PLAYER_VAN_HELSING) == ZURICH);
+		//assert (gv_get_location (gv, PLAYER_MINA_HARKER) == BAY_OF_BISCAY);
+		//assert (gv_get_location (gv, PLAYER_DRACULA) == ENGLISH_CHANNEL);
+		//assert (gv_get_health (gv, PLAYER_DRACULA) == 0);
 
 		puts ("passed");
 		gv_drop (gv);
 	} while (0);
+
+	//MY TESTS TODO add more
+	do {////////////////////////////////////////////////////////////////
+		puts ("Test for traps/dracula confrontation");
+
+		char *trail =
+			"GAO.... SAO.... HZU.... MBB.... DSTTV.. "
+			"GAO.... SAO.... HZU.... MBB.... DECTVV. "
+			"GAO.... SSTTV.. HZU.... MBB.... DEC..M. ";
+		player_message messages[] = {
+			"Hello", "Rubbish", "Stuff", "", "Mwahahah"};
+		GameView gv = gv_new (trail, messages);
+
+		assert (gv_get_player (gv) == PLAYER_LORD_GODALMING);
+		assert (gv_get_round (gv) == 3);
+		//assert (gv_get_location (gv, PLAYER_LORD_GODALMING) == STRASBOURG);
+		//assert (gv_get_location (gv, PLAYER_DR_SEWARD) == ATLANTIC_OCEAN);
+		//assert (gv_get_location (gv, PLAYER_VAN_HELSING) == ZURICH);
+		//assert (gv_get_location (gv, PLAYER_MINA_HARKER) == BAY_OF_BISCAY);
+		//assert (gv_get_location (gv, PLAYER_DRACULA) == ENGLISH_CHANNEL);
+		//assert (gv_get_health (gv, PLAYER_DRACULA) == 0);
+
+		puts ("passed");
+		gv_drop (gv);
+	} while (0);
+
+
 
 	//STANDARD TESTS
 	do {////////////////////////////////////////////////////////////////
@@ -174,6 +208,32 @@ int main (void)
 		gv_drop (gv);
 	} while (0);
 
+	do {////////////////////////////////////////////////////////////////
+		puts ("Hunter dies");
+
+		char *trail =
+			"GGE.... SGE.... HGE.... MGE.... DEC.... "
+			"GST.... SST.... HST.... MST.... DD1....";
+		player_message messages[] = {
+			"Hello", "Rubbish", "Stuff", "", "Mwahahah",
+			"Aha!", "", "", "", "Back I go"};
+		GameView gv = gv_new (trail, messages);
+
+		assert (gv_get_player (gv) == 0);
+		assert (gv_get_health (gv, PLAYER_DRACULA) ==
+				GAME_START_BLOOD_POINTS - (2 * LIFE_LOSS_SEA));
+		assert (gv_get_location (gv, PLAYER_DRACULA) == DOUBLE_BACK_1);
+
+		location_t history[TRAIL_SIZE];
+		gv_get_history (gv, PLAYER_DRACULA, history);
+		assert (history[0] == DOUBLE_BACK_1);
+		assert (history[1] == ENGLISH_CHANNEL);
+
+		puts ("passed");
+		gv_drop (gv);
+	} while (0);
+
+
 
 	do {////////////////////////////////////////////////////////////////
 		puts ("Test for connections");
@@ -217,7 +277,7 @@ int main (void)
 				seen[edges[i]] = true;
 
 
-			printf("n_edges = %d\n", n_edges);
+			//printf("n_edges = %d\n", n_edges);
 			assert (n_edges == 7);
 			assert (seen[IONIAN_SEA]);
 			assert (seen[BLACK_SEA]);
@@ -258,7 +318,7 @@ int main (void)
 
 			bool seen[NUM_MAP_LOCATIONS] = {false};
 			for (size_t i = 0; i < n_edges; i++) {
-				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				//printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
 				seen[edges[i]] = true;
 			}
 
@@ -284,7 +344,7 @@ int main (void)
 
 			bool seen[NUM_MAP_LOCATIONS] = {false};
 			for (size_t i = 0; i < n_edges; i++) {
-				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				//printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
 				seen[edges[i]] = true;
 			}
 
@@ -316,7 +376,7 @@ int main (void)
 
 			bool seen[NUM_MAP_LOCATIONS] = {false};
 			for (size_t i = 0; i < n_edges; i++) {
-				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				//printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
 				seen[edges[i]] = true;
 			}
 
@@ -342,7 +402,7 @@ int main (void)
 
 			bool seen[NUM_MAP_LOCATIONS] = {false};
 			for (size_t i = 0; i < n_edges; i++) {
-				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				//printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
 				seen[edges[i]] = true;
 			}
 
@@ -365,7 +425,27 @@ int main (void)
 
 			bool seen[NUM_MAP_LOCATIONS] = {false};
 			for (size_t i = 0; i < n_edges; i++) {
-				printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				//printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
+				seen[edges[i]] = true;
+			}
+
+			assert (n_edges == 0);
+
+			free (edges);
+		} while (0);
+
+		do {
+			puts ("\n\nChecking anyone starting in an unknown location");
+			size_t n_edges;
+			location_t *edges = gv_get_connections (
+				gv, &n_edges,
+				CITY_UNKNOWN, PLAYER_LORD_GODALMING, 13,
+				true, true, true
+			);
+
+			bool seen[NUM_MAP_LOCATIONS] = {false};
+			for (size_t i = 0; i < n_edges; i++) {
+				//printf("edges[%d] = %s\n",i, location_get_name(edges[i]));
 				seen[edges[i]] = true;
 			}
 
@@ -376,9 +456,10 @@ int main (void)
 
 		puts ("passed");
 		gv_drop (gv);
+
+		
 	} while (0);
-	
-	
+
 
 	return EXIT_SUCCESS;
 }

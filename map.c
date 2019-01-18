@@ -26,7 +26,8 @@ typedef struct map {
 		struct map_adj *next; // link to next node
 	} *connections[NUM_MAP_LOCATIONS]; // array of lists
 } map;
-size_t connections (map *g, int front, int *arr, int round, bool road, bool rail, bool sea, int player);
+
+
 static void add_connections (map *);
 static void add_connection (map *, location_t, location_t, transport_t);
 static inline bool is_sentinel_edge (connection);
@@ -117,7 +118,6 @@ size_t connections (map *g, int front, int *arr, int round, bool road, bool rail
 	for (map_adj *curr = g->connections[front]; curr != NULL; curr = curr->next) {
 
 		//printf ("%s connects to %s by %s\n", location_get_name ((location_t) front), location_get_name (curr->v), transport_to_s (curr->type));
-
 
 		//If dracula skip st joseph and marys
 		if(player==4 && curr->v==ST_JOSEPH_AND_ST_MARYS) continue;
@@ -229,6 +229,12 @@ size_t connections (map *g, int front, int *arr, int round, bool road, bool rail
 				}
 			}
 		}	
+	}
+
+	//if Dracula cannot move, he teleports to castle dracula
+	if(n_connections==0) {
+		arr[0]=CASTLE_DRACULA;
+		n_connections++;
 	}
 
 	return n_connections;
