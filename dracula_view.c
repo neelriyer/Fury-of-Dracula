@@ -137,12 +137,14 @@ void dv_get_player_move (
  * (e.g. at sea, or NOWHERE), then set both counts to zero.
  */
 void dv_get_locale_info (
-	dracula_view *dv __unused, location_t where __unused,
-	int *n_traps __unused, int *n_vamps __unused)
+	dracula_view *dv, location_t where,
+	int *n_traps, int *n_vamps)
 {
-	printf("trap_count(dv->game_view) = %d\n",trap_count(dv->game_view, where));
+	//printf("trap_count(dv->game_view) = %d\n",trap_count(dv->game_view, where));
 	*n_traps = trap_count(dv->game_view, where);
 
+	//printf("vamp_count(dv->game_view) = %d\n",vamp_count(dv->game_view, where));
+	*n_vamps = vamp_count(dv->game_view, where);
 	
 }
 
