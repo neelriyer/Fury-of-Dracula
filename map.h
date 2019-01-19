@@ -32,4 +32,7 @@ size_t map_nv (Map);
 /** Get the number of edges. */
 size_t map_ne (Map, transport_t);
 
+/** Custom functions */
+size_t connections (Map, int front, int *arr, int round, bool road, bool rail, bool sea, int player);
+
 #endif // !defined(FOD__MAP_H_)

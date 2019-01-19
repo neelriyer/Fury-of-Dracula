@@ -15,6 +15,8 @@
 #include "places.h"
 
 typedef struct game_view *GameView;
+typedef struct moves *Move;
+int trap_count(GameView gv, int id);
 
 /**
  * Creates a new view to summarise the current state of the game.
@@ -122,5 +124,6 @@ location_t *gv_get_connections (
 	location_t from,
 	enum player player, round_t round,
 	bool road, bool rail, bool sea);
+
 
 #endif // !defined (FOD__GAME_VIEW_H_)
