@@ -446,6 +446,11 @@ static Move dracula_setup(char *past_plays, int i, game_view *new) {
 
 } 
 
+//helper 6
+int vamp_count(game_view *gv, int id) {
+	if(valid_location_p(id)) return gv->vamps[id];
+	else return 0;
+}
 
 //0        1        2          3     4                  5                 6  7       8
 //[player][location][location][trap][immature vampire][dracula_encounter][.]["space"][player]etc.
@@ -456,28 +461,28 @@ game_view *gv_new (char *past_plays, player_message messages[] __unused)
 	game_view *new = new_node_game_view();
 	//Initialise
 	Move G_prev = NULL;
-    Move S_prev = NULL;
-    Move H_prev = NULL;
-    Move M_prev = NULL;
-    Move D_prev = NULL;
+    	Move S_prev = NULL;
+    	Move H_prev = NULL;
+    	Move M_prev = NULL;
+    	Move D_prev = NULL;
 
 	new->G_head = NULL;
 	new->S_head = NULL;
-    new->H_head = NULL;
-    new->M_head = NULL;
-    new->D_head = NULL;
+    	new->H_head = NULL;
+    	new->M_head = NULL;
+    	new->D_head = NULL;
 
-    new->G_tail = NULL;
+    	new->G_tail = NULL;
 	new->S_tail = NULL;
-    new->H_tail = NULL;
-    new->M_tail = NULL;
-    new->D_tail = NULL;
+   	new->H_tail = NULL;
+    	new->M_tail = NULL;
+    	new->D_tail = NULL;
 
 	new->G_turns = 0;
-    new->S_turns = 0;
-    new->H_turns = 0;
-    new->M_turns = 0;
-    new->D_turns = 0;
+    	new->S_turns = 0;
+    	new->H_turns = 0;
+    	new->M_turns = 0;
+    	new->D_turns = 0;
 
 	new->round = 0;
 
@@ -681,6 +686,23 @@ int gv_get_health (game_view *gv, enum player player)
 	return health;
 }
 
+/**
+ * Get the current location of a given player.
+ *
+ * May be `UNKNOWN_LOCATION` if the player has not had a turn yet
+ * (i.e., at the beginning of the game when the round is 0)
+ *
+ * Possible values include:
+ * - in the interval 0..70, if the player was (known to be) in a
+ *   particular city or on a particular sea;
+ * - `CITY_UNKNOWN`, if Dracula was known to be in a city;
+ * - `SEA_UNKNOWN`, if Dracula was known to be at sea;
+ * - `HIDE`, if Dracula was known to have made a hide move;
+ * - `DOUBLE_BACK_n`, where n is [1...5], if Dracula was known to have
+ *   made a double back move _n_ positions back in the trail; e.g.,
+ *   `DOUBLE_BACK_1` is the last place place he visited; or
+ * - `TELEPORT`, if Dracula apparated back to Castle Dracula.
+ */
 location_t gv_get_location (game_view *gv, enum player player)
 {
 

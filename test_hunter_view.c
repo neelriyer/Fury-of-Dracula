@@ -25,7 +25,7 @@ int main (void)
 		player_message messages[] = {};
 		HunterView hv = hv_new (trail, messages);
 
-		assert (hv_get_player (hv) == PLAYER_LORD_GODALMING);
+		assert (hv_get_player (hv) == PLAYER_LORD_GODALMING); 
 		assert (hv_get_round (hv) == 0);
 		assert (hv_get_health (hv, PLAYER_DR_SEWARD) == GAME_START_HUNTER_LIFE_POINTS);
 		assert (hv_get_health (hv, PLAYER_DRACULA) == GAME_START_BLOOD_POINTS);
@@ -70,7 +70,7 @@ int main (void)
 			"Hello", "Rubbish", "Stuff", "", "Mwahahah",
 			"Aha!" };
 		HunterView hv = hv_new (trail, messages);
-
+		
 		assert (hv_get_location (hv, PLAYER_DRACULA) == GENEVA);
 		assert (hv_get_health (hv, PLAYER_LORD_GODALMING) == 5);
 		assert (hv_get_health (hv, PLAYER_DRACULA) == 30);
@@ -78,7 +78,8 @@ int main (void)
 
 		location_t history[TRAIL_SIZE];
 		hv_get_trail (hv, PLAYER_DRACULA, history);
-		assert (history[0] == GENEVA);
+		for (int i=0; i<6; i++) {printf("%d\n", history[i]);}
+		assert (history[0] == GENEVA); 
 		assert (history[1] == UNKNOWN_LOCATION);
 
 		hv_get_trail (hv, PLAYER_LORD_GODALMING, history);

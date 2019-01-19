@@ -140,6 +140,12 @@ void dv_get_locale_info (
 	dracula_view *dv, location_t where,
 	int *n_traps, int *n_vamps)
 {
+	if (location_get_type(where) == SEA || where == NOWHERE) {
+		*n_traps = 0;
+		*n_vamps = 0;
+		return;
+	}
+	
 	//printf("trap_count(dv->game_view) = %d\n",trap_count(dv->game_view, where));
 	*n_traps = trap_count(dv->game_view, where);
 
@@ -168,7 +174,14 @@ void dv_get_trail (
 	dracula_view *dv, enum player player,
 	location_t trail[TRAIL_SIZE])
 {
-	return;
+	gv_get_history (dv->game_view, player, trail);
+
+	// edit dracula's trail 
+	if (player == PLAYER_DRACULA) { 
+		for (int i = 0;i < 6;i++) {
+					
+		}
+	}	
 }
 
 /**

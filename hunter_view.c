@@ -20,7 +20,6 @@
 typedef struct hunter_view {
 	
 	GameView game_view;
-	Move moves;
 
 } hunter_view;
 
@@ -65,7 +64,7 @@ void hv_drop (hunter_view *hv)
  */
 round_t hv_get_round (hunter_view *hv)
 {
-	gv_get_round(hv->game_view);
+	return gv_get_round(hv->game_view);
 }
 
 /**
@@ -143,14 +142,17 @@ void hv_get_trail (
 	// edit dracula's trail 
 	if (player == PLAYER_DRACULA) { 
 		for (int i = 0;i < 6;i++) {
-			if (location_get_type(trail[i]) == SEA) 
-				trail[i] = SEA_UNKNOWN;
+			if (valid_location_p (trail[i])) {
+				// hunters know whenever Dracula is at sea
+				if (location_get_type(trail[i]) == SEA) 
+					trail[i] = SEA_UNKNOWN;
 					
-			else if (location_get_type(trail[i]) == LAND 
-				&& trail[i] != CASTLE_DRACULA)
-				trail[i] = CITY_UNKNOWN;			
+				// no encounter or not at Castle Dracula
+			}
+						
 		}
-	}				
+	}
+			
 }
 
 /**
