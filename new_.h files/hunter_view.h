@@ -1,32 +1,21 @@
 ////////////////////////////////////////////////////////////////////////
 // COMP2521 19t0 ... the Fury of Dracula
-// hunter_view.c: the HunterView ADT implementation
+// hunter_view.h: the HunterView ADT
 //
 // 2014-07-01	v1.0	Team Dracula <cs2521@cse.unsw.edu.au>
-// 2017-12-01	v1.1	Team Dracula <cs2521@cse.unsw.edu.au>
+// 2017-11-30	v1.1	Team Dracula <cs2521@cse.unsw.edu.au>
 // 2018-12-31	v2.0	Team Dracula <cs2521@cse.unsw.edu.au>
 
-#include <assert.h>
-#include <err.h>
+#ifndef FOD__HUNTER_VIEW_H_
+#define FOD__HUNTER_VIEW_H_
+
 #include <stdbool.h>
-#include <stdlib.h>
-#include <sysexits.h>
-#include <stdio.h>
 
 #include "game.h"
 #include "game_view.h"
-#include "hunter_view.h"
-#include "map.h"
+#include "places.h"
 
-void dracula_trail_fixer (GameView gv, int *trail, enum player player);
-location_t hunter_dracula_location (GameView gv, enum player player);
-size_t dracula_connections (Map, int front, int *arr, bool road, bool sea, int *trail);
-
-typedef struct hunter_view {
-
-	GameView game_view;
-
-} hunter_view;
+typedef struct hunter_view *HunterView;
 
 /**
  * Creates a new view to summarise the current state of the game.
@@ -43,61 +32,35 @@ typedef struct hunter_view {
  * The "player_message" type is defined in game.h.
  * You are free to ignore messages if you wish.
  */
-hunter_view *hv_new (char *past_plays, player_message messages[])
-{
-	//create node
-	hunter_view *new = malloc(sizeof(struct hunter_view));
-	if (new == NULL) err (EX_OSERR, "couldn't allocate GameView");
-
-	//send to game_view
-	new->game_view = gv_new(past_plays, messages);
-
-	return new;
-}
+HunterView hv_new (char *past_plays, player_message messages[]);
 
 /**
  * Frees all resources allocated for `hv`.
  * After this has been called, `hv` should not be accessed.
  */
-void hv_drop (hunter_view *hv)
-{
-	gv_drop(hv->game_view);
-	free(hv);
-}
+void hv_drop (HunterView hv);
 
 /**
  * Get the current round.
  */
-round_t hv_get_round (hunter_view *hv)
-{
-	return gv_get_round(hv->game_view);
-}
+round_t hv_get_round (HunterView hv);
 
 /**
  * Get the current player; effectively, whose turn is it?
  */
-enum player hv_get_player (hunter_view *hv)
-{
-	return gv_get_player (hv->game_view);
-}
+enum player hv_get_player (HunterView hv);
 
 /**
  * Get the current score, a positive integer between 0 and 366.
  */
-int hv_get_score (hunter_view *hv)
-{
-	return gv_get_score(hv->game_view);
-}
+int hv_get_score (HunterView hv);
 
 /**
  * Get the current health points for a given player.
  * @param player specifies which players's life/blood points to return.
  * @returns a value between 0..9 for Hunters, or >0 for Dracula
  */
-int hv_get_health (hunter_view *hv, enum player player)
-{
-	return gv_get_health(hv->game_view, player);
-}
+int hv_get_health (HunterView hv, enum player player);
 
 /**
  * Get the current location of a given player.
@@ -116,14 +79,7 @@ int hv_get_health (hunter_view *hv, enum player player)
  *   `DOUBLE_BACK_1` is the last place place he visited; or
  * - `TELEPORT`, if Dracula apparated back to Castle Dracula.
  */
-location_t hv_get_location (hunter_view *hv, enum player player)
-{
-	if(player!=PLAYER_DRACULA) return gv_get_location (hv->game_view, player);
-
-	//makes deductions about 
-	else return hunter_dracula_location (hv->game_view, player);
-	
-}
+location_t hv_get_location (HunterView hv, enum player player);
 
 /**
  * Fills the trail array with the locations of the last 6 turns for the
@@ -144,11 +100,7 @@ location_t hv_get_location (hunter_view *hv, enum player player)
  * or has been encountered
  */
 void hv_get_trail (
-	hunter_view *hv, enum player player,
-	location_t trail[TRAIL_SIZE])
-{
-	gv_get_history (hv->game_view, player, trail);
-}
+	HunterView hv, enum player player, location_t trail[TRAIL_SIZE]);
 
 /**
  * Return an array of `location_t`s giving all locations that the
@@ -162,11 +114,7 @@ void hv_get_trail (
  * if the `road`, `rail`, or `sea` parameters are true, respectively.
  */
 location_t *hv_get_dests (
-	hunter_view *hv, size_t *n_locations,
-	bool road, bool rail, bool sea)
-{
-	return gv_get_connections (hv->game_view, n_locations, hv_get_location(hv, hv_get_player (hv)), hv_get_player (hv), hv_get_round (hv), road, rail, sea);
-}
+	HunterView hv, size_t *n_locations, bool road, bool rail, bool sea);
 
 /**
  * Return an array of `location_t`s giving all of the locations that the
@@ -186,31 +134,7 @@ location_t *hv_get_dests (
  * Dracula's location precisely.
  */
 location_t *hv_get_dests_player (
-	hunter_view *hv, size_t *n_locations, enum player player,
-	bool road, bool rail, bool sea)
-{
-	if(player!=PLAYER_DRACULA) return gv_get_connections (hv->game_view, n_locations, hv_get_location(hv, player), player, hv_get_round (hv), road, rail, sea);
+	HunterView hv, size_t *n_locations,
+	enum player player, bool road, bool rail, bool sea);
 
-	//create map
-	Map europe = map_new();
-
-	//get trail
-	location_t trail[TRAIL_SIZE];
-	gv_get_history (hv->game_view, player, trail);
-	dracula_trail_fixer (hv->game_view, trail, player);
-
-	//create array
-	int *arr = malloc(NUM_MAP_LOCATIONS * sizeof *arr);
-
-	//find number of connections
-	size_t n_connections = dracula_connections(europe, hv_get_location(hv, PLAYER_DRACULA), arr, road, sea, trail);
-
-	//copy number of connections into n_locations
-	*n_locations = n_connections;
-
-	map_drop(europe);
-
-	return arr;
-	
-	
-}
+#endif // !defined (FOD__HUNTER_VIEW_H_)

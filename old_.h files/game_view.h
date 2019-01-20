@@ -123,4 +123,5 @@ location_t *gv_get_connections (
 	enum player player, round_t round,
 	bool road, bool rail, bool sea);
 
+
 #endif // !defined (FOD__GAME_VIEW_H_)

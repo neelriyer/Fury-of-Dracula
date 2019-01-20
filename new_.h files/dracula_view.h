@@ -1,38 +1,21 @@
 ////////////////////////////////////////////////////////////////////////
 // COMP2521 19t0 ... the Fury of Dracula
-// dracula_view.c: the DraculaView ADT implementation
+// dracula_view.h: the DraculaView ADT
 //
 // 2014-07-01	v1.0	Team Dracula <cs2521@cse.unsw.edu.au>
-// 2017-12-01	v1.1	Team Dracula <cs2521@cse.unsw.edu.au>
+// 2017-11-30	v1.1	Team Dracula <cs2521@cse.unsw.edu.au>
 // 2018-12-31	v2.0	Team Dracula <cs2521@cse.unsw.edu.au>
 
-#include <assert.h>
-#include <err.h>
-#include <stdbool.h>
-#include <stdlib.h>
-#include <sysexits.h>
-#include <stdio.h>
+#ifndef FOD__DRACULA_VIEW_H_
+#define FOD__DRACULA_VIEW_H_
 
-#include "dracula_view.h"
+#include <stdbool.h>
+
 #include "game.h"
 #include "game_view.h"
+#include "places.h"
 
-#include "map.h"
-
-#define __unused __attribute__((unused))
-
-//helpers
-int trap_count(GameView gv, int id);
-int vamp_count(GameView gv, int id);
-void dracula_trail_fixer (GameView gv, int *trail, enum player player);
-size_t dracula_connections (Map, int front, int *arr, bool road, bool sea, int *trail);
-
-
-typedef struct dracula_view {
-
-	GameView game_view;
-	
-} dracula_view;
+typedef struct dracula_view *DraculaView;
 
 /**
  * Creates a new view to summarise the current state of the game.
@@ -53,54 +36,30 @@ typedef struct dracula_view {
  * - the `past_plays` string should contain full details of all moves
  * - the last move should always be by Mina Harker
  */
-dracula_view *dv_new (char *past_plays, player_message messages[])
-{
-	//create node
-	dracula_view *new = malloc(sizeof(struct dracula_view));
-	if (new == NULL) err (EX_OSERR, "couldn't allocate GameView");
-
-	//send to game_view
-	new->game_view = gv_new(past_plays, messages);
-
-	return new;
-}
+DraculaView dv_new (char *past_plays, player_message messages[]);
 
 /**
  * Frees all resources allocated for `dv`.
  * After this has been called, `dv` should not be accessed.
  */
-void dv_drop (dracula_view *dv)
-{
-	gv_drop(dv->game_view);
-	free(dv);
-}
-
+void dv_drop (DraculaView dv);
 
 /**
  * Get the current round.
  */
-round_t dv_get_round (dracula_view *dv)
-{
-	return gv_get_round(dv->game_view);
-}
+round_t dv_get_round (DraculaView dv);
 
 /**
  * Get the current score, a positive integer between 0 and 366.
  */
-int dv_get_score (dracula_view *dv)
-{
-	return gv_get_score(dv->game_view);
-}
+int dv_get_score (DraculaView dv);
 
 /**
  * Get the current health points for a given player.
  * @param player specifies which players's life/blood points to return
  * @returns a value between 0..9 for Hunters, or >0 for Dracula
  */
-int dv_get_health (dracula_view *dv, enum player player)
-{
-	return gv_get_health(dv->game_view, player);
-}
+int dv_get_health (DraculaView dv, enum player player);
 
 /**
  * Get the current location of a given player.
@@ -111,45 +70,7 @@ int dv_get_health (dracula_view *dv, enum player player)
  * Always returns an exact location, as the `past_plays` string contains
  * full Dracula locations since Dracula always knows where he's been.
  */
-location_t dv_get_location (dracula_view *dv, enum player player)
-{
-	location_t loc  = gv_get_location(dv->game_view, player);
-
-	//if dracula is at an invalid location
-	if(!valid_location_p(loc) && player == PLAYER_DRACULA) {
-
-		//create trail array
-		location_t trail[TRAIL_SIZE];
-
-		//get trail
-		dv_get_trail(dv, player, trail);
-
-		//Hide
-		if(loc == HIDE) loc = trail[1];
-
-        // Double back 1
-		else if(loc == DOUBLE_BACK_1) loc = trail[1];
-
-        // Double back 2
-        else if(loc == DOUBLE_BACK_2) loc = trail[2];
-
-		// Double back 3
-        else if(loc == DOUBLE_BACK_3) loc = trail[3];
-
-		// Double back 4
-        else if(loc == DOUBLE_BACK_4) loc = trail[4];
-
-		// Double back 5
-        else if(loc == DOUBLE_BACK_5) loc = trail[5];
-
-        // Teleport Castle Dracula
-        else if(loc == TELEPORT) loc = CASTLE_DRACULA;
-
-	}
-	
-	return loc;
-	
-}
+location_t dv_get_location (DraculaView dv, enum player player);
 
 /**
  * Get the most recent move of a given player, returning the start and
@@ -160,22 +81,8 @@ location_t dv_get_location (dracula_view *dv, enum player player)
  * (for a hunter's first move).
  */
 void dv_get_player_move (
-	dracula_view *dv, enum player player,
-	location_t *start, location_t *end)
-{
-	//if round 0 and player is DRACULA
-	if(dv_get_round (dv) == 0 && player == PLAYER_DRACULA) {
-		*start = UNKNOWN_LOCATION;
-		*end = UNKNOWN_LOCATION;
-		return;
-	}
-
-	location_t trail[TRAIL_SIZE];
-	gv_get_history(dv->game_view, player, trail);
-	*start = trail[1];
-	*end = trail[0];
-	return;
-}
+	DraculaView dv, enum player player,
+	location_t *start, location_t *end);
 
 /**
  * Find out what minions I (Dracula) have placed at the specified
@@ -186,16 +93,7 @@ void dv_get_player_move (
  * (e.g. at sea, or NOWHERE), then set both counts to zero.
  */
 void dv_get_locale_info (
-	dracula_view *dv, location_t where,
-	int *n_traps, int *n_vamps)
-{
-	//printf("\ntrap_count(dv->game_view) = %d\nlocation is %s\n",trap_count(dv->game_view, where), location_get_abbrev(where));
-	*n_traps = trap_count(dv->game_view, where);
-
-	//printf("\nvamp_count(dv->game_view) = %d\nlocation is %s\n",vamp_count(dv->game_view, where), location_get_abbrev(where));
-	*n_vamps = vamp_count(dv->game_view, where);
-	
-}
+	DraculaView dv, location_t where, int *n_traps, int *n_vamps);
 
 /**
  * Fills the trail array with the locations of the last 6 turns for the
@@ -214,19 +112,7 @@ void dv_get_locale_info (
  * has previously been, not double-backs, etc.
  */
 void dv_get_trail (
-	dracula_view *dv, enum player player,
-	location_t trail[TRAIL_SIZE])
-{
-
-	gv_get_history (dv->game_view, player, trail);
-
-	//if dracula
-	if(player == PLAYER_DRACULA) {
-
-		//only get real locations in trail remove HIDE, DOUBLE_BACK etc.
-		dracula_trail_fixer (dv->game_view, trail, player);
-	}	
-}
+	DraculaView dv, enum player player, location_t trail[TRAIL_SIZE]);
 
 /**
  * Return an array of `location_t`s giving all locations that Dracula
@@ -246,29 +132,7 @@ void dv_get_trail (
  * trail).
  */
 location_t *dv_get_dests (
-	dracula_view *dv, size_t *n_locations, bool road, bool sea)
-
-{
-	//create trail
-	location_t trail[TRAIL_SIZE];
-	dv_get_trail (dv, PLAYER_DRACULA, trail);
-
-	//create map
-	Map europe = map_new();
-
-	//create array
-	int *arr = malloc(NUM_MAP_LOCATIONS * sizeof *arr);
-
-	//find number of connections
-	size_t n_connections = dracula_connections(europe, dv_get_location(dv, PLAYER_DRACULA), arr, road, sea, trail); 
-
-	//copy number of connections into n_locations
-	*n_locations = n_connections;
-
-	map_drop(europe);
-
-	return arr;
-}
+	DraculaView dv, size_t *n_locations, bool road, bool sea);
 
 /**
  * Return an array of `location_t`s giving all of the locations that the
@@ -287,8 +151,7 @@ location_t *dv_get_dests (
  * If `player` is Dracula, calls dv_get_dests().
  */
 location_t *dv_get_dests_player (
-	dracula_view *dv, size_t *n_locations, enum player player,
-	bool road, bool rail, bool sea)
-{
-	return gv_get_connections(dv->game_view, n_locations, dv_get_location(dv, player), player, dv_get_round(dv), road, rail, sea);
-}
+	DraculaView dv, size_t *n_locations,
+	enum player player, bool road, bool rail, bool sea);
+
+#endif // !defined(FOD__DRACULA_VIEW_H_)

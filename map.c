@@ -15,6 +15,11 @@
 
 #include "map.h"
 #include "places.h"
+#include "game.h"
+
+//helpers
+size_t connections (Map, int front, int *arr, int round, bool road, bool rail, bool sea, int player);
+size_t dracula_connections (Map, int front, int *arr, bool road, bool sea, int *trail);
 
 typedef struct map_adj map_adj;
 typedef struct map {
@@ -73,16 +78,12 @@ void map_show (map *g)
 {
 	assert (g != NULL);
 
-	printf ("V=%zu, E=%zu\n", g->n_vertices, g->n_edges);
-	for (size_t i = 0; i < g->n_vertices; i++)
-		for (map_adj *curr = g->connections[i];
-			 curr != NULL; curr = curr->next)
-			printf (
-				"%s connects to %s by %s\n",
-				location_get_name ((location_t) i),
-				location_get_name (curr->v),
-				transport_to_s (curr->type)
-			);
+	//printf ("V=%zu, E=%zu\n", g->n_vertices, g->n_edges);
+	for (size_t i = 0; i < g->n_vertices; i++) {
+		for (map_adj *curr = g->connections[i]; curr != NULL; curr = curr->next) {
+			//printf ("%s connects to %s by %s\n", location_get_name ((location_t) i), location_get_name (curr->v),transport_to_s (curr->type));
+		}
+	}
 }
 
 //helper
@@ -97,7 +98,8 @@ static int is_part_of_array(int variable, int *arr, size_t up_to) {
 }
 
 //helper
-size_t connections (map *g, int front, int *arr, int round, bool road, bool rail, bool sea, int player)
+//return n_connections from dracula's perspective
+size_t dracula_connections (map *g, int front, int *arr, bool road, bool sea, int *trail)
 {
 	assert (g != NULL);
 
@@ -106,13 +108,73 @@ size_t connections (map *g, int front, int *arr, int round, bool road, bool rail
 	//if unknown location return nothing
 	if(valid_location_p(front)==0) return n_connections;
 
-	//if dracula's location is a sea, then he cannot stay in the sea
-	if(!(player==4 && location_get_type(front)==SEA)) {
+	//printf("front = %s\n", location_get_abbrev(front));
+
+	//if on land and HIDE is not part of trail
+	//HIDE is an option
+	if(land_p(front) && is_part_of_array(HIDE,trail,TRAIL_SIZE-1)!=1) {
 
 		//add current city to array
 		arr[n_connections] = front;
 		n_connections++;
 	}
+
+	//find all other connections and store in arr
+	for (map_adj *curr = g->connections[front]; curr != NULL; curr = curr->next) {
+
+		//printf ("%s connects to %s by %s\n", location_get_name ((location_t) front), location_get_name (curr->v), transport_to_s (curr->type));
+
+		//skip st joseph and marys
+		if(curr->v==ST_JOSEPH_AND_ST_MARYS) continue;
+
+		//if road is allowed
+		if(curr->type==ROAD && road) {
+	
+			//add connections that are: 
+			//(1) not already part of array 
+			//(2) not in trail
+			if(is_part_of_array(curr->v,arr,n_connections)!=1 && 
+				is_part_of_array(curr->v,trail,TRAIL_SIZE-1)!=1) {
+				//printf("adding %s\n", location_get_abbrev(curr->v));
+				arr[n_connections] = curr->v;
+				n_connections++;
+			}
+		}
+
+		//if sea is allowed
+		if(curr->type==BOAT && sea) {
+
+			//add connections that are: 
+			//(1) not already part of array 
+			//(2) not in trail
+			if(is_part_of_array(curr->v,arr,n_connections)!=1 &&
+				is_part_of_array(curr->v,trail,TRAIL_SIZE-1)!=1) {
+				//printf("adding %s\n", location_get_abbrev(curr->v));
+				arr[n_connections] = curr->v;
+				n_connections++;
+			}
+		}
+	}
+	return n_connections;
+}
+
+
+
+//helper
+//return n_connections from hunters perspective
+size_t connections (map *g, int front, int *arr, int round, bool road, bool rail, bool sea, int player)
+{
+	assert (g != NULL);
+
+
+	size_t n_connections=0;
+
+	//if unknown location return nothing
+	if(valid_location_p(front)==0) return n_connections;
+
+	//add current city to array
+	arr[n_connections] = front;
+	n_connections++;
 
 	//find all other connections and store in arr
 	for (map_adj *curr = g->connections[front]; curr != NULL; curr = curr->next) {
@@ -130,6 +192,8 @@ size_t connections (map *g, int front, int *arr, int round, bool road, bool rail
 					arr[n_connections] = curr->v;
 					n_connections++;
 			}
+			//else if not part of arr & dracula & not in trail
+			//add to  arr
 		}
 
 		//if sea is allowed
