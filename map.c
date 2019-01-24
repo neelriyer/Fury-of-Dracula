@@ -1,10 +1,8 @@
 ////////////////////////////////////////////////////////////////////////
 // COMP2521 19t0 ... the Fury of Dracula
 // map.c: an implementation of a Map type
-// You can change this as much as you want!
 //
-// 2017-11-30	v1.0	Team Dracula <cs2521@cse.unsw.edu.au>
-// 2018-12-31	v2.0	Team Dracula <cs2521@cse.unsw.edu.au>
+// Code by TheGroup, COMP1927 14s2
 
 #include <assert.h>
 #include <err.h>
@@ -33,6 +31,9 @@ static inline bool is_sentinel_edge (connection);
 
 static map_adj *adjlist_insert (map_adj *, location_t, transport_t);
 static bool adjlist_contains (map_adj *, location_t, transport_t);
+
+static void include_reachable_by_rail (
+	Map map, bool reachable[NUM_MAP_LOCATIONS], location_t from, int rail_len);
 
 // Create a new empty graph (for a map)
 // #Vertices always same as NUM_PLACES
@@ -171,4 +172,58 @@ static bool adjlist_contains (map_adj *list, location_t v, transport_t type)
 		if (curr->v == v && curr->type == type)
 			return true;
 	return false;
+}
+
+////////////////////////////////////////////////////////////////////////
+
+location_t *reachable_locations (
+	Map map, size_t *num_locations, location_t from,
+	bool drac, int rail_len, bool road, bool sea)
+{
+    //a boolean for each location, if it is reachable
+	bool reachable[NUM_MAP_LOCATIONS] = { false };
+
+	//setting the 'from' location as reachable
+	reachable[from] = 1;
+
+    //for each connection that is by ROAD or SEA,
+	//set it to reachable if road or sea is set to true
+	for (map_adj *curr = map->connections[from];
+		 curr != NULL; curr = curr->next)
+		if ((curr->type == ROAD && road) ||
+			(curr->type == BOAT && sea))
+			reachable[curr->v] = 1;
+
+	//include the places reachable by rail
+	include_reachable_by_rail (map, reachable, from, rail_len);
+
+	//going through and putting every reachable location into an array
+	location_t *locations = malloc (NUM_MAP_LOCATIONS * sizeof (location_t));
+	size_t index = 0;
+	for (location_t loc = MIN_MAP_LOCATION; loc <= MAX_MAP_LOCATION; loc++)
+		if (reachable[loc])
+			//don't allow dracula to go to the hospital
+			if (! (drac && loc == ST_JOSEPH_AND_ST_MARYS))
+				locations[index++] = loc;
+
+	//setting the number of locations actually returned
+	*num_locations = index;
+
+	return locations;
+}
+
+static void include_reachable_by_rail (
+	Map map, bool reachable[NUM_MAP_LOCATIONS],
+	location_t from, int rail_len)
+{
+	assert(rail_len >= 0);
+
+	reachable[from] = 1;
+
+	if (rail_len <= 0) return;
+
+	for (map_adj *curr = map->connections[from];
+		 curr != NULL; curr = curr->next)
+		if (curr->type == RAIL)
+			include_reachable_by_rail (map, reachable, curr->v, rail_len - 1);
 }

@@ -19,31 +19,6 @@
 
 int main (void)
 {
-
-	//MY TESTS TODO add more
-	do {////////////////////////////////////////////////////////////////
-		puts ("Test for traps/dracula confrontation");
-
-		char *trail =
-			"GSTTVD. SAOTVD. HZUTVD. MBBTVD. DC?T...";
-		player_message messages[] = {
-			"Hello", "Rubbish", "Stuff", "", "Mwahahah"};
-		GameView gv = gv_new (trail, messages);
-
-		assert (gv_get_player (gv) == PLAYER_LORD_GODALMING);
-		assert (gv_get_round (gv) == 1);
-		assert (gv_get_location (gv, PLAYER_LORD_GODALMING) == STRASBOURG);
-		assert (gv_get_location (gv, PLAYER_DR_SEWARD) == ATLANTIC_OCEAN);
-		assert (gv_get_location (gv, PLAYER_VAN_HELSING) == ZURICH);
-		assert (gv_get_location (gv, PLAYER_MINA_HARKER) == BAY_OF_BISCAY);
-		assert (gv_get_location (gv, PLAYER_DRACULA) == CITY_UNKNOWN);
-		assert (gv_get_health (gv, PLAYER_DRACULA) == 0);
-
-		puts ("passed");
-		gv_drop (gv);
-	} while (0);
-
-	//STANDARD TESTS
 	do {////////////////////////////////////////////////////////////////
 		puts ("Test basic empty initialisation");
 
@@ -204,7 +179,6 @@ int main (void)
 			free (edges);
 		} while (0);
 
-
 		do {
 			puts ("Checking Ionian Sea sea connections");
 			size_t n_edges;
@@ -248,8 +222,6 @@ int main (void)
 		puts ("passed");
 		gv_drop (gv);
 	} while (0);
-	
-	
 
 	return EXIT_SUCCESS;
 }

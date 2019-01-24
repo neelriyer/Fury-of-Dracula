@@ -2,91 +2,132 @@
 // COMP2521 19t0 ... the Fury of Dracula
 // hunter_view.c: the HunterView ADT implementation
 //
-// 2014-07-01	v1.0	Team Dracula <cs2521@cse.unsw.edu.au>
-// 2017-12-01	v1.1	Team Dracula <cs2521@cse.unsw.edu.au>
-// 2018-12-31	v2.0	Team Dracula <cs2521@cse.unsw.edu.au>
+// Code by TheGroup, COMP1927 14s2.
+// Modified by gac & jas, 15s2, 16s2.
 
-#include <assert.h>
-#include <err.h>
-#include <stdbool.h>
 #include <stdlib.h>
-#include <sysexits.h>
+#include <assert.h>
 
 #include "game.h"
 #include "game_view.h"
 #include "hunter_view.h"
-// #include "map.h" ... if you decide to use the Map ADT
+#include "places.h"
 
-typedef struct hunter_view {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-} hunter_view;
 
-hunter_view *hv_new (char *past_plays, player_message messages[])
+// Representation of the Hunter's view of the game
+
+struct hunter_view {
+    GameView game;
+};
+
+
+// Creates a new HunterView to summarise the current state of the game
+HunterView hv_new(char *pastPlays, player_message messages[])
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	hunter_view *new = malloc (sizeof *new);
-	if (new == NULL) err (EX_OSERR, "couldn't allocate HunterView");
-
-	return new;
+    HunterView hunter_view = malloc(sizeof(struct hunter_view));
+    hunter_view->game = gv_new(pastPlays, messages);
+    return hunter_view;
 }
 
-void hv_drop (hunter_view *hv)
+
+// Frees all memory previously allocated for the HunterView toBeDeleted
+void hv_drop(HunterView toBeDeleted)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	free (hv);
+    free(toBeDeleted->game);
+    free(toBeDeleted);
 }
 
-round_t hv_get_round (hunter_view *hv)
+
+//// Functions to return simple information about the current state of the game
+
+// Get the current round
+round_t hv_get_round(HunterView currentView)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	return 0;
+    return gv_get_round(currentView->game);
 }
 
-enum player hv_get_player (hunter_view *hv)
+// Get the id of current player
+enum player hv_get_player(HunterView currentView)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	return 0;
+    return gv_get_player(currentView->game);
 }
 
-int hv_get_score (hunter_view *hv)
+// Get the current score
+int hv_get_score(HunterView currentView)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	return 0;
+    return gv_get_score(currentView->game);
 }
 
-int hv_get_health (hunter_view *hv, enum player player)
+// Get the current health points for a given player
+int hv_get_health(HunterView currentView, enum player player)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	return 0;
+    return gv_get_health(currentView->game, player);
 }
 
-location_t hv_get_location (hunter_view *hv, enum player player)
+// Get the current location id of a given player
+location_t hv_get_location(HunterView currentView, enum player player)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	return 0;
+    return gv_get_location(currentView->game, player);
 }
 
-void hv_get_trail (
-	hunter_view *hv, enum player player,
-	location_t trail[TRAIL_SIZE])
+//// Functions that return information about the history of the game
+
+// Fills the trail array with the location ids of the last 6 turns
+void hv_get_trail(HunterView currentView, enum player player,
+                    location_t trail[TRAIL_SIZE])
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
+    gv_get_history(currentView->game, player, trail);
 }
 
-location_t *hv_get_dests (
-	hunter_view *hv, size_t *n_locations,
+//// Functions that query the map to find information about connectivity
+
+// What are my possible next moves (locations)
+location_t *hv_get_dests(
+	HunterView currentView, size_t *numLocations,
 	bool road, bool rail, bool sea)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	*n_locations = 0;
-	return NULL;
+    return hv_get_dests_player(
+		currentView,
+		numLocations,
+		gv_get_player(currentView->game),
+		road, rail, sea);
 }
 
-location_t *hv_get_dests_player (
-	hunter_view *hv, size_t *n_locations, enum player player,
-	bool road, bool rail, bool sea)
+// What are the specified player's next possible moves
+location_t *hv_get_dests_player(
+	HunterView currentView, size_t *numLocations,
+	enum player player, bool road, bool rail, bool sea)
 {
-	/// @todo REPLACE THIS WITH YOUR OWN IMPLEMENTATION
-	*n_locations = 0;
-	return NULL;
+    size_t i, map_nvalidLocations, index;
+    location_t forbidden = NOWHERE;
+    location_t *validLocations;
+
+    location_t *locations =
+		gv_get_connections(
+			currentView->game,
+			numLocations,
+			gv_get_location(currentView->game, player),
+			player,
+			gv_get_round(currentView->game),
+			road, rail, sea);
+
+    if (player == PLAYER_DRACULA)
+		forbidden = ST_JOSEPH_AND_ST_MARYS;
+    map_nvalidLocations = 0;
+    for(i = 0; i < (*numLocations); i++){
+        if (locations[i] == forbidden) continue;
+        map_nvalidLocations++;
+    }
+
+    index = 0;
+    validLocations = malloc(sizeof(location_t) * map_nvalidLocations);
+    for(i = 0; i < map_nvalidLocations; i++){
+        if (locations[i] == forbidden) continue;
+        validLocations[index] = locations[i];
+        index++;
+    }
+
+    free(locations);
+    *numLocations = map_nvalidLocations;
+    return validLocations;
 }

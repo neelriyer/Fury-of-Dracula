@@ -114,6 +114,12 @@ void dv_get_locale_info (
 void dv_get_trail (
 	DraculaView dv, enum player player, location_t trail[TRAIL_SIZE]);
 
+// Fills the trail array with the moves for the last 6 turns for the
+// given player, including Dracula (if he asks about his own trail).
+// Even Dracula gets double-backs, etc.
+void dv_get_moves (
+	DraculaView view, enum player player, location_t trail[TRAIL_SIZE]);
+
 /**
  * Return an array of `location_t`s giving all locations that Dracula
  * could reach in his next move.
