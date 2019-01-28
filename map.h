@@ -2,7 +2,8 @@
 // COMP2521 19t0 ... the Fury of Dracula
 // map.h: an interface to a Map data type
 //
-// Code by TheGroup, COMP1927 14s2.
+// 2017-11-30   v1.0    Team Dracula <cs2521@cse.unsw.edu.au>
+// 2018-12-31   v2.0    Team Dracula <cs2521@cse.unsw.edu.au>
 
 #include <stdbool.h>
 #include <stdlib.h>
@@ -30,9 +31,5 @@ void map_show (Map);
 size_t map_nv (Map);
 /** Get the number of edges. */
 size_t map_ne (Map, transport_t);
-
-location_t *reachable_locations (
-	Map map, size_t *n_locations, location_t from,
-	bool drac, int rail_length, bool road, bool sea);
 
 #endif // !defined(FOD__MAP_H_)

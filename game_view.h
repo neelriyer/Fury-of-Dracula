@@ -123,10 +123,4 @@ location_t *gv_get_connections (
 	enum player player, round_t round,
 	bool road, bool rail, bool sea);
 
-
-// Get information about traps/vampires at a specified location
-// (Extra function not in original interface)
-void getMinions (
-	GameView game, location_t where, int *numTraps, int *numVamps);
-
 #endif // !defined (FOD__GAME_VIEW_H_)
