@@ -171,7 +171,7 @@ static inline bool sea_p (location_t loc)
 
 /** is the given location valid? */
 static inline bool valid_location_p (location_t pid)
-{
+{	
 	return MIN_MAP_LOCATION <= pid
 		&& pid <= MAX_MAP_LOCATION;
 }

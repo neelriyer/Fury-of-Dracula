@@ -1,0 +1,1854 @@
+2521 3c    -c -o dracula.o dracula.c
+2521 3c  -DI_AM_DRACULA -c player.c -o player_dracula.o
+2521 3c    -c -o dracula_view.o dracula_view.c
+2521 3c    -c -o Queue.o Queue.c
+2521 3c    -c -o game_view.o game_view.c
+2521 3c    -c -o map.o map.c
+2521 3c    -c -o places.o places.c
+2521 3c   dracula.o player_dracula.o dracula_view.o Queue.o game_view.o map.o places.o /usr/lib/i386-linux-gnu/libdl.so /usr/lib/i386-linux-gnu/libjansson.so   -o dracula
+2521 3c    -c -o hunter.o hunter.c
+2521 3c  -c player.c -o player_hunter.o
+2521 3c    -c -o hunter_view.o hunter_view.c
+2521 3c   hunter.o player_hunter.o hunter_view.o Queue.o game_view.o map.o places.o /usr/lib/i386-linux-gnu/libdl.so /usr/lib/i386-linux-gnu/libjansson.so   -o hunter
+   The FURY of DRACULA   
+          _..._          
+        .'     '.        
+       ; __   __ ;       
+       |/  \ /  \|       
+     |\| -- ' -- |/|     
+     |(| \o| |o/ |)|     
+     _\|    U    |/_     
+  .-'  | ,.___., |  '-.  
+  \    ;  V'-'V  ;    /  
+   `\   \       /   /`   
+     `\  '-...-'  /`     
+       `\  / \  /`       
+         `\\_//`         
+...........................
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": ""
+Program exited with code: null
+Received signal: SIGABRT
+==============================================================
+Program Output (175): hunter: game_view.c:457: location_t *gv_get_connections(GameView, size_t *, location_t, enum player, round_t, _Bool, _Bool, _Bool): Assertion `valid_location_p(from)' failed.
+
+==============================================================
+Move data parse error: ""
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at ChildProcess.<anonymous> (/tmp_amd/kamen/export/kamen/2/cs2521ass/19t0/19t0.dracula/game_runner/runGame.js:199:24)
+    at ChildProcess.emit (events.js:188:13)
+    at maybeClose (internal/child_process.js:978:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:265:5)
+This usually means your program crashed before making a move.
+Move:  {}
+> Player 0 disqualified for illegal move.
+> +++ 
+> --- 
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM...."
+Program exited with code: null
+Received signal: SIGABRT
+==============================================================
+Program Output (175): hunter: game_view.c:457: location_t *gv_get_connections(GameView, size_t *, location_t, enum player, round_t, _Bool, _Bool, _Bool): Assertion `valid_location_p(from)' failed.
+
+==============================================================
+Move data parse error: ""
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at ChildProcess.<anonymous> (/tmp_amd/kamen/export/kamen/2/cs2521ass/19t0/19t0.dracula/game_runner/runGame.js:199:24)
+    at ChildProcess.emit (events.js:188:13)
+    at maybeClose (internal/child_process.js:978:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:265:5)
+This usually means your program crashed before making a move.
+Move:  {}
+> Player 1 disqualified for illegal move.
+> +++ 
+> --- 
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM...."
+Program exited with code: null
+Received signal: SIGABRT
+==============================================================
+Program Output (175): hunter: game_view.c:457: location_t *gv_get_connections(GameView, size_t *, location_t, enum player, round_t, _Bool, _Bool, _Bool): Assertion `valid_location_p(from)' failed.
+
+==============================================================
+Move data parse error: ""
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at ChildProcess.<anonymous> (/tmp_amd/kamen/export/kamen/2/cs2521ass/19t0/19t0.dracula/game_runner/runGame.js:199:24)
+    at ChildProcess.emit (events.js:188:13)
+    at maybeClose (internal/child_process.js:978:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:265:5)
+This usually means your program crashed before making a move.
+Move:  {}
+> Player 2 disqualified for illegal move.
+> +++ 
+> --- 
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM...."
+Program exited with code: null
+Received signal: SIGABRT
+==============================================================
+Program Output (175): hunter: game_view.c:457: location_t *gv_get_connections(GameView, size_t *, location_t, enum player, round_t, _Bool, _Bool, _Bool): Assertion `valid_location_p(from)' failed.
+
+==============================================================
+Move data parse error: ""
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at ChildProcess.<anonymous> (/tmp_amd/kamen/export/kamen/2/cs2521ass/19t0/19t0.dracula/game_runner/runGame.js:199:24)
+    at ChildProcess.emit (events.js:188:13)
+    at maybeClose (internal/child_process.js:978:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:265:5)
+This usually means your program crashed before making a move.
+Move:  {}
+> Player 3 disqualified for illegal move.
+> +++ 
+> --- 
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM...."
+Program exited with code: null
+Received signal: SIGABRT
+==============================================================
+Program Output (176): dracula: game_view.c:457: location_t *gv_get_connections(GameView, size_t *, location_t, enum player, round_t, _Bool, _Bool, _Bool): Assertion `valid_location_p(from)' failed.
+
+==============================================================
+Move data parse error: ""
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at ChildProcess.<anonymous> (/tmp_amd/kamen/export/kamen/2/cs2521ass/19t0/19t0.dracula/game_runner/runGame.js:199:24)
+    at ChildProcess.emit (events.js:188:13)
+    at maybeClose (internal/child_process.js:978:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:265:5)
+This usually means your program crashed before making a move.
+Move:  {}
+> Player 4 disqualified for illegal move.
+> +++ 
+> --- 
+Default Dracula Move: "ZA"
+> End of Round:  0
+> Starting Round:  1
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "VI"
+> End of Round:  1
+> Starting Round:  2
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "PR"
+> End of Round:  2
+> Starting Round:  3
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D1"
+> End of Round:  3
+> Starting Round:  4
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "NU"
+> End of Round:  4
+> Starting Round:  5
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "FR"
+> End of Round:  5
+> Starting Round:  6
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "LI"
+> End of Round:  6
+> Starting Round:  7
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "CO"
+> End of Round:  7
+> Starting Round:  8
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BU"
+> End of Round:  8
+> Starting Round:  9
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D2"
+> End of Round:  9
+> Starting Round:  10
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "ST"
+> End of Round:  10
+> Starting Round:  11
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  11
+> Starting Round:  12
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "GE"
+> End of Round:  12
+> Starting Round:  13
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "PA"
+> End of Round:  13
+> Starting Round:  14
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BU"
+> End of Round:  14
+> Starting Round:  15
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "AM"
+> End of Round:  15
+> Starting Round:  16
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "NS"
+> End of Round:  16
+> Starting Round:  17
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HA"
+> End of Round:  17
+> Starting Round:  18
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "CO"
+> End of Round:  18
+> Starting Round:  19
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D5"
+> End of Round:  19
+> Starting Round:  20
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  20
+> Starting Round:  21
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "PA"
+> End of Round:  21
+> Starting Round:  22
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "ST"
+> End of Round:  22
+> Starting Round:  23
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "FR"
+> End of Round:  23
+> Starting Round:  24
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "LI"
+> End of Round:  24
+> Starting Round:  25
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HA"
+> End of Round:  25
+> Starting Round:  26
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BR"
+> End of Round:  26
+> Starting Round:  27
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D1"
+> End of Round:  27
+> Starting Round:  28
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "PR"
+> End of Round:  28
+> Starting Round:  29
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  29
+> Starting Round:  30
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "NU"
+> End of Round:  30
+> Starting Round:  31
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "FR"
+> End of Round:  31
+> Starting Round:  32
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "ST"
+> End of Round:  32
+> Starting Round:  33
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D2"
+> End of Round:  33
+> Starting Round:  34
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "LI"
+> End of Round:  34
+> Starting Round:  35
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  35
+> Starting Round:  36
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BR"
+> End of Round:  36
+> Starting Round:  37
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HA"
+> End of Round:  37
+> Starting Round:  38
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "NS"
+> End of Round:  38
+> Starting Round:  39
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "EC"
+> End of Round:  39
+> Starting Round:  40
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "AO"
+> End of Round:  40
+> Starting Round:  41
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BB"
+> End of Round:  41
+> Starting Round:  42
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D2"
+> End of Round:  42
+> Starting Round:  43
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "IR"
+> End of Round:  43
+> Starting Round:  44
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "DU"
+> End of Round:  44
+> Starting Round:  45
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  45
+> Starting Round:  46
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "GW"
+> End of Round:  46
+> Starting Round:  47
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "AO"
+> End of Round:  47
+> Starting Round:  48
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D5"
+> End of Round:  48
+> Starting Round:  49
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "LV"
+> End of Round:  49
+> Starting Round:  50
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "SW"
+> End of Round:  50
+> Starting Round:  51
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "LO"
+> End of Round:  51
+> Starting Round:  52
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "EC"
+> End of Round:  52
+> Starting Round:  53
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "AO"
+> End of Round:  53
+> Starting Round:  54
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BB"
+> End of Round:  54
+> Starting Round:  55
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D1"
+> End of Round:  55
+> Starting Round:  56
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "NA"
+> End of Round:  56
+> Starting Round:  57
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "CF"
+> End of Round:  57
+> Starting Round:  58
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  58
+> Starting Round:  59
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "TO"
+> End of Round:  59
+> Starting Round:  60
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "SR"
+> End of Round:  60
+> Starting Round:  61
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "AL"
+> End of Round:  61
+> Starting Round:  62
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "MA"
+> End of Round:  62
+> Starting Round:  63
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D2"
+> End of Round:  63
+> Starting Round:  64
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  64
+> Starting Round:  65
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "GR"
+> End of Round:  65
+> Starting Round:  66
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "CA"
+> End of Round:  66
+> Starting Round:  67
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "LS"
+> End of Round:  67
+> Starting Round:  68
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "MA"
+> End of Round:  68
+> Starting Round:  69
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D4"
+> End of Round:  69
+> Starting Round:  70
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  70
+> Starting Round:  71
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "AL"
+> End of Round:  71
+> Starting Round:  72
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "MS"
+> End of Round:  72
+> Starting Round:  73
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "TS"
+> End of Round:  73
+> Starting Round:  74
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "CG"
+> End of Round:  74
+> Starting Round:  75
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D2"
+> End of Round:  75
+> Starting Round:  76
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "IO"
+> End of Round:  76
+> Starting Round:  77
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "AS"
+> End of Round:  77
+> Starting Round:  78
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "VE"
+> End of Round:  78
+> Starting Round:  79
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  79
+> Starting Round:  80
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "FL"
+> End of Round:  80
+> Starting Round:  81
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D1"
+> End of Round:  81
+> Starting Round:  82
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "GO"
+> End of Round:  82
+> Starting Round:  83
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "MI"
+> End of Round:  83
+> Starting Round:  84
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "MU"
+> End of Round:  84
+> Starting Round:  85
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "VI"
+> End of Round:  85
+> Starting Round:  86
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "HI"
+> End of Round:  86
+> Starting Round:  87
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D1"
+> End of Round:  87
+> Starting Round:  88
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "ZA"
+> End of Round:  88
+> Starting Round:  89
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "SJ"
+> End of Round:  89
+> Starting Round:  90
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BE"
+> End of Round:  90
+> Starting Round:  91
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "SZ"
+> End of Round:  91
+> Starting Round:  92
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BD"
+> End of Round:  92
+> Starting Round:  93
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "KL"
+> End of Round:  93
+> Starting Round:  94
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "GA"
+> End of Round:  94
+> Starting Round:  95
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "D2"
+> End of Round:  95
+> Starting Round:  96
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BC"
+> End of Round:  96
+> Starting Round:  97
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "CN"
+> End of Round:  97
+> Starting Round:  98
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "VR"
+> End of Round:  98
+> Starting Round:  99
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "BS"
+> End of Round:  99
+> Starting Round:  100
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.0
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.1
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.2
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.3
+Default Hunter Move "JM"
+--------------------------------------------------------------------------
+Player is currently disqualified. Making a move on their behalf.4
+Default Dracula Move: "IO"
+> End of Round:  100
+> Starting Round:  101
+--------------------------------------------------------------------------
+> End of game: 
+> +++
+  score: 187
+  revealedPastPlays: GJM.... SJM.... HJM.... MJM.... DZA.V.. GJM.... SJM.... HJM.... MJM.... DVIT... GJM.... SJM.... HJM.... MJM.... DPRT... GJM.... SJM.... HJM.... MJM.... DD1T... GJM.... SJM.... HJM.... MJM.... DNUT... GJM.... SJM.... HJM.... MJM.... DFRT... GJM.... SJM.... HJM.... MJM.... DLIT.V. GJM.... SJM.... HJM.... MJM.... DCOT.M. GJM.... SJM.... HJM.... MJM.... DBUT.M. GJM.... SJM.... HJM.... MJM.... DD2T.M. GJM.... SJM.... HJM.... MJM.... DSTT.M. GJM.... SJM.... HJM.... MJM.... DHIT.M. GJM.... SJM.... HJM.... MJM.... DGET.M. GJM.... SJM.... HJM.... MJM.... DPA.VM. GJM.... SJM.... HJM.... MJM.... DBUT.M. GJM.... SJM.... HJM.... MJM.... DAMT.M. GJM.... SJM.... HJM.... MJM.... DNS..M. GJM.... SJM.... HJM.... MJM.... DHAT.M. GJM.... SJM.... HJM.... MJM.... DCOT.M. GJM.... SJM.... HJM.... MJM.... DD5T.V. GJM.... SJM.... HJM.... MJM.... DHIT.M. GJM.... SJM.... HJM.... MJM.... DPAT.M. GJM.... SJM.... HJM.... MJM.... DSTT... GJM.... SJM.... HJM.... MJM.... DFRT.M. GJM.... SJM.... HJM.... MJM.... DLIT.M. GJM.... SJM.... HJM.... MJM.... DHAT.M. GJM.... SJM.... HJM.... MJM.... DBR.VM. GJM.... SJM.... HJM.... MJM.... DD1T.M. GJM.... SJM.... HJM.... MJM.... DPRT.M. GJM.... SJM.... HJM.... MJM.... DHIT.M. GJM.... SJM.... HJM.... MJM.... DNUT.M. GJM.... SJM.... HJM.... MJM.... DFRT.M. GJM.... SJM.... HJM.... MJM.... DSTT.V. GJM.... SJM.... HJM.... MJM.... DD2T.M. GJM.... SJM.... HJM.... MJM.... DLIT.M. GJM.... SJM.... HJM.... MJM.... DHIT.M. GJM.... SJM.... HJM.... MJM.... DBRT.M. GJM.... SJM.... HJM.... MJM.... DHAT.M. GJM.... SJM.... HJM.... MJM.... DNS..M. GJM.... SJM.... HJM.... MJM.... DEC..M. GJM.... SJM.... HJM.... MJM.... DAO..M. GJM.... SJM.... HJM.... MJM.... DBB..M. GJM.... SJM.... HJM.... MJM.... DD2..M. GJM.... SJM.... HJM.... MJM.... DIR..M. GJM.... SJM.... HJM.... MJM.... DDUT... GJM.... SJM.... HJM.... MJM.... DHIT... GJM.... SJM.... HJM.... MJM.... DGWT... GJM.... SJM.... HJM.... MJM.... DAO.... GJM.... SJM.... HJM.... MJM.... DD5.... GJM.... SJM.... HJM.... MJM.... DLVT... GJM.... SJM.... HJM.... MJM.... DSWT.M. GJM.... SJM.... HJM.... MJM.... DLOT.M. GJM.... SJM.... HJM.... MJM.... DEC..M. GJM.... SJM.... HJM.... MJM.... DAO.... GJM.... SJM.... HJM.... MJM.... DBB.... GJM.... SJM.... HJM.... MJM.... DD1..M. GJM.... SJM.... HJM.... MJM.... DNAT.M. GJM.... SJM.... HJM.... MJM.... DCFT.M. GJM.... SJM.... HJM.... MJM.... DHIT... GJM.... SJM.... HJM.... MJM.... DTOT... GJM.... SJM.... HJM.... MJM.... DSRT... GJM.... SJM.... HJM.... MJM.... DALT... GJM.... SJM.... HJM.... MJM.... DMAT.M. GJM.... SJM.... HJM.... MJM.... DD2T.M. GJM.... SJM.... HJM.... MJM.... DHIT.M. GJM.... SJM.... HJM.... MJM.... DGR.VM. GJM.... SJM.... HJM.... MJM.... DCAT.M. GJM.... SJM.... HJM.... MJM.... DLST.M. GJM.... SJM.... HJM.... MJM.... DMAT.M. GJM.... SJM.... HJM.... MJM.... DD4T.M. GJM.... SJM.... HJM.... MJM.... DHIT.M. GJM.... SJM.... HJM.... MJM.... DALT.V. GJM.... SJM.... HJM.... MJM.... DMS..M. GJM.... SJM.... HJM.... MJM.... DTS..M. GJM.... SJM.... HJM.... MJM.... DCGT.M. GJM.... SJM.... HJM.... MJM.... DD2..M. GJM.... SJM.... HJM.... MJM.... DIO..M. GJM.... SJM.... HJM.... MJM.... DAS..M. GJM.... SJM.... HJM.... MJM.... DVE.V.. GJM.... SJM.... HJM.... MJM.... DHIT... GJM.... SJM.... HJM.... MJM.... DFLT.M. GJM.... SJM.... HJM.... MJM.... DD1T... GJM.... SJM.... HJM.... MJM.... DGOT... GJM.... SJM.... HJM.... MJM.... DMIT... GJM.... SJM.... HJM.... MJM.... DMUT.V. GJM.... SJM.... HJM.... MJM.... DVIT.M. GJM.... SJM.... HJM.... MJM.... DHIT.M. GJM.... SJM.... HJM.... MJM.... DD1T.M. GJM.... SJM.... HJM.... MJM.... DZAT.M. GJM.... SJM.... HJM.... MJM.... DSJT.M. GJM.... SJM.... HJM.... MJM.... DBET.M. GJM.... SJM.... HJM.... MJM.... DSZ.VM. GJM.... SJM.... HJM.... MJM.... DBDT.M. GJM.... SJM.... HJM.... MJM.... DKLT.M. GJM.... SJM.... HJM.... MJM.... DGAT.M. GJM.... SJM.... HJM.... MJM.... DD2T.M. GJM.... SJM.... HJM.... MJM.... DBCT.M. GJM.... SJM.... HJM.... MJM.... DCNT.V. GJM.... SJM.... HJM.... MJM.... DVRT.M. GJM.... SJM.... HJM.... MJM.... DBS..M. GJM.... SJM.... HJM.... MJM.... DIO..M.
+  messages: ["===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... =====","===== Generating default move...player disqualified... ====="]
+> ---
+> Game Over
+187
+101
+Player 0 was disqualified? true
+Player 1 was disqualified? true
+Player 2 was disqualified? true
+Player 3 was disqualified? true
+Player 4 was disqualified? true

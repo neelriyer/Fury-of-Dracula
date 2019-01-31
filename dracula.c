@@ -14,7 +14,7 @@ location_t get_next_move (DraculaView dv, enum player player);
 
 void decide_dracula_move (DraculaView dv)
 {
-	char *next = location_get_abbrev (get_next_move(currentView, 3));		
+	char *next = location_get_abbrev (get_next_move(dv, 3));		
 	
 	register_best_play (next, "Mwahahahaha");
 }
@@ -24,7 +24,7 @@ location_t get_next_move (DraculaView currentView, enum player player) {
 	location_t *moves = dv_get_dests(currentView, n_locations, true, true);
 	
 	// if no legal place to go
-	if (n_location = 0){
+	if (n_locations = 0){
 		// hide
 		if (!dv_has_hide(currentView))
 			return dv_get_location(currentView, 3);\
@@ -37,6 +37,6 @@ location_t get_next_move (DraculaView currentView, enum player player) {
 	}
 	
 	// take the best move
-	return dv_best_move_array (currentView, moves, n_location);
+	return dv_best_move_array (currentView, moves, n_locations);
 }
 

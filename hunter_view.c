@@ -12,7 +12,6 @@
 #include "game_view.h"
 #include "hunter_view.h"
 #include "places.h"
-#include "Queue.h"
 
 
 size_t *hv_get_distance (
@@ -113,7 +112,8 @@ location_t *hv_get_dests_player(
     size_t i, map_nvalidLocations, index;
     location_t forbidden = NOWHERE;
     location_t *validLocations;
-
+	
+	//printf("------------%s\n", location_get_name(gv_get_location(currentView->game, player)));
     location_t *locations =
 		gv_get_connections(
 			currentView->game,

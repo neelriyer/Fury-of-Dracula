@@ -451,7 +451,9 @@ location_t *gv_get_connections(
 	GameView currentView __unused, size_t *numLocations,
 	location_t from, enum player player, round_t round,
 	bool road, bool rail, bool sea)
-{
+{	
+	//printf("------------%s\n", location_get_name (from));
+	//printf("------------%d\n", valid_location_p(from));	
     assert(valid_location_p(from));
     assert(validPlayer(player));
 
