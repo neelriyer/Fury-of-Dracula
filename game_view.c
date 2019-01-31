@@ -16,6 +16,7 @@
 #include "game_view.h"
 #include "places.h"
 #include "map.h"
+#include "Queue.h"
 
 #ifndef __unused
 #define __unused __attribute__((unused))
@@ -34,6 +35,13 @@ static int numTurns (char *past_plays);
 //static void testMatches ();
 static void addLocation (GameView view, enum player player, location_t newLoc);
 static int seaLocation (location_t loc);
+size_t *gv_get_distance (
+	GameView currentView,location_t from, location_t to,
+	enum player player, bool road, bool rail, bool sea);
+location_t *gv_get_neighbors (
+	GameView currentView, size_t *numLocations, location_t curr,
+	enum player player, bool road, bool rail, bool sea);
+
 
 struct city {
     // Values are either NO_ITEM = -1 for not existant
@@ -88,7 +96,7 @@ static int originalMove (int index, char * past_plays)
     while (HIDE <= curr && curr <= DOUBLE_BACK_5) {
         //If he hid, he was in the previous city
         if (curr == HIDE) {
-            index -= 40;
+            index -= 40; // 5 turns * TURN_LENGTH = 40 chars
         } else {
             assert(curr <= DOUBLE_BACK_5 && curr >= DOUBLE_BACK_1);
             //If he doubled back, go back that many steps
@@ -479,4 +487,93 @@ void getMinions (
 
     *numTraps = traps;
     *map_nvamps = vamps;
+}
+
+// Only use for finding path for hunter
+// Return an array of location the certain hunter can reach in a round
+// Except the current hunter location
+location_t *gv_get_neighbors (
+	GameView currentView, size_t *numLocations, location_t curr,
+	enum player player, bool road, bool rail, bool sea)
+{
+	assert(player >= 0 && player <= 3);
+	
+	size_t i, map_nvalidLocations, index;
+    	location_t forbidden = NOWHERE;
+    	location_t *validLocations;
+
+    	location_t *locations =
+		gv_get_connections(
+			currentView,
+			numLocations,
+			curr,
+			player,
+			gv_get_round(currentView),
+			road, rail, sea);
+
+
+    	map_nvalidLocations = 0;
+    	for(i = 0; i < (*numLocations); i++){
+        	if (locations[i] == forbidden || locations[i] == curr) continue;
+        	map_nvalidLocations++;
+    	}
+
+    	index = 0;
+   	validLocations = malloc(sizeof(location_t) * map_nvalidLocations);
+    	for(i = 0; i < map_nvalidLocations; i++){
+        	if (locations[i] == forbidden || locations[i] == curr) continue;
+        	validLocations[index] = locations[i];
+        	index++;
+    	}
+
+    	free(locations);
+    	*numLocations = map_nvalidLocations;
+    	return validLocations;
+
+}
+
+// Only use for finding path for hunter
+// Use BFS to find the distance from a location to another
+size_t *gv_get_distance (
+	GameView currentView,location_t from, location_t to,
+	enum player player, bool road, bool rail, bool sea)
+{
+	size_t dist[NUM_MAP_LOCATIONS];
+
+	for (int i = 0; i < NUM_MAP_LOCATIONS; i++)
+		dist[i] = 0xffffffff;//-1;
+ 	dist[from] = 1;
+
+	size_t v, w;
+	size_t distance = 0, n_neighbors = 0;
+
+	Queue frontier = newQueue();
+	QueueJoin(frontier, from);
+
+	while (!QueueIsEmpty(frontier)) {
+		
+		v = QueueLeave (frontier);
+
+		if (dist[v] < 0xffffffff) continue;
+
+		if (v == to) {
+			distance = dist[v] + 1; 
+			break;
+		}
+
+		location_t *neighbors = gv_get_neighbors (
+			currentView, n_neighbors, v,
+			player, road, rail, sea);
+
+		for (w = 0; w < n_neighbors; w++) {
+			location_t loc = neighbors[w];
+			if (dist[loc] == 0xffffffff) {
+				dist[w] = dist[v] + 1;
+				QueueJoin(frontier, w);	
+			}		
+		}
+		
+	}
+
+	return distance;	
 }

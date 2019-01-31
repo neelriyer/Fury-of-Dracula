@@ -16,6 +16,14 @@
 #include "game_view.h"
 #include "dracula_view.h"
 
+size_t dv_get_distance (DraculaView currentView,location_t from);
+size_t dv_get_min (size_t a, size_t b);
+bool dv_is_bigger (size_t a, size_t b);
+bool dv_has_hide (DraculaView currentView);
+bool dv_has_double_back (DraculaView currentView);
+location_t dv_best_move_array (DraculaView currentView, location_t *arr, size_t size);
+location_t dv_double_back (DraculaView currentView);
+
 // Representation of Dracula's view of the game
 
 struct dracula_view {
@@ -173,6 +181,7 @@ static int onTrail(location_t *trail, location_t loc)
 }
 
 // What are my (Dracula's) possible next moves (locations)
+// no hospital, no trial
 location_t *dv_get_dests(
 	DraculaView currentView, size_t *numLocations,
 	bool road, bool sea)
@@ -229,3 +238,102 @@ location_t *dv_get_dests_player(
 			road, rail, sea);
 	return locations;
 }
+
+
+// return the distance from a location to the closest hunter's locaton
+size_t dv_get_distance (DraculaView currentView,location_t from) {
+	
+	enum player player = 0;
+	location_t to = dv_get_location(currentView, player); 	
+	size_t min_dist = gv_get_distance(currentView, from, to, player, true, true, true);
+	
+	for (int i = 1; i < 3; i++) {
+		player = i;
+		to = dv_get_location(currentView, i); 
+		min_dist = dv_get_min (min_dist, 
+			gv_get_distance(currentView, from, to, i, true, true, true));
+	}
+}
+
+// return the smaller number
+size_t dv_get_min (size_t a, size_t b){
+	if (a <= b)
+		return a;
+	return b;
+}
+
+bool dv_is_bigger (size_t a, size_t b){
+	if (a >= b)
+		return true;
+	return false;
+}
+
+/*
+// compare the distance of two location
+bool dv_longer_than (HunterView currentView, location_t a, location b) {
+	if (dv_get_distance (currentView ,a) > dv_get_distance (currentView ,b))
+		return a;
+	return b;
+} 
+*/
+
+// check hide in trail
+bool dv_has_hide (DraculaView currentView) {
+	
+	location_t trail[TRAIL_SIZE];
+	dv_get_trail(currentView, 3, trail);
+
+	//  check the hide in trial
+	for (int i = 0; i < TRAIL_SIZE - 1; i++) { 
+		if (trail[i] == trail[i + 1])
+			return false;		
+	}
+	return true;
+}
+
+
+// check double back in trial
+bool dv_has_double_back (DraculaView currentView){
+	
+	location_t trail[TRAIL_SIZE];
+	dv_get_trail(currentView, 3, trail);
+
+	// check double back in trial
+	for (int i = 0; i < TRAIL_SIZE - 1; i++) {
+		for (int j = i + 2; j < TRAIL_SIZE; j++){
+			if (trail[i] == trail[j])
+				return false;				
+		}	
+	}	
+
+
+	return true;		
+}
+
+// get the location with shortest distance in the array
+location_t dv_best_move_array (DraculaView currentView, location_t *arr, size_t size) {
+	
+	location_t res = arr[0];
+	size_t max_dist = dv_get_distance (currentView, arr[0]);
+
+	for(int i = 1; i < size; i++) {
+		size_t tmp = arr[i];
+		if (dv_is_bigger(tmp, max_dist)) {
+			res = arr[i];
+			max_dist = tmp; 
+		}
+	}
+
+	return res;
+}
+
+location_t dv_double_back (DraculaView currentView) {
+	location_t trail[TRAIL_SIZE];
+	dv_get_trail(currentView, 3, trail);
+
+	return dv_best_move_array (currentView, trail, TRAIL_SIZE);
+}
+
+
+
+

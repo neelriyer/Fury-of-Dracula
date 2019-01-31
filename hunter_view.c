@@ -12,7 +12,19 @@
 #include "game_view.h"
 #include "hunter_view.h"
 #include "places.h"
+#include "Queue.h"
 
+
+size_t *hv_get_distance (
+	HunterView currentView,location_t from, location_t to,
+	enum player player, bool road, bool rail, bool sea);
+location_t hv_move_dest (
+	HunterView currentView, location_t dest,
+	enum player player, bool road, bool rail, bool sea);
+location_t hv_move_random (HunterView currentView, enum player player);
+bool hv_has_other_hunters (HunterView currentView,
+	enum player player, location_t loc);
+location_t hv_find_dracula (HunterView currentView, enum player player);
 
 // Representation of the Hunter's view of the game
 
@@ -131,3 +143,95 @@ location_t *hv_get_dests_player(
     *numLocations = map_nvalidLocations;
     return validLocations;
 }
+
+// find the distance from a location to another
+size_t *hv_get_distance (
+	HunterView currentView,location_t from, location_t to,
+	enum player player, bool road, bool rail, bool sea)
+{
+	return gv_get_distance (currentView, from, to, player, road, rail, sea);
+}
+
+// take a move toward the destination
+location_t hv_move_dest (
+	HunterView currentView, location_t dest,
+	enum player player, bool road, bool rail, bool sea)
+{
+		
+	size_t n_neighbors = 0;
+	size_t min_dist;
+	location_t next;
+	location_t curr = hv_get_location(currentView, player);
+	location_t *moves = hv_get_dests_player(
+		currentView, n_neighbors, player, road, rail, sea);
+
+	min_dist = hv_get_distance (
+			currentView, moves[0], dest, 
+			player, road, rail, sea);
+	next = moves[0];
+
+	for (size_t i = 1; i < n_neighbors; i++) {
+		size_t tmp_dist = hv_get_distance (
+			currentView, moves[i], dest, 
+			player, road, rail, sea);
+		
+		if (tmp_dist < min_dist) {
+			min_dist = tmp_dist;
+			next = moves[i];								
+		}
+	}
+	
+	return next;
+}
+
+// take a random move to one of the reachable locations 
+location_t hv_move_random (HunterView currentView, enum player player) {
+
+	size_t n_locations = 0;
+	location_t curr = hv_get_location(currentView, player);
+	// get possible moves
+	// current move is intra
+	location_t *moves = hv_get_dests_player(
+		currentView, n_locations, player, true, true, true);
+
+	// take a random move
+	for (size_t i = 0; i < n_locations; i++) {
+		if (!hv_has_other_hunters(currentView, player, moves[i]))
+			return moves[i];	
+	}
+	
+	return curr;	
+}	
+
+// check a location if it is occuppied by other hunters
+// intend to spread the hunters out
+bool hv_has_other_hunters (HunterView currentView,
+	enum player player, location_t loc) 
+{
+
+	for (size_t i = 0; i < 3; i++) {
+		if (i == player) continue;
+		
+		if (loc == hv_get_location(currentView, player))
+			return true;
+	}
+	
+	return false;
+}
+
+// find lastest location in dracula's trail
+location_t hv_find_dracula (HunterView currentView, enum player player) {
+		
+	location_t trail[TRAIL_SIZE];
+	hv_get_trail(currentView, player, trail);
+	for (size_t i = 0; i < TRAIL_SIZE; i++) {
+		if (valid_location_p(trail[i]))
+			return trail[i];
+	}
+	
+	return NOWHERE;
+}
+
+
+
+
