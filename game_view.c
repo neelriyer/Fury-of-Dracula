@@ -577,5 +577,6 @@ size_t *gv_get_distance (
 		
 	}
 
+	dropQueue(frontier);
 	return distance;	
 }

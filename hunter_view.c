@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include <assert.h>
+#include <stdio.h>
 
 #include "game.h"
 #include "game_view.h"
@@ -24,6 +25,7 @@ location_t hv_move_random (HunterView currentView, enum player player);
 bool hv_has_other_hunters (HunterView currentView,
 	enum player player, location_t loc);
 location_t hv_find_dracula (HunterView currentView, enum player player);
+location_t hv_get_next_move (HunterView hv, enum player player) ;
 
 // Representation of the Hunter's view of the game
 
@@ -141,6 +143,7 @@ location_t *hv_get_dests_player(
 
     free(locations);
     *numLocations = map_nvalidLocations;
+	//printf("numlocations is %d, valid locations is %d", *numLocations, map_nvalidLocations);
     return validLocations;
 }
 
@@ -152,54 +155,85 @@ size_t *hv_get_distance (
 	return gv_get_distance (currentView, from, to, player, road, rail, sea);
 }
 
+/*
+// get the location with shortest distance in the array
+location_t dv_best_move_array (HunterView currentView, location_t *arr, size_t size) {
+	
+	location_t res = arr[0];
+	size_t max_dist = dv_get_distance (currentView, arr[0]);
+
+	for(int i = 1; i < size; i++) {
+		size_t tmp = arr[i];
+		if (dv_is_bigger(tmp, max_dist)) {
+			res = arr[i];
+			max_dist = tmp; 
+		}
+	}
+
+	return res;
+}
+*/
+
+
 // take a move toward the destination
 location_t hv_move_dest (
 	HunterView currentView, location_t dest,
 	enum player player, bool road, bool rail, bool sea)
 {
 		
-	size_t n_neighbors = 0;
+	size_t *n_locations = malloc (sizeof(size_t) * 1);
+	
 	size_t min_dist;
 	location_t next;
-	location_t curr = hv_get_location(currentView, player);
-	location_t *moves = hv_get_dests_player(
-		currentView, n_neighbors, player, road, rail, sea);
 
+	//location_t curr = hv_get_location(currentView, player);
+	location_t *moves = hv_get_dests_player(
+		currentView, n_locations, player, road, rail, sea);
+
+	 
 	min_dist = hv_get_distance (
 			currentView, moves[0], dest, 
 			player, road, rail, sea);
 	next = moves[0];
 
-	for (size_t i = 1; i < n_neighbors; i++) {
+	printf("n_locations is %d\n", *n_locations);
+	for (size_t i = 1; (i < (*n_locations)) ; i++) {
 		size_t tmp_dist = hv_get_distance (
-			currentView, moves[i], dest, 
+			currentView, 
+			moves[i], 
+			dest, 
 			player, road, rail, sea);
-		
+		//printf("is is %d\n", i);
 		if (tmp_dist < min_dist) {
 			min_dist = tmp_dist;
 			next = moves[i];								
 		}
 	}
 	
+	free(n_locations);
+	free(moves);
 	return next;
 }
 
 // take a random move to one of the reachable locations 
 location_t hv_move_random (HunterView currentView, enum player player) {
 
-	size_t n_locations = 0;
+	size_t *n_locations = malloc(1*sizeof(size_t));
 	location_t curr = hv_get_location(currentView, player);
+
 	// get possible moves
 	// current move is intra
 	location_t *moves = hv_get_dests_player(
 		currentView, n_locations, player, true, true, true);
 
 	// take a random move
-	for (size_t i = 0; i < n_locations; i++) {
-		if (!hv_has_other_hunters(currentView, player, moves[i]))
+	for (size_t i = 0; i < *n_locations; i++) {
+		if (!hv_has_other_hunters(currentView, player, moves[i]) && moves[i] != curr)
 			return moves[i];	
 	}
 	
+	free(moves);
+	free(n_locations);
 	return curr;	
 }	
 
@@ -225,11 +259,36 @@ location_t hv_find_dracula (HunterView currentView, enum player player) {
 	location_t trail[TRAIL_SIZE];
 	hv_get_trail(currentView, player, trail);
 	for (size_t i = 0; i < TRAIL_SIZE; i++) {
-		if (valid_location_p(trail[i]))
-			return trail[i];
+		printf("trail %d: %s\n", i, location_get_name(trail[i]));
+	
+		if (valid_location_p(trail[i])) {			
+			return trail[i];	
+		}		
 	}
 	
 	return NOWHERE;
+}
+
+
+// return the next move
+location_t hv_get_next_move (HunterView hv, enum player player) 
+{
+	// die
+	if (hv_get_health(hv, player) <= 0) {
+		puts("revive in JM");		
+		return ST_JOSEPH_AND_ST_MARYS;
+	}
+	// take a move
+	location_t dra = hv_find_dracula (hv, 4);
+	printf("find dracula in %s\n", location_get_name(dra));
+	if (!valid_location_p(dra)){
+		puts("random move");
+		return hv_move_random (hv, player);
+	} else { 
+		puts("dest move");
+		return hv_move_dest (hv, dra, player, true, true, true);
+	}
+		
 }
 
 

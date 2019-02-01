@@ -10,33 +10,27 @@
 #include "dracula_view.h"
 #include "game.h"
 
-location_t get_next_move (DraculaView dv, enum player player);
 
 void decide_dracula_move (DraculaView dv)
 {
-	char *next = location_get_abbrev (get_next_move(dv, 3));		
-	
-	register_best_play (next, "Mwahahahaha");
-}
-
-location_t get_next_move (DraculaView currentView, enum player player) {
-	size_t n_locations = 0;
-	location_t *moves = dv_get_dests(currentView, n_locations, true, true);
-	
-	// if no legal place to go
-	if (n_locations = 0){
-		// hide
-		if (!dv_has_hide(currentView))
-			return dv_get_location(currentView, 3);\
-		// double back
-		else if (!dv_has_double_back(currentView))
-			return dv_double_back (currentView);
-		
-		else
-			return NOWHERE;
+	location_t curr = dv_get_location(dv, 4);
+	//printf("%d\n", curr);
+/*
+	if (curr != NOWHERE) {
+		register_best_play (location_get_abbrev(curr), "Have we nothing Toulouse?");	
+	} 	
+*/		
+	if (dv_get_round(dv) < 1) {
+		//puts("first round");
+		register_best_play ("CD", "Mwahahahaha");
 	}
 	
-	// take the best move
-	return dv_best_move_array (currentView, moves, n_locations);
+	else {
+		char *next = location_get_abbrev (dv_get_next_move(dv, 4));		
+	
+		register_best_play (next, "Mwahahahaha");	
+	}		
 }
+
+
 

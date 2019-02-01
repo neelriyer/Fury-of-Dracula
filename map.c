@@ -207,7 +207,9 @@ location_t *reachable_locations (
 				locations[index++] = loc;
 
 	//setting the number of locations actually returned
+	//printf("num locations is %d, address of num_locations is %d, index is %d\n", *num_locations, num_locations, index);
 	*num_locations = index;
+	//fprintf(stderr, "num locations is %d, address of num_locations is %d, index is %d\n", *num_locations, num_locations, index);
 
 	return locations;
 }

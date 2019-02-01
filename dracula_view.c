@@ -23,6 +23,7 @@ bool dv_has_hide (DraculaView currentView);
 bool dv_has_double_back (DraculaView currentView);
 location_t dv_best_move_array (DraculaView currentView, location_t *arr, size_t size);
 location_t dv_double_back (DraculaView currentView);
+location_t dv_get_next_move (DraculaView currentView, enum player player);
 
 // Representation of Dracula's view of the game
 
@@ -216,6 +217,7 @@ location_t *dv_get_dests(
 	}
 
 	free(locations);
+	free(isValid);
 	*numLocations = nValid;
 	return validLocs;
 }
@@ -281,7 +283,7 @@ bool dv_longer_than (HunterView currentView, location_t a, location b) {
 bool dv_has_hide (DraculaView currentView) {
 	
 	location_t trail[TRAIL_SIZE];
-	dv_get_trail(currentView, 3, trail);
+	dv_get_trail(currentView, 4, trail);
 
 	//  check the hide in trial
 	for (int i = 0; i < TRAIL_SIZE - 1; i++) { 
@@ -296,7 +298,7 @@ bool dv_has_hide (DraculaView currentView) {
 bool dv_has_double_back (DraculaView currentView){
 	
 	location_t trail[TRAIL_SIZE];
-	dv_get_trail(currentView, 3, trail);
+	dv_get_trail(currentView, 4, trail);
 
 	// check double back in trial
 	for (int i = 0; i < TRAIL_SIZE - 1; i++) {
@@ -329,11 +331,46 @@ location_t dv_best_move_array (DraculaView currentView, location_t *arr, size_t 
 
 location_t dv_double_back (DraculaView currentView) {
 	location_t trail[TRAIL_SIZE];
-	dv_get_trail(currentView, 3, trail);
+	dv_get_trail(currentView, 4, trail);
 
 	return dv_best_move_array (currentView, trail, TRAIL_SIZE);
 }
 
+location_t dv_get_next_move (DraculaView currentView, enum player player) {
 
+	size_t *n_locations = malloc (sizeof(size_t) * 1);
+	location_t *moves = dv_get_dests(currentView, n_locations, true, true);
+	
+	// if no legal place to go
+	if (*n_locations == 0){
+		// hide
+		if (!dv_has_hide(currentView)) {
+			free(moves);	
+			free(n_locations);
+			return dv_get_location(currentView, 4);
+		}
+		// double back
+		else if (!dv_has_double_back(currentView)) {
+			free(moves);	
+			free(n_locations);
+			return dv_double_back (currentView);
+		}
+	
+		else {
+			free(moves);	
+			free(n_locations);
+			return NOWHERE;
+		}
+	}
+	
+	// take the best move
+
+	location_t next = dv_best_move_array (currentView, moves, *n_locations);
+	
+	free(moves);	
+	free(n_locations);
+	return next;
+
+}
 
 
