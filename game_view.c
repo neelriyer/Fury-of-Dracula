@@ -498,7 +498,6 @@ location_t *gv_get_neighbors (
 	GameView currentView, size_t *numLocations, location_t curr,
 	enum player player, bool road, bool rail, bool sea)
 {
-	assert(player >= 0 && player <= 3);
 	
 	size_t i, map_nvalidLocations, index;
     	location_t forbidden = NOWHERE;
@@ -540,26 +539,27 @@ size_t *gv_get_distance (
 	GameView currentView,location_t from, location_t to,
 	enum player player, bool road, bool rail, bool sea)
 {
+	//puts("gv_get_distance");
 	size_t dist[NUM_MAP_LOCATIONS];
 
 	for (int i = 0; i < NUM_MAP_LOCATIONS; i++)
-		dist[i] = 0xffffffff;//-1;
- 	dist[from] = 1;
+		dist[i] = 0xffffffff;
+ 	dist[from] = 0;
 
-	size_t v, w;
-	size_t distance = 0, n_neighbors = 0;
+	size_t v;
+	size_t *n_neighbors = malloc (sizeof(size_t) * 1);
 
 	Queue frontier = newQueue();
 	QueueJoin(frontier, from);
 
 	while (!QueueIsEmpty(frontier)) {
-		
 		v = QueueLeave (frontier);
 
-		if (dist[v] < 0xffffffff) continue;
+		//showQueue(frontier);
+		//if (dist[v] < 0xffffffff) continue;
 
 		if (v == to) {
-			distance = dist[v] + 1; 
+			dist[to] = dist[v] + 1; 
 			break;
 		}
 
@@ -567,16 +567,24 @@ size_t *gv_get_distance (
 			currentView, n_neighbors, v,
 			player, road, rail, sea);
 
-		for (w = 0; w < n_neighbors; w++) {
-			location_t loc = neighbors[w];
+		//printf("avalible n_neighbors: %d\n", *n_neighbors);
+		for (int i = 0; i < *n_neighbors - 1; i++) {
+
+			location_t loc = neighbors[i];
 			if (dist[loc] == 0xffffffff) {
-				dist[w] = dist[v] + 1;
-				QueueJoin(frontier, w);	
-			}		
+				//printf("%d, %zu\n", loc, dist[loc]);
+				dist[loc] = dist[v] + 1;
+				QueueJoin(frontier, loc);	
+			}	
+	
 		}
 		
+		free(neighbors);
 	}
-
 	dropQueue(frontier);
-	return distance;	
+
+	//printf("current distance is: %d\n", dist[to]);
+
+	free(n_neighbors);
+	return dist[to];	
 }

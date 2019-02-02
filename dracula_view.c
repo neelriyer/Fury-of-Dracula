@@ -247,13 +247,13 @@ size_t dv_get_distance (DraculaView currentView,location_t from) {
 	
 	enum player player = 0;
 	location_t to = dv_get_location(currentView, player); 	
-	size_t min_dist = gv_get_distance(currentView, from, to, player, true, true, true);
+	size_t min_dist = gv_get_distance(currentView->game, from, to, player, true, true, true);
 	
 	for (int i = 1; i < 3; i++) {
 		player = i;
 		to = dv_get_location(currentView, i); 
 		min_dist = dv_get_min (min_dist, 
-			gv_get_distance(currentView, from, to, i, true, true, true));
+			gv_get_distance(currentView->game, from, to, i, true, true, true));
 	}
 }
 
@@ -345,21 +345,24 @@ location_t dv_get_next_move (DraculaView currentView, enum player player) {
 	if (*n_locations == 0){
 		// hide
 		if (!dv_has_hide(currentView)) {
+			puts("HIDE");
 			free(moves);	
 			free(n_locations);
 			return dv_get_location(currentView, 4);
 		}
 		// double back
 		else if (!dv_has_double_back(currentView)) {
+			puts("DOUBLE BACK");
 			free(moves);	
 			free(n_locations);
 			return dv_double_back (currentView);
 		}
-	
+		// teleport
 		else {
+			puts("TELEPORT");
 			free(moves);	
 			free(n_locations);
-			return NOWHERE;
+			return CASTLE_DRACULA;
 		}
 	}
 	

@@ -15,11 +15,7 @@ void decide_dracula_move (DraculaView dv)
 {
 	location_t curr = dv_get_location(dv, 4);
 	//printf("%d\n", curr);
-/*
-	if (curr != NOWHERE) {
-		register_best_play (location_get_abbrev(curr), "Have we nothing Toulouse?");	
-	} 	
-*/		
+	
 	if (dv_get_round(dv) < 1) {
 		//puts("first round");
 		register_best_play ("CD", "Mwahahahaha");
@@ -29,7 +25,9 @@ void decide_dracula_move (DraculaView dv)
 		char *next = location_get_abbrev (dv_get_next_move(dv, 4));		
 	
 		register_best_play (next, "Mwahahahaha");	
-	}		
+	}
+
+	//register_best_play ("LO", "Mwahahahaha");	
 }
 
 

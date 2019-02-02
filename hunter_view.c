@@ -152,7 +152,7 @@ size_t *hv_get_distance (
 	HunterView currentView,location_t from, location_t to,
 	enum player player, bool road, bool rail, bool sea)
 {
-	return gv_get_distance (currentView, from, to, player, road, rail, sea);
+	return gv_get_distance (currentView->game, from, to, player, road, rail, sea);
 }
 
 /*
@@ -180,7 +180,7 @@ location_t hv_move_dest (
 	HunterView currentView, location_t dest,
 	enum player player, bool road, bool rail, bool sea)
 {
-		
+	//puts("hv_move_dest");	
 	size_t *n_locations = malloc (sizeof(size_t) * 1);
 	
 	size_t min_dist;
@@ -190,26 +190,29 @@ location_t hv_move_dest (
 	location_t *moves = hv_get_dests_player(
 		currentView, n_locations, player, road, rail, sea);
 
-	 
+	
 	min_dist = hv_get_distance (
 			currentView, moves[0], dest, 
 			player, road, rail, sea);
 	next = moves[0];
 
-	printf("n_locations is %d\n", *n_locations);
-	for (size_t i = 1; (i < (*n_locations)) ; i++) {
+	//printf("n_locations is %d\n", *n_locations);
+	for (size_t i = 1; i < *n_locations ; i++) {
 		size_t tmp_dist = hv_get_distance (
 			currentView, 
 			moves[i], 
 			dest, 
 			player, road, rail, sea);
 		//printf("is is %d\n", i);
-		if (tmp_dist < min_dist) {
+		if (tmp_dist < min_dist 
+			&& !hv_has_other_hunters (currentView, player, moves[i])) 
+		{
 			min_dist = tmp_dist;
 			next = moves[i];								
 		}
 	}
-	
+	//printf("min_dist = %d\n", min_dist);
+	puts("dest22");
 	free(n_locations);
 	free(moves);
 	return next;
@@ -217,7 +220,7 @@ location_t hv_move_dest (
 
 // take a random move to one of the reachable locations 
 location_t hv_move_random (HunterView currentView, enum player player) {
-
+	puts("random move");
 	size_t *n_locations = malloc(1*sizeof(size_t));
 	location_t curr = hv_get_location(currentView, player);
 
@@ -226,12 +229,29 @@ location_t hv_move_random (HunterView currentView, enum player player) {
 	location_t *moves = hv_get_dests_player(
 		currentView, n_locations, player, true, true, true);
 
-	// take a random move
-	for (size_t i = 0; i < *n_locations; i++) {
-		if (!hv_has_other_hunters(currentView, player, moves[i]) && moves[i] != curr)
-			return moves[i];	
+	printf("random n_locations: %d\n", *n_locations);
+	// take a random move to a locaition with no hunter.
+	while (true){
+		int i = rand() % (*n_locations);
+		if (!hv_has_other_hunters(currentView, player, moves[i]) && moves[i] != curr) {
+			location_t res = moves[i];
+			free(moves);
+			free(n_locations);
+			return res;	
+		}
 	}
 	
+/*
+	for (size_t i = 0; i < *n_locations; i++) {
+		printf("locations: %d\n", moves[i]);
+		if (!hv_has_other_hunters(currentView, player, moves[i]) && moves[i] != curr) {
+			location_t res = moves[i];
+			free(moves);
+			free(n_locations);
+			return res;	
+		}
+	}
+*/	
 	free(moves);
 	free(n_locations);
 	return curr;	
@@ -243,7 +263,7 @@ bool hv_has_other_hunters (HunterView currentView,
 	enum player player, location_t loc) 
 {
 
-	for (size_t i = 0; i < 3; i++) {
+	for (size_t i = 0; i < 4; i++) {
 		if (i == player) continue;
 		
 		if (loc == hv_get_location(currentView, player))
@@ -281,14 +301,16 @@ location_t hv_get_next_move (HunterView hv, enum player player)
 	// take a move
 	location_t dra = hv_find_dracula (hv, 4);
 	printf("find dracula in %s\n", location_get_name(dra));
+
 	if (!valid_location_p(dra)){
-		puts("random move");
+		
 		return hv_move_random (hv, player);
 	} else { 
-		puts("dest move");
+		
 		return hv_move_dest (hv, dra, player, true, true, true);
 	}
 		
+	//return hv_move_random (hv, player);
 }
 
 
