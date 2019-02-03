@@ -18,7 +18,7 @@ void decide_dracula_move (DraculaView dv)
 	
 	if (dv_get_round(dv) < 1) {
 		//puts("first round");
-		register_best_play ("CD", "Mwahahahaha");
+		register_best_play ("LO", "Mwahahahaha");
 	}
 	
 	else {

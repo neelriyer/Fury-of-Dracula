@@ -204,8 +204,7 @@ location_t hv_move_dest (
 			dest, 
 			player, road, rail, sea);
 		//printf("is is %d\n", i);
-		if (tmp_dist < min_dist 
-			&& !hv_has_other_hunters (currentView, player, moves[i])) 
+		if (tmp_dist <= min_dist) //&& !hv_has_other_hunters (currentView, player, moves[i])) 
 		{
 			min_dist = tmp_dist;
 			next = moves[i];								
@@ -229,7 +228,7 @@ location_t hv_move_random (HunterView currentView, enum player player) {
 	location_t *moves = hv_get_dests_player(
 		currentView, n_locations, player, true, true, true);
 
-	printf("random n_locations: %d\n", *n_locations);
+	//printf("random n_locations: %d\n", *n_locations);
 	// take a random move to a locaition with no hunter.
 	while (true){
 		int i = rand() % (*n_locations);
@@ -279,7 +278,7 @@ location_t hv_find_dracula (HunterView currentView, enum player player) {
 	location_t trail[TRAIL_SIZE];
 	hv_get_trail(currentView, player, trail);
 	for (size_t i = 0; i < TRAIL_SIZE; i++) {
-		printf("trail %d: %s\n", i, location_get_name(trail[i]));
+		//printf("trail %d: %s\n", i, location_get_name(trail[i]));
 	
 		if (valid_location_p(trail[i])) {			
 			return trail[i];	

@@ -23,7 +23,7 @@ void decide_hunter_move (HunterView hv)
 */
 	if (hv_get_round(hv) < 1) {
 		puts("born in JM");
-		register_best_play ("LO", "Have we nothing Toulouse?");	
+		register_best_play ("JM", "Have we nothing Toulouse?");	
 	}
 	
 	else { 

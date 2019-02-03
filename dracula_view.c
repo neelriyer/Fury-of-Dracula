@@ -281,9 +281,8 @@ bool dv_longer_than (HunterView currentView, location_t a, location b) {
 
 // check hide in trail
 bool dv_has_hide (DraculaView currentView) {
-	
-	location_t trail[TRAIL_SIZE];
-	dv_get_trail(currentView, 4, trail);
+
+	location_t *trail = currentView->myTrail;
 
 	//  check the hide in trial
 	for (int i = 0; i < TRAIL_SIZE - 1; i++) { 
@@ -291,14 +290,14 @@ bool dv_has_hide (DraculaView currentView) {
 			return false;		
 	}
 	return true;
+
 }
 
 
 // check double back in trial
 bool dv_has_double_back (DraculaView currentView){
 	
-	location_t trail[TRAIL_SIZE];
-	dv_get_trail(currentView, 4, trail);
+	location_t *trail = currentView->myTrail;
 
 	// check double back in trial
 	for (int i = 0; i < TRAIL_SIZE - 1; i++) {
@@ -312,14 +311,21 @@ bool dv_has_double_back (DraculaView currentView){
 	return true;		
 }
 
-// get the location with shortest distance in the array
+// get the location with shortest distance in the array , expect the current location
 location_t dv_best_move_array (DraculaView currentView, location_t *arr, size_t size) {
 	
-	location_t res = arr[0];
-	size_t max_dist = dv_get_distance (currentView, arr[0]);
+	location_t curr = dv_get_location(currentView, 4);
+	location_t res = curr;
+	size_t max_dist = -1;
 
-	for(int i = 1; i < size; i++) {
-		size_t tmp = arr[i];
+	for(int i = 0; i < size; i++) {
+		//printf("-%s,", location_get_abbrev(arr[i]));
+		if (arr[i] == curr) continue;
+		if (max_dist = -1) {
+			res = arr[i];
+			max_dist = dv_get_distance (currentView, arr[i]); 
+		}
+		size_t tmp = dv_get_distance (currentView, arr[i]);
 		if (dv_is_bigger(tmp, max_dist)) {
 			res = arr[i];
 			max_dist = tmp; 
@@ -330,46 +336,64 @@ location_t dv_best_move_array (DraculaView currentView, location_t *arr, size_t 
 }
 
 location_t dv_double_back (DraculaView currentView) {
-	location_t trail[TRAIL_SIZE];
-	dv_get_trail(currentView, 4, trail);
+	location_t *trail = currentView->myTrail;
+	//return dv_best_move_array (currentView, trail, TRAIL_SIZE);
 
-	return dv_best_move_array (currentView, trail, TRAIL_SIZE);
+	location_t back = dv_best_move_array (currentView, trail, TRAIL_SIZE);
+
+	for (int i = 1; i < TRAIL_SIZE; i++){
+		if (back == trail[i])
+			return (102 + i); // DOUBLE_BACK_1 = HIDE + 1
+	}
+	
+	return HIDE;
+
 }
 
 location_t dv_get_next_move (DraculaView currentView, enum player player) {
 
 	size_t *n_locations = malloc (sizeof(size_t) * 1);
 	location_t *moves = dv_get_dests(currentView, n_locations, true, true);
+	location_t next;
+
+	printf("\n dracula legal moves: ");
+	printf("dracula n_locations: %d\n", *n_locations);
+	for (int i = 0; i < *n_locations; i++) {
+		printf ("%s, ", location_get_abbrev(moves[i]));
+	}
 	
 	// if no legal place to go
-	if (*n_locations == 0){
+	if (*n_locations <= 1){
+		printf("dracula can only hide, double back, or teleport");
 		// hide
 		if (!dv_has_hide(currentView)) {
 			puts("HIDE");
-			free(moves);	
-			free(n_locations);
-			return dv_get_location(currentView, 4);
+			next = HIDE;
+			//return dv_get_location(currentView, 4);
 		}
 		// double back
+
 		else if (!dv_has_double_back(currentView)) {
 			puts("DOUBLE BACK");
-			free(moves);	
-			free(n_locations);
-			return dv_double_back (currentView);
+			next = dv_double_back (currentView);
+			//return dv_double_back (currentView);
 		}
+
 		// teleport
 		else {
 			puts("TELEPORT");
-			free(moves);	
-			free(n_locations);
-			return CASTLE_DRACULA;
+			next = CASTLE_DRACULA;
+			//return CASTLE_DRACULA;
 		}
+	} 
+	
+	// take normal move
+	else {
+		next = dv_best_move_array (currentView, moves, *n_locations);
 	}
-	
-	// take the best move
 
-	location_t next = dv_best_move_array (currentView, moves, *n_locations);
-	
+	printf("\ndracula next: %s\n", location_get_abbrev(next));
+
 	free(moves);	
 	free(n_locations);
 	return next;
