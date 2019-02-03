@@ -319,8 +319,14 @@ location_t dv_best_move_array (DraculaView currentView, location_t *arr, size_t 
 	size_t max_dist = -1;
 
 	for(int i = 0; i < size; i++) {
-		//printf("-%s,", location_get_abbrev(arr[i]));
+		
 		if (arr[i] == curr) continue;
+		if (arr[i] == dv_get_location(currentView, 0)) continue;
+		if (arr[i] == dv_get_location(currentView, 1)) continue;
+		if (arr[i] == dv_get_location(currentView, 2)) continue;
+		if (arr[i] == dv_get_location(currentView, 3)) continue;
+
+		printf("-%s,", location_get_abbrev(arr[i]));
 		if (max_dist = -1) {
 			res = arr[i];
 			max_dist = dv_get_distance (currentView, arr[i]); 
@@ -362,8 +368,11 @@ location_t dv_get_next_move (DraculaView currentView, enum player player) {
 		printf ("%s, ", location_get_abbrev(moves[i]));
 	}
 	
-	// if no legal place to go
-	if (*n_locations <= 1){
+	// take a move
+	next = dv_best_move_array (currentView, moves, *n_locations);
+
+	// if no other place to go
+	if (next == dv_get_location(currentView, 4)){
 		printf("dracula can only hide, double back, or teleport");
 		// hide
 		if (!dv_has_hide(currentView)) {
@@ -386,12 +395,12 @@ location_t dv_get_next_move (DraculaView currentView, enum player player) {
 			//return CASTLE_DRACULA;
 		}
 	} 
-	
+/*
 	// take normal move
 	else {
 		next = dv_best_move_array (currentView, moves, *n_locations);
 	}
-
+*/
 	printf("\ndracula next: %s\n", location_get_abbrev(next));
 
 	free(moves);	

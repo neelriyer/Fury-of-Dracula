@@ -204,7 +204,7 @@ location_t hv_move_dest (
 			dest, 
 			player, road, rail, sea);
 		//printf("is is %d\n", i);
-		if (tmp_dist <= min_dist) //&& !hv_has_other_hunters (currentView, player, moves[i])) 
+		if (tmp_dist <= min_dist && !hv_has_other_hunters (currentView, player, moves[i])) 
 		{
 			min_dist = tmp_dist;
 			next = moves[i];								

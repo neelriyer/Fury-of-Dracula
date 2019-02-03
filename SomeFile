@@ -35,7 +35,7 @@ Program Output (11): born in JM
 Move:  {
   "move": "JM",
   "message": "Have we nothing Toulouse?",
-  "timer": 238
+  "timer": 246
 }
 > Game score: 366
 > Moving from: undefined
@@ -44,7 +44,7 @@ Move:  {
 > +++
   move: JM
   message: Have we nothing Toulouse?
-  timer: 238
+  timer: 246
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -54,8 +54,8 @@ Program Output (11): born in JM
 
 ==============================================================
 Move:  {
+  "timer": 284,
   "move": "JM",
-  "timer": 153,
   "message": "Have we nothing Toulouse?"
 }
 > Game score: 366
@@ -63,8 +63,8 @@ Move:  {
 > Life Points: 9
 > Player 1 made move:
 > +++
+  timer: 284
   move: JM
-  timer: 153
   message: Have we nothing Toulouse?
 > ---
 --------------------------------------------------------------------------
@@ -75,8 +75,8 @@ Program Output (11): born in JM
 
 ==============================================================
 Move:  {
+  "timer": 215,
   "move": "JM",
-  "timer": 172,
   "message": "Have we nothing Toulouse?"
 }
 > Game score: 366
@@ -84,8 +84,8 @@ Move:  {
 > Life Points: 9
 > Player 2 made move:
 > +++
+  timer: 215
   move: JM
-  timer: 172
   message: Have we nothing Toulouse?
 > ---
 --------------------------------------------------------------------------
@@ -98,7 +98,7 @@ Program Output (11): born in JM
 Move:  {
   "move": "JM",
   "message": "Have we nothing Toulouse?",
-  "timer": 157
+  "timer": 279
 }
 > Game score: 366
 > Moving from: undefined
@@ -107,7 +107,7 @@ Move:  {
 > +++
   move: JM
   message: Have we nothing Toulouse?
-  timer: 157
+  timer: 279
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
@@ -117,8 +117,8 @@ Program Output (0):
 ==============================================================
 Move:  {
   "move": "LO",
-  "timer": 509,
-  "message": "Mwahahahaha"
+  "message": "Mwahahahaha",
+  "timer": 374
 }
 > Game score: 366
 > Moving from: undefined
@@ -126,8 +126,8 @@ Move:  {
 > Player 4 made move:
 > +++
   move: LO
-  timer: 509
   message: Mwahahahaha
+  timer: 374
 > ---
 > End of Round:  0
 > Starting Round:  1
@@ -140,18 +140,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "SZ",
-  "timer": 1261
+  "message": "Have we nothing Toulouse?",
+  "timer": 659
 }
 > Game score: 365
 > Moving from: JM
 > Life Points: 9
 > Player 0 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: SZ
-  timer: 1261
+  message: Have we nothing Toulouse?
+  timer: 659
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -164,7 +164,7 @@ random move
 Move:  {
   "move": "SZ",
   "message": "Have we nothing Toulouse?",
-  "timer": 641
+  "timer": 998
 }
 > Game score: 365
 > Moving from: JM
@@ -173,7 +173,7 @@ Move:  {
 > +++
   move: SZ
   message: Have we nothing Toulouse?
-  timer: 641
+  timer: 998
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -184,18 +184,18 @@ random move
 
 ==============================================================
 Move:  {
+  "timer": 794,
   "move": "SZ",
-  "message": "Have we nothing Toulouse?",
-  "timer": 1330
+  "message": "Have we nothing Toulouse?"
 }
 > Game score: 365
 > Moving from: JM
 > Life Points: 9
 > Player 2 made move:
 > +++
+  timer: 794
   move: SZ
   message: Have we nothing Toulouse?
-  timer: 1330
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -208,7 +208,7 @@ random move
 Move:  {
   "move": "SZ",
   "message": "Have we nothing Toulouse?",
-  "timer": 716
+  "timer": 884
 }
 > Game score: 365
 > Moving from: JM
@@ -217,22 +217,22 @@ Move:  {
 > +++
   move: SZ
   message: Have we nothing Toulouse?
-  timer: 716
+  timer: 884
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ...."
 ==============================================================
-Program Output (84): 
+Program Output (100): 
  dracula legal moves: dracula n_locations: 5
-EC, LO, MN, PL, SW, 
+EC, LO, MN, PL, SW, -EC,-MN,-PL,-SW,
 dracula next: SW
 
 ==============================================================
 Move:  {
   "move": "SW",
   "message": "Mwahahahaha",
-  "timer": 295593
+  "timer": 277818
 }
 > Game score: 365
 > Moving from: LO
@@ -242,7 +242,7 @@ Move:  {
 > +++
   move: SW
   message: Mwahahahaha
-  timer: 295593
+  timer: 277818
 > ---
 > End of Round:  1
 > Starting Round:  2
@@ -257,7 +257,7 @@ random move
 Move:  {
   "move": "SO",
   "message": "Have we nothing Toulouse?",
-  "timer": 1457
+  "timer": 944
 }
 > Game score: 364
 > Moving from: SZ
@@ -266,7 +266,7 @@ Move:  {
 > +++
   move: SO
   message: Have we nothing Toulouse?
-  timer: 1457
+  timer: 944
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -278,8 +278,8 @@ random move
 ==============================================================
 Move:  {
   "move": "VI",
-  "timer": 1018,
-  "message": "Have we nothing Toulouse?"
+  "message": "Have we nothing Toulouse?",
+  "timer": 1150
 }
 > Game score: 364
 > Moving from: SZ
@@ -287,8 +287,8 @@ Move:  {
 > Player 1 made move:
 > +++
   move: VI
-  timer: 1018
   message: Have we nothing Toulouse?
+  timer: 1150
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -299,18 +299,18 @@ random move
 
 ==============================================================
 Move:  {
+  "timer": 537,
   "move": "BD",
-  "message": "Have we nothing Toulouse?",
-  "timer": 718
+  "message": "Have we nothing Toulouse?"
 }
 > Game score: 364
 > Moving from: SZ
 > Life Points: 9
 > Player 2 made move:
 > +++
+  timer: 537
   move: BD
   message: Have we nothing Toulouse?
-  timer: 718
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -323,7 +323,7 @@ random move
 Move:  {
   "move": "BC",
   "message": "Have we nothing Toulouse?",
-  "timer": 1208
+  "timer": 725
 }
 > Game score: 364
 > Moving from: SZ
@@ -332,22 +332,22 @@ Move:  {
 > +++
   move: BC
   message: Have we nothing Toulouse?
-  timer: 1208
+  timer: 725
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC...."
 ==============================================================
-Program Output (76): 
+Program Output (84): 
  dracula legal moves: dracula n_locations: 3
-IR, LV, SW, 
+IR, LV, SW, -IR,-LV,
 dracula next: LV
 
 ==============================================================
 Move:  {
+  "timer": 133224,
   "move": "LV",
-  "message": "Mwahahahaha",
-  "timer": 166762
+  "message": "Mwahahahaha"
 }
 > Game score: 364
 > Moving from: SW
@@ -355,9 +355,9 @@ Move:  {
 > Legal Drac moves: LV IR D1 D2 HI
 > Player 4 made move:
 > +++
+  timer: 133224
   move: LV
   message: Mwahahahaha
-  timer: 166762
 > ---
 > End of Round:  2
 > Starting Round:  3
@@ -372,7 +372,7 @@ random move
 Move:  {
   "move": "BC",
   "message": "Have we nothing Toulouse?",
-  "timer": 1463
+  "timer": 1122
 }
 > Game score: 363
 > Moving from: SO
@@ -381,7 +381,7 @@ Move:  {
 > +++
   move: BC
   message: Have we nothing Toulouse?
-  timer: 1463
+  timer: 1122
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -394,7 +394,7 @@ random move
 Move:  {
   "move": "MU",
   "message": "Have we nothing Toulouse?",
-  "timer": 1032
+  "timer": 1042
 }
 > Game score: 363
 > Moving from: VI
@@ -403,7 +403,7 @@ Move:  {
 > +++
   move: MU
   message: Have we nothing Toulouse?
-  timer: 1032
+  timer: 1042
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -415,8 +415,8 @@ random move
 ==============================================================
 Move:  {
   "move": "VI",
-  "timer": 1702,
-  "message": "Have we nothing Toulouse?"
+  "message": "Have we nothing Toulouse?",
+  "timer": 755
 }
 > Game score: 363
 > Moving from: BD
@@ -424,8 +424,8 @@ Move:  {
 > Player 2 made move:
 > +++
   move: VI
-  timer: 1702
   message: Have we nothing Toulouse?
+  timer: 755
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -436,7 +436,7 @@ random move
 
 ==============================================================
 Move:  {
-  "timer": 1439,
+  "timer": 963,
   "move": "SZ",
   "message": "Have we nothing Toulouse?"
 }
@@ -445,7 +445,7 @@ Move:  {
 > Life Points: 9
 > Player 3 made move:
 > +++
-  timer: 1439
+  timer: 963
   move: SZ
   message: Have we nothing Toulouse?
 > ---
@@ -453,16 +453,16 @@ Move:  {
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ...."
 ==============================================================
-Program Output (76): 
+Program Output (84): 
  dracula legal moves: dracula n_locations: 3
-IR, LV, MN, 
+IR, LV, MN, -IR,-MN,
 dracula next: MN
 
 ==============================================================
 Move:  {
   "move": "MN",
-  "message": "Mwahahahaha",
-  "timer": 120471
+  "timer": 119969,
+  "message": "Mwahahahaha"
 }
 > Game score: 363
 > Moving from: LV
@@ -471,8 +471,8 @@ Move:  {
 > Player 4 made move:
 > +++
   move: MN
+  timer: 119969
   message: Mwahahahaha
-  timer: 120471
 > ---
 > End of Round:  3
 > Starting Round:  4
@@ -487,7 +487,7 @@ random move
 Move:  {
   "move": "KL",
   "message": "Have we nothing Toulouse?",
-  "timer": 1321
+  "timer": 775
 }
 > Game score: 362
 > Moving from: BC
@@ -496,7 +496,7 @@ Move:  {
 > +++
   move: KL
   message: Have we nothing Toulouse?
-  timer: 1321
+  timer: 775
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -507,18 +507,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "ZU",
-  "timer": 1426
+  "message": "Have we nothing Toulouse?",
+  "timer": 1127
 }
 > Game score: 362
 > Moving from: MU
 > Life Points: 9
 > Player 1 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: ZU
-  timer: 1426
+  message: Have we nothing Toulouse?
+  timer: 1127
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -531,7 +531,7 @@ random move
 Move:  {
   "move": "ZA",
   "message": "Have we nothing Toulouse?",
-  "timer": 1112
+  "timer": 674
 }
 > Game score: 362
 > Moving from: VI
@@ -540,7 +540,7 @@ Move:  {
 > +++
   move: ZA
   message: Have we nothing Toulouse?
-  timer: 1112
+  timer: 674
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -551,33 +551,33 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
+  "timer": 938,
   "move": "VI",
-  "timer": 955
+  "message": "Have we nothing Toulouse?"
 }
 > Game score: 362
 > Moving from: SZ
 > Life Points: 9
 > Player 3 made move:
 > +++
-  message: Have we nothing Toulouse?
+  timer: 938
   move: VI
-  timer: 955
+  message: Have we nothing Toulouse?
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI...."
 ==============================================================
-Program Output (72): 
+Program Output (76): 
  dracula legal moves: dracula n_locations: 2
-ED, MN, 
+ED, MN, -ED,
 dracula next: ED
 
 ==============================================================
 Move:  {
+  "timer": 81344,
   "move": "ED",
-  "message": "Mwahahahaha",
-  "timer": 84985
+  "message": "Mwahahahaha"
 }
 > Game score: 362
 > Moving from: MN
@@ -585,9 +585,9 @@ Move:  {
 > Legal Drac moves: ED D1 D2 D4 HI
 > Player 4 made move:
 > +++
+  timer: 81344
   move: ED
   message: Mwahahahaha
-  timer: 84985
 > ---
 > End of Round:  4
 > Starting Round:  5
@@ -600,18 +600,18 @@ random move
 
 ==============================================================
 Move:  {
-  "move": "BC",
+  "timer": 1373,
   "message": "Have we nothing Toulouse?",
-  "timer": 1566
+  "move": "BC"
 }
 > Game score: 361
 > Moving from: KL
 > Life Points: 9
 > Player 0 made move:
 > +++
-  move: BC
+  timer: 1373
   message: Have we nothing Toulouse?
-  timer: 1566
+  move: BC
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -622,18 +622,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "FR",
-  "timer": 835
+  "message": "Have we nothing Toulouse?",
+  "timer": 775
 }
 > Game score: 361
 > Moving from: ZU
 > Life Points: 9
 > Player 1 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: FR
-  timer: 835
+  message: Have we nothing Toulouse?
+  timer: 775
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -645,8 +645,8 @@ random move
 ==============================================================
 Move:  {
   "move": "MU",
-  "timer": 1336,
-  "message": "Have we nothing Toulouse?"
+  "message": "Have we nothing Toulouse?",
+  "timer": 1117
 }
 > Game score: 361
 > Moving from: ZA
@@ -654,8 +654,8 @@ Move:  {
 > Player 2 made move:
 > +++
   move: MU
-  timer: 1336
   message: Have we nothing Toulouse?
+  timer: 1117
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -667,8 +667,8 @@ random move
 ==============================================================
 Move:  {
   "move": "MU",
-  "message": "Have we nothing Toulouse?",
-  "timer": 1281
+  "timer": 1173,
+  "message": "Have we nothing Toulouse?"
 }
 > Game score: 361
 > Moving from: VI
@@ -676,23 +676,23 @@ Move:  {
 > Player 3 made move:
 > +++
   move: MU
+  timer: 1173
   message: Have we nothing Toulouse?
-  timer: 1281
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU...."
 ==============================================================
-Program Output (72): 
+Program Output (76): 
  dracula legal moves: dracula n_locations: 2
-ED, NS, 
+ED, NS, -NS,
 dracula next: NS
 
 ==============================================================
 Move:  {
   "move": "NS",
   "message": "Mwahahahaha",
-  "timer": 89450
+  "timer": 48556
 }
 > Game score: 361
 > Moving from: ED
@@ -702,7 +702,7 @@ Move:  {
 > +++
   move: NS
   message: Mwahahahaha
-  timer: 89450
+  timer: 48556
 > ---
 > End of Round:  5
 > Starting Round:  6
@@ -717,7 +717,7 @@ random move
 Move:  {
   "move": "SZ",
   "message": "Have we nothing Toulouse?",
-  "timer": 948
+  "timer": 821
 }
 > Game score: 360
 > Moving from: BC
@@ -726,7 +726,7 @@ Move:  {
 > +++
   move: SZ
   message: Have we nothing Toulouse?
-  timer: 948
+  timer: 821
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -737,18 +737,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "BR",
-  "timer": 939
+  "message": "Have we nothing Toulouse?",
+  "timer": 798
 }
 > Game score: 360
 > Moving from: FR
 > Life Points: 9
 > Player 1 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: BR
-  timer: 939
+  message: Have we nothing Toulouse?
+  timer: 798
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -761,7 +761,7 @@ random move
 Move:  {
   "move": "ZU",
   "message": "Have we nothing Toulouse?",
-  "timer": 803
+  "timer": 1000
 }
 > Game score: 360
 > Moving from: MU
@@ -770,7 +770,7 @@ Move:  {
 > +++
   move: ZU
   message: Have we nothing Toulouse?
-  timer: 803
+  timer: 1000
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -782,8 +782,8 @@ random move
 ==============================================================
 Move:  {
   "move": "ZU",
-  "timer": 786,
-  "message": "Have we nothing Toulouse?"
+  "message": "Have we nothing Toulouse?",
+  "timer": 701
 }
 > Game score: 360
 > Moving from: MU
@@ -791,23 +791,23 @@ Move:  {
 > Player 3 made move:
 > +++
   move: ZU
-  timer: 786
   message: Have we nothing Toulouse?
+  timer: 701
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU...."
 ==============================================================
-Program Output (84): 
+Program Output (100): 
  dracula legal moves: dracula n_locations: 5
-AM, AO, EC, HA, NS, 
+AM, AO, EC, HA, NS, -AM,-AO,-EC,-HA,
 dracula next: HA
 
 ==============================================================
 Move:  {
   "move": "HA",
   "message": "Mwahahahaha",
-  "timer": 238299
+  "timer": 232784
 }
 > Game score: 360
 > Moving from: NS
@@ -817,7 +817,7 @@ Move:  {
 > +++
   move: HA
   message: Mwahahahaha
-  timer: 238299
+  timer: 232784
 > ---
 > End of Round:  6
 > Starting Round:  7
@@ -832,7 +832,7 @@ random move
 Move:  {
   "move": "VI",
   "message": "Have we nothing Toulouse?",
-  "timer": 821
+  "timer": 786
 }
 > Game score: 346
 > Moving from: SZ
@@ -841,7 +841,7 @@ Move:  {
 > +++
   move: VI
   message: Have we nothing Toulouse?
-  timer: 821
+  timer: 786
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -854,7 +854,7 @@ random move
 Move:  {
   "move": "PR",
   "message": "Have we nothing Toulouse?",
-  "timer": 1652
+  "timer": 1368
 }
 > Game score: 346
 > Moving from: BR
@@ -863,7 +863,7 @@ Move:  {
 > +++
   move: PR
   message: Have we nothing Toulouse?
-  timer: 1652
+  timer: 1368
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -874,18 +874,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "MR",
-  "timer": 1241
+  "timer": 1253,
+  "message": "Have we nothing Toulouse?"
 }
 > Game score: 346
 > Moving from: ZU
 > Life Points: 9
 > Player 2 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: MR
-  timer: 1241
+  timer: 1253
+  message: Have we nothing Toulouse?
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -896,33 +896,33 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "FR",
-  "timer": 1059
+  "message": "Have we nothing Toulouse?",
+  "timer": 1182
 }
 > Game score: 346
 > Moving from: ZU
 > Life Points: 9
 > Player 3 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: FR
-  timer: 1059
+  message: Have we nothing Toulouse?
+  timer: 1182
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR...."
 ==============================================================
-Program Output (80): 
+Program Output (92): 
  dracula legal moves: dracula n_locations: 4
-BR, CO, HA, LI, 
+BR, CO, HA, LI, -BR,-CO,-LI,
 dracula next: LI
 
 ==============================================================
 Move:  {
   "move": "LI",
   "message": "Mwahahahaha",
-  "timer": 105384
+  "timer": 66162
 }
 > Game score: 346
 > Moving from: HA
@@ -932,7 +932,7 @@ Move:  {
 > +++
   move: LI
   message: Mwahahahaha
-  timer: 105384
+  timer: 66162
 > ---
 > End of Round:  7
 > Starting Round:  8
@@ -947,7 +947,7 @@ random move
 Move:  {
   "move": "MU",
   "message": "Have we nothing Toulouse?",
-  "timer": 1481
+  "timer": 1441
 }
 > Game score: 345
 > Moving from: VI
@@ -956,7 +956,7 @@ Move:  {
 > +++
   move: MU
   message: Have we nothing Toulouse?
-  timer: 1481
+  timer: 1441
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -967,18 +967,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "VI",
-  "timer": 1479
+  "message": "Have we nothing Toulouse?",
+  "timer": 935
 }
 > Game score: 345
 > Moving from: PR
 > Life Points: 9
 > Player 1 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: VI
-  timer: 1479
+  message: Have we nothing Toulouse?
+  timer: 935
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -989,18 +989,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "MS",
-  "timer": 1440
+  "message": "Have we nothing Toulouse?",
+  "timer": 1410
 }
 > Game score: 345
 > Moving from: MR
 > Life Points: 9
 > Player 2 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: MS
-  timer: 1440
+  message: Have we nothing Toulouse?
+  timer: 1410
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -1013,7 +1013,7 @@ random move
 Move:  {
   "move": "BR",
   "message": "Have we nothing Toulouse?",
-  "timer": 1923
+  "timer": 1451
 }
 > Game score: 345
 > Moving from: FR
@@ -1022,22 +1022,22 @@ Move:  {
 > +++
   move: BR
   message: Have we nothing Toulouse?
-  timer: 1923
+  timer: 1451
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR...."
 ==============================================================
-Program Output (84): 
+Program Output (96): 
  dracula legal moves: dracula n_locations: 5
-BR, CO, FR, LI, NU, 
+BR, CO, FR, LI, NU, -CO,-FR,-NU,
 dracula next: NU
 
 ==============================================================
 Move:  {
+  "timer": 78022,
   "move": "NU",
-  "message": "Mwahahahaha",
-  "timer": 132247
+  "message": "Mwahahahaha"
 }
 > Game score: 345
 > Moving from: LI
@@ -1045,9 +1045,9 @@ Move:  {
 > Legal Drac moves: BR CO FR NU D1 D2 HI
 > Player 4 made move:
 > +++
+  timer: 78022
   move: NU
   message: Mwahahahaha
-  timer: 132247
 > ---
 > End of Round:  8
 > Starting Round:  9
@@ -1060,18 +1060,18 @@ random move
 
 ==============================================================
 Move:  {
-  "move": "ZU",
   "message": "Have we nothing Toulouse?",
-  "timer": 1883
+  "move": "ZU",
+  "timer": 1078
 }
 > Game score: 344
 > Moving from: MU
 > Life Points: 9
 > Player 0 made move:
 > +++
-  move: ZU
   message: Have we nothing Toulouse?
-  timer: 1883
+  move: ZU
+  timer: 1078
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -1083,8 +1083,8 @@ random move
 ==============================================================
 Move:  {
   "move": "ZA",
-  "message": "Have we nothing Toulouse?",
-  "timer": 1873
+  "timer": 1034,
+  "message": "Have we nothing Toulouse?"
 }
 > Game score: 344
 > Moving from: VI
@@ -1092,8 +1092,8 @@ Move:  {
 > Player 1 made move:
 > +++
   move: ZA
+  timer: 1034
   message: Have we nothing Toulouse?
-  timer: 1873
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -1104,18 +1104,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "AO",
-  "timer": 1394
+  "message": "Have we nothing Toulouse?",
+  "timer": 1363
 }
 > Game score: 344
 > Moving from: MS
 > Life Points: 9
 > Player 2 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: AO
-  timer: 1394
+  message: Have we nothing Toulouse?
+  timer: 1363
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -1126,33 +1126,33 @@ random move
 
 ==============================================================
 Move:  {
-  "timer": 1029,
   "move": "PR",
-  "message": "Have we nothing Toulouse?"
+  "message": "Have we nothing Toulouse?",
+  "timer": 996
 }
 > Game score: 344
 > Moving from: BR
 > Life Points: 9
 > Player 3 made move:
 > +++
-  timer: 1029
   move: PR
   message: Have we nothing Toulouse?
+  timer: 996
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR...."
 ==============================================================
-Program Output (84): 
+Program Output (96): 
  dracula legal moves: dracula n_locations: 5
-FR, MU, NU, PR, ST, 
+FR, MU, NU, PR, ST, -FR,-MU,-ST,
 dracula next: ST
 
 ==============================================================
 Move:  {
-  "move": "ST",
+  "timer": 182523,
   "message": "Mwahahahaha",
-  "timer": 241639
+  "move": "ST"
 }
 > Game score: 344
 > Moving from: NU
@@ -1160,9 +1160,9 @@ Move:  {
 > Legal Drac moves: FR MU PR ST D1 D2 HI
 > Player 4 made move:
 > +++
-  move: ST
+  timer: 182523
   message: Mwahahahaha
-  timer: 241639
+  move: ST
 > ---
 > End of Round:  9
 > Starting Round:  10
@@ -1175,18 +1175,18 @@ random move
 
 ==============================================================
 Move:  {
-  "move": "FR",
   "message": "Have we nothing Toulouse?",
-  "timer": 2253
+  "move": "FR",
+  "timer": 1728
 }
 > Game score: 343
 > Moving from: ZU
 > Life Points: 9
 > Player 0 made move:
 > +++
-  move: FR
   message: Have we nothing Toulouse?
-  timer: 2253
+  move: FR
+  timer: 1728
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -1197,18 +1197,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "MU",
-  "timer": 1700
+  "message": "Have we nothing Toulouse?",
+  "timer": 1003
 }
 > Game score: 343
 > Moving from: ZA
 > Life Points: 9
 > Player 1 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: MU
-  timer: 1700
+  message: Have we nothing Toulouse?
+  timer: 1003
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -1219,18 +1219,18 @@ random move
 
 ==============================================================
 Move:  {
+  "timer": 1923,
   "move": "BB",
-  "message": "Have we nothing Toulouse?",
-  "timer": 2187
+  "message": "Have we nothing Toulouse?"
 }
 > Game score: 343
 > Moving from: AO
 > Life Points: 9
 > Player 2 made move:
 > +++
+  timer: 1923
   move: BB
   message: Have we nothing Toulouse?
-  timer: 2187
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -1242,8 +1242,8 @@ random move
 ==============================================================
 Move:  {
   "move": "VI",
-  "timer": 2087,
-  "message": "Have we nothing Toulouse?"
+  "message": "Have we nothing Toulouse?",
+  "timer": 1747
 }
 > Game score: 343
 > Moving from: PR
@@ -1251,32 +1251,32 @@ Move:  {
 > Player 3 made move:
 > +++
   move: VI
-  timer: 2087
   message: Have we nothing Toulouse?
+  timer: 1747
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI...."
 ==============================================================
-Program Output (96): 
+Program Output (116): 
  dracula legal moves: dracula n_locations: 8
-BU, CO, FR, GE, MU, PA, ST, ZU, 
+BU, CO, FR, GE, MU, PA, ST, ZU, -BU,-CO,-GE,-PA,-ZU,
 dracula next: ZU
 
 ==============================================================
 Move:  {
+  "message": "Mwahahahaha",
   "move": "ZU",
-  "timer": 154443,
-  "message": "Mwahahahaha"
+  "timer": 120473
 }
 > Game score: 343
 > Moving from: ST
 > Blood Points: 38
 > Player 4 made move:
 > +++
-  move: ZU
-  timer: 154443
   message: Mwahahahaha
+  move: ZU
+  timer: 120473
 > ---
 > End of Round:  10
 > Starting Round:  11
@@ -1291,7 +1291,7 @@ random move
 Move:  {
   "move": "BR",
   "message": "Have we nothing Toulouse?",
-  "timer": 1151
+  "timer": 1932
 }
 > Game score: 342
 > Moving from: FR
@@ -1300,7 +1300,7 @@ Move:  {
 > +++
   move: BR
   message: Have we nothing Toulouse?
-  timer: 1151
+  timer: 1932
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -1311,18 +1311,18 @@ random move
 
 ==============================================================
 Move:  {
-  "message": "Have we nothing Toulouse?",
   "move": "ZU",
-  "timer": 1004
+  "message": "Have we nothing Toulouse?",
+  "timer": 2507
 }
 > Game score: 342
 > Moving from: MU
 > Life Points: 9
 > Player 1 made move:
 > +++
-  message: Have we nothing Toulouse?
   move: ZU
-  timer: 1004
+  message: Have we nothing Toulouse?
+  timer: 2507
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
@@ -1334,8 +1334,8 @@ dest22
 ==============================================================
 Move:  {
   "move": "SN",
-  "message": "Have we nothing Toulouse?",
-  "timer": 70997
+  "timer": 80385,
+  "message": "Have we nothing Toulouse?"
 }
 > Game score: 342
 > Moving from: BB
@@ -1343,8 +1343,8 @@ Move:  {
 > Player 2 made move:
 > +++
   move: SN
+  timer: 80385
   message: Have we nothing Toulouse?
-  timer: 70997
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
@@ -1357,7 +1357,7 @@ dest22
 Move:  {
   "message": "Have we nothing Toulouse?",
   "move": "ZA",
-  "timer": 117466
+  "timer": 142742
 }
 > Game score: 342
 > Moving from: VI
@@ -1366,22 +1366,22 @@ Move:  {
 > +++
   message: Have we nothing Toulouse?
   move: ZA
-  timer: 117466
+  timer: 142742
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
 Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA...."
 ==============================================================
-Program Output (84): 
+Program Output (100): 
  dracula legal moves: dracula n_locations: 5
-GE, MR, MI, MU, ZU, 
+GE, MR, MI, MU, ZU, -GE,-MR,-MI,-MU,
 dracula next: MU
 
 ==============================================================
 Move:  {
   "move": "MU",
   "message": "Mwahahahaha",
-  "timer": 254734
+  "timer": 242752
 }
 > Game score: 342
 > Moving from: ZU
@@ -1391,7 +1391,7 @@ Move:  {
 > +++
   move: MU
   message: Mwahahahaha
-  timer: 254734
+  timer: 242752
 > ---
 > End of Round:  11
 > Starting Round:  12
@@ -1406,7 +1406,7 @@ dest22
 Move:  {
   "move": "PR",
   "message": "Have we nothing Toulouse?",
-  "timer": 58762
+  "timer": 75509
 }
 > Game score: 341
 > Moving from: BR
@@ -1415,7 +1415,7 @@ Move:  {
 > +++
   move: PR
   message: Have we nothing Toulouse?
-  timer: 58762
+  timer: 75509
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
@@ -1426,77 +1426,77 @@ dest22
 
 ==============================================================
 Move:  {
-  "move": "ZU",
+  "move": "ST",
   "message": "Have we nothing Toulouse?",
-  "timer": 121704
+  "timer": 102685
 }
 > Game score: 341
 > Moving from: ZU
 > Life Points: 3
 > Player 1 made move:
 > +++
-  move: ZU
+  move: ST
   message: Have we nothing Toulouse?
-  timer: 121704
+  timer: 102685
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DC?T.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SZU...."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SSTT..."
 ==============================================================
 Program Output (30): find dracula in Zurich
 dest22
 
 ==============================================================
 Move:  {
-  "timer": 118728,
   "move": "SR",
-  "message": "Have we nothing Toulouse?"
+  "message": "Have we nothing Toulouse?",
+  "timer": 92380
 }
 > Game score: 341
 > Moving from: SN
 > Life Points: 9
 > Player 2 made move:
 > +++
-  timer: 118728
   move: SR
   message: Have we nothing Toulouse?
+  timer: 92380
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DC?T.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SZU.... HSR...."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SSTT... HSR...."
 ==============================================================
 Program Output (30): find dracula in Zurich
 dest22
 
 ==============================================================
 Move:  {
-  "move": "ZA",
+  "move": "VI",
   "message": "Have we nothing Toulouse?",
-  "timer": 105995
+  "timer": 131590
 }
 > Game score: 341
 > Moving from: ZA
 > Life Points: 9
 > Player 3 made move:
 > +++
-  move: ZA
+  move: VI
   message: Have we nothing Toulouse?
-  timer: 105995
+  timer: 131590
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SZU.... HSR.... MZA...."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI...."
 ==============================================================
-Program Output (84): 
+Program Output (96): 
  dracula legal moves: dracula n_locations: 5
-MI, MU, VE, VI, ZA, 
+MI, MU, VE, VI, ZA, -MI,-VE,-ZA,
 dracula next: ZA
 
 ==============================================================
 Move:  {
   "move": "ZA",
   "message": "Mwahahahaha",
-  "timer": 265962
+  "timer": 123213
 }
 > Game score: 341
 > Moving from: MU
@@ -1506,22 +1506,22 @@ Move:  {
 > +++
   move: ZA
   message: Mwahahahaha
-  timer: 265962
+  timer: 123213
 > ---
 > End of Round:  12
 > Starting Round:  13
 --------------------------------------------------------------------------
 > Running player 0... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DC?T.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SZU.... HSR.... MZA.... DZAT.M."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SSTT... HSR.... MVI.... DC?T.M."
 ==============================================================
-Program Output (30): find dracula in Zagreb
+Program Output (30): find dracula in Zurich
 dest22
 
 ==============================================================
 Move:  {
   "move": "VI",
   "message": "Have we nothing Toulouse?",
-  "timer": 22417
+  "timer": 64729
 }
 > Game score: 340
 > Moving from: PR
@@ -1530,11 +1530,126 @@ Move:  {
 > +++
   move: VI
   message: Have we nothing Toulouse?
-  timer: 22417
+  timer: 64729
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DC?T.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SZU.... HSR.... MZA.... DZAT.M. GVI...."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SSTT... HSR.... MVI.... DC?T.M. GVI...."
+==============================================================
+Program Output (30): find dracula in Zurich
+dest22
+
+==============================================================
+Move:  {
+  "move": "ZU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 172767
+}
+> Game score: 340
+> Moving from: ST
+> Life Points: 1
+> Player 1 made move:
+> +++
+  move: ZU
+  message: Have we nothing Toulouse?
+  timer: 172767
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SSTT... HSR.... MVI.... DC?T.M. GVI.... SZU...."
+==============================================================
+Program Output (30): find dracula in Zurich
+dest22
+
+==============================================================
+Move:  {
+  "timer": 209646,
+  "move": "TO",
+  "message": "Have we nothing Toulouse?"
+}
+> Game score: 340
+> Moving from: SR
+> Life Points: 9
+> Player 2 made move:
+> +++
+  timer: 209646
+  move: TO
+  message: Have we nothing Toulouse?
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SSTT... HSR.... MVI.... DC?T.M. GVI.... SZU.... HTO...."
+==============================================================
+Program Output (30): find dracula in Zurich
+dest22
+
+==============================================================
+Move:  {
+  "message": "Have we nothing Toulouse?",
+  "move": "ZA",
+  "timer": 81967
+}
+> Game score: 340
+> Moving from: VI
+> Life Points: 9
+> Player 3 made move:
+> +++
+  message: Have we nothing Toulouse?
+  move: ZA
+  timer: 81967
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.."
+==============================================================
+Program Output (96): 
+ dracula legal moves: dracula n_locations: 5
+BD, SJ, SZ, VI, ZA, -BD,-SJ,-SZ,
+dracula next: SZ
+
+==============================================================
+Move:  {
+  "message": "Mwahahahaha",
+  "move": "SZ",
+  "timer": 169188
+}
+> Game score: 340
+> Moving from: ZA
+> Blood Points: 18
+> Legal Drac moves: BD SJ SZ VI D1 D2 HI
+> Player 4 made move:
+> +++
+  message: Mwahahahaha
+  move: SZ
+  timer: 169188
+> ---
+> End of Round:  13
+> Starting Round:  14
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "ZA",
+  "message": "Have we nothing Toulouse?",
+  "timer": 39622
+}
+> Game score: 339
+> Moving from: VI
+> Life Points: 9
+> Player 0 made move:
+> +++
+  move: ZA
+  message: Have we nothing Toulouse?
+  timer: 39622
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DC?T... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA...."
 ==============================================================
 Program Output (30): find dracula in Zagreb
 dest22
@@ -1543,42 +1658,271 @@ dest22
 Move:  {
   "move": "MU",
   "message": "Have we nothing Toulouse?",
-  "timer": 59575
+  "timer": 90248
 }
-> Game score: 340
+> Game score: 339
 > Moving from: ZU
-> Life Points: 6
+> Life Points: 1
 > Player 1 made move:
 > +++
   move: MU
   message: Have we nothing Toulouse?
-  timer: 59575
+  timer: 90248
 > ---
 --------------------------------------------------------------------------
 > Running player 2... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DC?T.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SZU.... HSR.... MZA.... DZAT.M. GVI.... SMUT..."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT..."
 ==============================================================
 Program Output (30): find dracula in Zagreb
 dest22
 
 ==============================================================
 Move:  {
-  "move": "PA",
-  "timer": 169567,
-  "message": "Have we nothing Toulouse?"
+  "move": "MR",
+  "message": "Have we nothing Toulouse?",
+  "timer": 61147
 }
-> Game score: 340
-> Moving from: SR
+> Game score: 333
+> Moving from: TO
 > Life Points: 9
 > Player 2 made move:
 > +++
-  move: PA
-  timer: 169567
+  move: MR
+  message: Have we nothing Toulouse?
+  timer: 61147
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "MU",
+  "timer": 27028,
+  "message": "Have we nothing Toulouse?"
+}
+> Game score: 333
+> Moving from: ZA
+> Life Points: 3
+> Player 3 made move:
+> +++
+  move: MU
+  timer: 27028
+  message: Have we nothing Toulouse?
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU...."
+==============================================================
+Program Output (92): 
+ dracula legal moves: dracula n_locations: 4
+BE, BD, KL, SZ, -BE,-BD,-KL,
+dracula next: KL
+
+==============================================================
+Move:  {
+  "move": "KL",
+  "message": "Mwahahahaha",
+  "timer": 147454
+}
+> Game score: 333
+> Moving from: SZ
+> Blood Points: 18
+> Legal Drac moves: BE BD KL D1 D2 HI
+> Player 4 made move:
+> +++
+  move: KL
+  message: Mwahahahaha
+  timer: 147454
+> ---
+> End of Round:  14
+> Starting Round:  15
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "MU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 48111
+}
+> Game score: 332
+> Moving from: ZA
+> Life Points: 9
+> Player 0 made move:
+> +++
+  move: MU
+  message: Have we nothing Toulouse?
+  timer: 48111
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU...."
+==============================================================
+Program Output (13): revive in JM
+
+==============================================================
+Move:  {
+  "move": "JM",
+  "message": "Have we nothing Toulouse?",
+  "timer": 1020
+}
+> Game score: 332
+> Moving from: JM
+> Life Points: 9
+> Player 1 made move:
+> +++
+  move: JM
+  message: Have we nothing Toulouse?
+  timer: 1020
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "ZU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 68288
+}
+> Game score: 332
+> Moving from: MR
+> Life Points: 9
+> Player 2 made move:
+> +++
+  move: ZU
+  message: Have we nothing Toulouse?
+  timer: 68288
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "ZA",
+  "message": "Have we nothing Toulouse?",
+  "timer": 34822
+}
+> Game score: 332
+> Moving from: MU
+> Life Points: 3
+> Player 3 made move:
+> +++
+  move: ZA
+  message: Have we nothing Toulouse?
+  timer: 34822
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA...."
+==============================================================
+Program Output (108): 
+ dracula legal moves: dracula n_locations: 6
+BE, BC, BD, CD, GA, KL, -BE,-BC,-BD,-CD,-GA,
+dracula next: GA
+
+==============================================================
+Move:  {
+  "move": "GA",
+  "message": "Mwahahahaha",
+  "timer": 232246
+}
+> Game score: 332
+> Moving from: KL
+> Blood Points: 18
+> Legal Drac moves: BE BC BD CD GA D1 D2 HI
+> Player 4 made move:
+> +++
+  move: GA
+  message: Mwahahahaha
+  timer: 232246
+> ---
+> End of Round:  15
+> Starting Round:  16
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T..."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "ZA",
+  "message": "Have we nothing Toulouse?",
+  "timer": 31440
+}
+> Game score: 331
+> Moving from: MU
+> Life Points: 9
+> Player 0 made move:
+> +++
+  move: ZA
+  message: Have we nothing Toulouse?
+  timer: 31440
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "ZA",
+  "message": "Have we nothing Toulouse?",
+  "timer": 24138
+}
+> Game score: 331
+> Moving from: JM
+> Life Points: 9
+> Player 1 made move:
+> +++
+  move: ZA
+  message: Have we nothing Toulouse?
+  timer: 24138
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "MU",
+  "timer": 51924,
+  "message": "Have we nothing Toulouse?"
+}
+> Game score: 331
+> Moving from: ZU
+> Life Points: 9
+> Player 2 made move:
+> +++
+  move: MU
+  timer: 51924
   message: Have we nothing Toulouse?
 > ---
 --------------------------------------------------------------------------
 > Running player 3... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DC?T.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SZU.... HSR.... MZA.... DZAT.M. GVI.... SMUT... HPA...."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU...."
 ==============================================================
 Program Output (30): find dracula in Zagreb
 dest22
@@ -1586,70 +1930,804 @@ dest22
 ==============================================================
 Move:  {
   "message": "Have we nothing Toulouse?",
-  "move": "ZA",
-  "timer": 35264
+  "move": "MU",
+  "timer": 44903
 }
-> Game score: 340
+> Game score: 331
 > Moving from: ZA
-> Life Points: 9
+> Life Points: 3
 > Player 3 made move:
 > +++
   message: Have we nothing Toulouse?
-  move: ZA
-  timer: 35264
+  move: MU
+  timer: 44903
 > ---
 --------------------------------------------------------------------------
 > Running player 4... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SZU.... HSR.... MZA.... DZAT.M. GVI.... SMUT... HPA.... MZATD.."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA.... DGAT... GZA.... SZA.... HMU.... MMU...."
+==============================================================
+Program Output (92): 
+ dracula legal moves: dracula n_locations: 4
+BC, CD, CN, GA, -BC,-CD,-CN,
+dracula next: CN
+
+==============================================================
+Move:  {
+  "move": "CN",
+  "message": "Mwahahahaha",
+  "timer": 129760
+}
+> Game score: 331
+> Moving from: GA
+> Blood Points: 18
+> Legal Drac moves: BC CD CN D1 D2 HI
+> Player 4 made move:
+> +++
+  move: CN
+  message: Mwahahahaha
+  timer: 129760
+> ---
+> End of Round:  16
+> Starting Round:  17
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T..."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "MU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 40698
+}
+> Game score: 330
+> Moving from: ZA
+> Life Points: 9
+> Player 0 made move:
+> +++
+  move: MU
+  message: Have we nothing Toulouse?
+  timer: 40698
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "MU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 35817
+}
+> Game score: 330
+> Moving from: ZA
+> Life Points: 9
+> Player 1 made move:
+> +++
+  move: MU
+  message: Have we nothing Toulouse?
+  timer: 35817
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "ZA",
+  "message": "Have we nothing Toulouse?",
+  "timer": 80403
+}
+> Game score: 330
+> Moving from: MU
+> Life Points: 9
+> Player 2 made move:
+> +++
+  move: ZA
+  message: Have we nothing Toulouse?
+  timer: 80403
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "timer": 20279,
+  "move": "ZA",
+  "message": "Have we nothing Toulouse?"
+}
+> Game score: 330
+> Moving from: MU
+> Life Points: 3
+> Player 3 made move:
+> +++
+  timer: 20279
+  move: ZA
+  message: Have we nothing Toulouse?
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA.... DGAT... GZA.... SZA.... HMU.... MMU.... DCNT... GMU.... SMU.... HZA.... MZA...."
+==============================================================
+Program Output (92): 
+ dracula legal moves: dracula n_locations: 4
+BS, BC, CN, VR, -BS,-BC,-VR,
+dracula next: VR
+
+==============================================================
+Move:  {
+  "move": "VR",
+  "message": "Mwahahahaha",
+  "timer": 119398
+}
+> Game score: 330
+> Moving from: CN
+> Blood Points: 18
+> Legal Drac moves: BC VR BS D1 D2 HI
+> Player 4 made move:
+> +++
+  move: VR
+  message: Mwahahahaha
+  timer: 119398
+> ---
+> End of Round:  17
+> Starting Round:  18
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T..."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "ZA",
+  "message": "Have we nothing Toulouse?",
+  "timer": 47328
+}
+> Game score: 329
+> Moving from: MU
+> Life Points: 9
+> Player 0 made move:
+> +++
+  move: ZA
+  message: Have we nothing Toulouse?
+  timer: 47328
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "ZA",
+  "message": "Have we nothing Toulouse?",
+  "timer": 80205
+}
+> Game score: 329
+> Moving from: MU
+> Life Points: 9
+> Player 1 made move:
+> +++
+  move: ZA
+  message: Have we nothing Toulouse?
+  timer: 80205
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "move": "MU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 42456
+}
+> Game score: 329
+> Moving from: ZA
+> Life Points: 9
+> Player 2 made move:
+> +++
+  move: MU
+  message: Have we nothing Toulouse?
+  timer: 42456
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU...."
+==============================================================
+Program Output (30): find dracula in Zagreb
+dest22
+
+==============================================================
+Move:  {
+  "message": "Have we nothing Toulouse?",
+  "move": "MU",
+  "timer": 44678
+}
+> Game score: 329
+> Moving from: ZA
+> Life Points: 3
+> Player 3 made move:
+> +++
+  message: Have we nothing Toulouse?
+  move: MU
+  timer: 44678
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA.... DGAT... GZA.... SZA.... HMU.... MMU.... DCNT... GMU.... SMU.... HZA.... MZA.... DVRT... GZA.... SZA.... HMU.... MMU...."
 ==============================================================
 Program Output (84): 
+ dracula legal moves: dracula n_locations: 3
+BS, SO, VR, -BS,-SO,
+dracula next: SO
+
+==============================================================
+Move:  {
+  "move": "SO",
+  "message": "Mwahahahaha",
+  "timer": 87872
+}
+> Game score: 329
+> Moving from: VR
+> Blood Points: 18
+> Legal Drac moves: SO BS D1 D2 HI
+> Player 4 made move:
+> +++
+  move: SO
+  message: Mwahahahaha
+  timer: 87872
+> ---
+> End of Round:  18
+> Starting Round:  19
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T..."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "message": "Have we nothing Toulouse?",
+  "move": "MU",
+  "timer": 2835
+}
+> Game score: 328
+> Moving from: ZA
+> Life Points: 9
+> Player 0 made move:
+> +++
+  message: Have we nothing Toulouse?
+  move: MU
+  timer: 2835
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "MU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 2583
+}
+> Game score: 328
+> Moving from: ZA
+> Life Points: 9
+> Player 1 made move:
+> +++
+  move: MU
+  message: Have we nothing Toulouse?
+  timer: 2583
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "ZU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 1518
+}
+> Game score: 328
+> Moving from: MU
+> Life Points: 9
+> Player 2 made move:
+> +++
+  move: ZU
+  message: Have we nothing Toulouse?
+  timer: 1518
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "MI",
+  "message": "Have we nothing Toulouse?",
+  "timer": 2095
+}
+> Game score: 328
+> Moving from: MU
+> Life Points: 3
+> Player 3 made move:
+> +++
+  move: MI
+  message: Have we nothing Toulouse?
+  timer: 2095
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA.... DGAT... GZA.... SZA.... HMU.... MMU.... DCNT... GMU.... SMU.... HZA.... MZA.... DVRT... GZA.... SZA.... HMU.... MMU.... DSOT... GMU.... SMU.... HZU.... MMI...."
+==============================================================
+Program Output (108): 
+ dracula legal moves: dracula n_locations: 6
+BE, BC, SA, SJ, SO, VA, -BE,-BC,-SA,-SJ,-VA,
+dracula next: VA
+
+==============================================================
+Move:  {
+  "move": "VA",
+  "message": "Mwahahahaha",
+  "timer": 240628
+}
+> Game score: 328
+> Moving from: SO
+> Blood Points: 18
+> Legal Drac moves: BE BC SA SJ VA D1 D2 HI
+> Player 4 made move:
+> +++
+  move: VA
+  message: Mwahahahaha
+  timer: 240628
+> ---
+> End of Round:  19
+> Starting Round:  20
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "ZU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 2481
+}
+> Game score: 314
+> Moving from: MU
+> Life Points: 9
+> Player 0 made move:
+> +++
+  move: ZU
+  message: Have we nothing Toulouse?
+  timer: 2481
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "ZU",
+  "message": "Have we nothing Toulouse?",
+  "timer": 2096
+}
+> Game score: 314
+> Moving from: MU
+> Life Points: 9
+> Player 1 made move:
+> +++
+  move: ZU
+  message: Have we nothing Toulouse?
+  timer: 2096
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "FR",
+  "message": "Have we nothing Toulouse?",
+  "timer": 2242
+}
+> Game score: 314
+> Moving from: ZU
+> Life Points: 9
+> Player 2 made move:
+> +++
+  move: FR
+  message: Have we nothing Toulouse?
+  timer: 2242
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "timer": 2679,
+  "move": "NP",
+  "message": "Have we nothing Toulouse?"
+}
+> Game score: 314
+> Moving from: MI
+> Life Points: 3
+> Player 3 made move:
+> +++
+  timer: 2679
+  move: NP
+  message: Have we nothing Toulouse?
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA.... DGAT... GZA.... SZA.... HMU.... MMU.... DCNT... GMU.... SMU.... HZA.... MZA.... DVRT... GZA.... SZA.... HMU.... MMU.... DSOT... GMU.... SMU.... HZU.... MMI.... DVAT.V. GZU.... SZU.... HFR.... MNP...."
+==============================================================
+Program Output (100): 
  dracula legal moves: dracula n_locations: 5
-BD, SJ, SZ, VI, ZA, 
+AT, IO, SA, SJ, VA, -AT,-IO,-SA,-SJ,
+dracula next: SJ
+
+==============================================================
+Move:  {
+  "move": "SJ",
+  "message": "Mwahahahaha",
+  "timer": 317837
+}
+> Game score: 314
+> Moving from: VA
+> Blood Points: 18
+> Legal Drac moves: AT SA SJ IO D1 D2 HI
+> Player 4 made move:
+> +++
+  move: SJ
+  message: Mwahahahaha
+  timer: 317837
+> ---
+> End of Round:  20
+> Starting Round:  21
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "MR",
+  "message": "Have we nothing Toulouse?",
+  "timer": 2447
+}
+> Game score: 313
+> Moving from: ZU
+> Life Points: 9
+> Player 0 made move:
+> +++
+  move: MR
+  message: Have we nothing Toulouse?
+  timer: 2447
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "FR",
+  "message": "Have we nothing Toulouse?",
+  "timer": 3175
+}
+> Game score: 313
+> Moving from: ZU
+> Life Points: 9
+> Player 1 made move:
+> +++
+  move: FR
+  message: Have we nothing Toulouse?
+  timer: 3175
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "BR",
+  "message": "Have we nothing Toulouse?",
+  "timer": 3197
+}
+> Game score: 313
+> Moving from: FR
+> Life Points: 9
+> Player 2 made move:
+> +++
+  move: BR
+  message: Have we nothing Toulouse?
+  timer: 3197
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "TS",
+  "message": "Have we nothing Toulouse?",
+  "timer": 2393
+}
+> Game score: 313
+> Moving from: NP
+> Life Points: 3
+> Player 3 made move:
+> +++
+  move: TS
+  message: Have we nothing Toulouse?
+  timer: 2393
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA.... DGAT... GZA.... SZA.... HMU.... MMU.... DCNT... GMU.... SMU.... HZA.... MZA.... DVRT... GZA.... SZA.... HMU.... MMU.... DSOT... GMU.... SMU.... HZU.... MMI.... DVAT.V. GZU.... SZU.... HFR.... MNP.... DSJT.M. GMR.... SFR.... HBR.... MTS...."
+==============================================================
+Program Output (84): 
+ dracula legal moves: dracula n_locations: 3
+BE, SJ, ZA, -BE,-ZA,
+dracula next: ZA
+
+==============================================================
+Move:  {
+  "move": "ZA",
+  "message": "Mwahahahaha",
+  "timer": 84081
+}
+> Game score: 313
+> Moving from: SJ
+> Blood Points: 18
+> Legal Drac moves: BE ZA D1 D2 D3 HI
+> Player 4 made move:
+> +++
+  move: ZA
+  message: Mwahahahaha
+  timer: 84081
+> ---
+> End of Round:  21
+> Starting Round:  22
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "message": "Have we nothing Toulouse?",
+  "move": "MS",
+  "timer": 3903
+}
+> Game score: 312
+> Moving from: MR
+> Life Points: 9
+> Player 0 made move:
+> +++
+  message: Have we nothing Toulouse?
+  move: MS
+  timer: 3903
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "BR",
+  "timer": 2806,
+  "message": "Have we nothing Toulouse?"
+}
+> Game score: 312
+> Moving from: FR
+> Life Points: 9
+> Player 1 made move:
+> +++
+  move: BR
+  timer: 2806
+  message: Have we nothing Toulouse?
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "PR",
+  "message": "Have we nothing Toulouse?",
+  "timer": 2959
+}
+> Game score: 312
+> Moving from: BR
+> Life Points: 9
+> Player 2 made move:
+> +++
+  move: PR
+  message: Have we nothing Toulouse?
+  timer: 2959
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR.... HPR...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "GO",
+  "message": "Have we nothing Toulouse?",
+  "timer": 3226
+}
+> Game score: 312
+> Moving from: TS
+> Life Points: 3
+> Player 3 made move:
+> +++
+  move: GO
+  message: Have we nothing Toulouse?
+  timer: 3226
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA.... DGAT... GZA.... SZA.... HMU.... MMU.... DCNT... GMU.... SMU.... HZA.... MZA.... DVRT... GZA.... SZA.... HMU.... MMU.... DSOT... GMU.... SMU.... HZU.... MMI.... DVAT.V. GZU.... SZU.... HFR.... MNP.... DSJT.M. GMR.... SFR.... HBR.... MTS.... DZAT.M. GMS.... SBR.... HPR.... MGO...."
+==============================================================
+Program Output (100): 
+ dracula legal moves: dracula n_locations: 5
+BD, MU, SZ, VI, ZA, -BD,-MU,-SZ,-VI,
 dracula next: VI
 
 ==============================================================
 Move:  {
+  "timer": 125349,
   "move": "VI",
-  "message": "Mwahahahaha",
-  "timer": 109101
+  "message": "Mwahahahaha"
 }
-> Game score: 340
+> Game score: 312
 > Moving from: ZA
 > Blood Points: 18
-> Legal Drac moves: BD SJ SZ VI D1 D2 HI
+> Legal Drac moves: BD MU SZ VI D1 D2 HI
 > Player 4 made move:
 > +++
+  timer: 125349
   move: VI
   message: Mwahahahaha
-  timer: 109101
 > ---
-> End of Round:  13
-> Starting Round:  14
+> End of Round:  22
+> Starting Round:  23
 --------------------------------------------------------------------------
 > Running player 0... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DC?T.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SZU.... HSR.... MZA.... DZAT.M. GVI.... SMUT... HPA.... MZATD.. DVI.VM."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR.... HPR.... MGO.... DC?T.M."
 ==============================================================
-Program Output (30): find dracula in Vienna
-dest22
+Program Output (45): find dracula in Unknown Location
+random move
 
 ==============================================================
 Move:  {
-  "move": "VI",
+  "move": "AO",
   "message": "Have we nothing Toulouse?",
-  "timer": 18723
+  "timer": 1925
 }
-> Game score: 339
-> Moving from: VI
+> Game score: 311
+> Moving from: MS
 > Life Points: 9
 > Player 0 made move:
 > +++
-  move: VI
+  move: AO
   message: Have we nothing Toulouse?
-  timer: 18723
+  timer: 1925
 > ---
 --------------------------------------------------------------------------
 > Running player 1... 
-Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DC?T.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SZU.... HSR.... MZA.... DZAT.M. GVI.... SMUT... HPA.... MZATD.. DVI.VM. GVIVD.."
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR.... HPR.... MGO.... DC?T.M. GAO...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "PR",
+  "message": "Have we nothing Toulouse?",
+  "timer": 2757
+}
+> Game score: 311
+> Moving from: BR
+> Life Points: 9
+> Player 1 made move:
+> +++
+  move: PR
+  message: Have we nothing Toulouse?
+  timer: 2757
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR.... HPR.... MGO.... DC?T.M. GAO.... SPR...."
+==============================================================
+Program Output (45): find dracula in Unknown Location
+random move
+
+==============================================================
+Move:  {
+  "move": "VI",
+  "message": "Have we nothing Toulouse?",
+  "timer": 1947
+}
+> Game score: 311
+> Moving from: PR
+> Life Points: 9
+> Player 2 made move:
+> +++
+  move: VI
+  message: Have we nothing Toulouse?
+  timer: 1947
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR.... HPR.... MGO.... DVIT.M. GAO.... SPR.... HVITD.."
 ==============================================================
 Program Output (30): find dracula in Vienna
 dest22
@@ -1657,25 +2735,140 @@ dest22
 ==============================================================
 Move:  {
   "message": "Have we nothing Toulouse?",
-  "move": "VI",
-  "timer": 47504
+  "move": "ZU",
+  "timer": 57599
 }
-> Game score: 339
-> Moving from: MU
-> Life Points: 4
-> Player 1 made move:
+> Game score: 311
+> Moving from: GO
+> Life Points: 3
+> Player 3 made move:
 > +++
   message: Have we nothing Toulouse?
+  move: ZU
+  timer: 57599
+> ---
+--------------------------------------------------------------------------
+> Running player 4... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA.... DGAT... GZA.... SZA.... HMU.... MMU.... DCNT... GMU.... SMU.... HZA.... MZA.... DVRT... GZA.... SZA.... HMU.... MMU.... DSOT... GMU.... SMU.... HZU.... MMI.... DVAT.V. GZU.... SZU.... HFR.... MNP.... DSJT.M. GMR.... SFR.... HBR.... MTS.... DZAT.M. GMS.... SBR.... HPR.... MGO.... DVIT.M. GAO.... SPR.... HVITD.. MZU...."
+==============================================================
+Program Output (88): 
+ dracula legal moves: dracula n_locations: 4
+BD, MU, PR, VI, -BD,-MU,
+dracula next: MU
+
+==============================================================
+Move:  {
+  "move": "MU",
+  "message": "Mwahahahaha",
+  "timer": 89017
+}
+> Game score: 311
+> Moving from: VI
+> Blood Points: 8
+> Legal Drac moves: BD MU PR D1 D2 HI
+> Player 4 made move:
+> +++
+  move: MU
+  message: Mwahahahaha
+  timer: 89017
+> ---
+> End of Round:  23
+> Starting Round:  24
+--------------------------------------------------------------------------
+> Running player 0... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR.... HPR.... MGO.... DVIT.M. GAO.... SPR.... HVITD.. MZU.... DC?T.M."
+==============================================================
+Program Output (30): find dracula in Vienna
+dest22
+
+==============================================================
+Move:  {
+  "move": "MS",
+  "message": "Have we nothing Toulouse?",
+  "timer": 120904
+}
+> Game score: 310
+> Moving from: AO
+> Life Points: 9
+> Player 0 made move:
+> +++
+  move: MS
+  message: Have we nothing Toulouse?
+  timer: 120904
+> ---
+--------------------------------------------------------------------------
+> Running player 1... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR.... HPR.... MGO.... DVIT.M. GAO.... SPR.... HVITD.. MZU.... DC?T.M. GMS...."
+==============================================================
+Program Output (30): find dracula in Vienna
+dest22
+
+==============================================================
+Move:  {
+  "timer": 21781,
+  "move": "VI",
+  "message": "Have we nothing Toulouse?"
+}
+> Game score: 310
+> Moving from: PR
+> Life Points: 9
+> Player 1 made move:
+> +++
+  timer: 21781
   move: VI
-  timer: 47504
+  message: Have we nothing Toulouse?
+> ---
+--------------------------------------------------------------------------
+> Running player 2... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR.... HPR.... MGO.... DVIT.M. GAO.... SPR.... HVITD.. MZU.... DC?T.M. GMS.... SVI...."
+==============================================================
+Program Output (30): find dracula in Vienna
+dest22
+
+==============================================================
+Move:  {
+  "move": "SZ",
+  "message": "Have we nothing Toulouse?",
+  "timer": 33587
+}
+> Game score: 310
+> Moving from: VI
+> Life Points: 3
+> Player 2 made move:
+> +++
+  move: SZ
+  message: Have we nothing Toulouse?
+  timer: 33587
+> ---
+--------------------------------------------------------------------------
+> Running player 3... 
+Running with input: "past_plays": "GJM.... SJM.... HJM.... MJM.... DC?.V.. GSZ.... SSZ.... HSZ.... MSZ.... DC?T... GSO.... SVI.... HBD.... MBC.... DC?T... GBC.... SMU.... HVI.... MSZ.... DC?T... GKL.... SZU.... HZA.... MVI.... DC?T... GBC.... SFR.... HMU.... MMU.... DS?.... GSZ.... SBR.... HZU.... MZU.... DC?T.V. GVI.... SPR.... HMR.... MFR.... DC?T.M. GMU.... SVI.... HMS.... MBR.... DC?T.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DC?.VM. GZA.... SMUT... HMR.... MMU.... DC?T.M. GMU.... SJM.... HZU.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZA.... MZA.... DC?T... GZA.... SZA.... HMU.... MMU.... DC?T... GMU.... SMU.... HZU.... MMI.... DC?T.V. GZU.... SZU.... HFR.... MNP.... DC?T.M. GMR.... SFR.... HBR.... MTS.... DC?T.M. GMS.... SBR.... HPR.... MGO.... DVIT.M. GAO.... SPR.... HVITD.. MZU.... DC?T.M. GMS.... SVI.... HSZ...."
+==============================================================
+Program Output (30): find dracula in Vienna
+dest22
+
+==============================================================
+Move:  {
+  "move": "MU",
+  "timer": 106537,
+  "message": "Have we nothing Toulouse?"
+}
+> Game score: 310
+> Moving from: ZU
+> Life Points: 3
+> Player 3 made move:
+> +++
+  move: MU
+  timer: 106537
+  message: Have we nothing Toulouse?
 > ---
 --------------------------------------------------------------------------
 > End of game: 
 > +++
-  score: 333
-  revealedPastPlays: GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SZU.... HSR.... MZA.... DZAT.M. GVI.... SMUT... HPA.... MZATD.. DVI.VM. GVIVD.. SVID...
-  messages: ["Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?"]
+  score: 304
+  revealedPastPlays: GJM.... SJM.... HJM.... MJM.... DLO.V.. GSZ.... SSZ.... HSZ.... MSZ.... DSWT... GSO.... SVI.... HBD.... MBC.... DLVT... GBC.... SMU.... HVI.... MSZ.... DMNT... GKL.... SZU.... HZA.... MVI.... DEDT... GBC.... SFR.... HMU.... MMU.... DNS.... GSZ.... SBR.... HZU.... MZU.... DHAT.V. GVI.... SPR.... HMR.... MFR.... DLIT.M. GMU.... SVI.... HMS.... MBR.... DNUT.M. GZU.... SZA.... HAO.... MPR.... DSTT.M. GFR.... SMU.... HBB.... MVI.... DZUT.M. GBR.... SZUTD.. HSN.... MZA.... DMUT... GPR.... SSTT... HSR.... MVI.... DZAT.M. GVI.... SZU.... HTO.... MZATD.. DSZ.VM. GZA.... SMUT... HMR.... MMU.... DKLT.M. GMU.... SJM.... HZU.... MZA.... DGAT... GZA.... SZA.... HMU.... MMU.... DCNT... GMU.... SMU.... HZA.... MZA.... DVRT... GZA.... SZA.... HMU.... MMU.... DSOT... GMU.... SMU.... HZU.... MMI.... DVAT.V. GZU.... SZU.... HFR.... MNP.... DSJT.M. GMR.... SFR.... HBR.... MTS.... DZAT.M. GMS.... SBR.... HPR.... MGO.... DVIT.M. GAO.... SPR.... HVITD.. MZU.... DMUT.M. GMS.... SVI.... HSZ.... MMUTD..
+  messages: ["Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Mwahahahaha","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?","Have we nothing Toulouse?"]
 > ---
 > Game Over
-333
-14
+304
+24
