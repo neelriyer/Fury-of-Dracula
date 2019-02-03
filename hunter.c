@@ -21,11 +21,14 @@ void decide_hunter_move (HunterView hv)
 		register_best_play (location_get_abbrev(curr), "Have we nothing Toulouse?");	
 	} 
 */
+
+	//if first round
 	if (hv_get_round(hv) < 1) {
 		puts("born in JM");
 		register_best_play ("JM", "Have we nothing Toulouse?");	
 	}
 	
+	//otherwise
 	else { 
 		//puts("----------------------------else");
 		char *next = location_get_abbrev (hv_get_next_move(hv, player));

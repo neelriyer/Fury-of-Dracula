@@ -542,6 +542,8 @@ size_t *gv_get_distance (
 	//puts("gv_get_distance");
 	size_t dist[NUM_MAP_LOCATIONS];
 
+
+	//initialise arrays
 	for (int i = 0; i < NUM_MAP_LOCATIONS; i++)
 		dist[i] = 0xffffffff;
  	dist[from] = 0;
@@ -549,15 +551,21 @@ size_t *gv_get_distance (
 	size_t v;
 	size_t *n_neighbors = malloc (sizeof(size_t) * 1);
 
+	//Create Queue
 	Queue frontier = newQueue();
+
+	//Add to Queue
 	QueueJoin(frontier, from);
 
 	while (!QueueIsEmpty(frontier)) {
+
+		//Leave Queue
 		v = QueueLeave (frontier);
 
 		//showQueue(frontier);
 		//if (dist[v] < 0xffffffff) continue;
 
+		//if dest found
 		if (v == to) {
 			dist[to] = dist[v] + 1; 
 			break;

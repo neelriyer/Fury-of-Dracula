@@ -16,6 +16,7 @@
 #include "game_view.h"
 #include "dracula_view.h"
 
+//helper
 size_t dv_get_distance (DraculaView currentView,location_t from);
 size_t dv_get_min (size_t a, size_t b);
 bool dv_is_bigger (size_t a, size_t b);
@@ -320,17 +321,22 @@ location_t dv_best_move_array (DraculaView currentView, location_t *arr, size_t 
 
 	for(int i = 0; i < size; i++) {
 		
+		//location cannot be the same as the hunters
 		if (arr[i] == curr) continue;
 		if (arr[i] == dv_get_location(currentView, 0)) continue;
 		if (arr[i] == dv_get_location(currentView, 1)) continue;
 		if (arr[i] == dv_get_location(currentView, 2)) continue;
 		if (arr[i] == dv_get_location(currentView, 3)) continue;
 
+
+		//if max distance uninitialised
 		printf("-%s,", location_get_abbrev(arr[i]));
 		if (max_dist = -1) {
 			res = arr[i];
 			max_dist = dv_get_distance (currentView, arr[i]); 
 		}
+
+		//find max distance from hunters
 		size_t tmp = dv_get_distance (currentView, arr[i]);
 		if (dv_is_bigger(tmp, max_dist)) {
 			res = arr[i];
